@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.35.0",
-    "@nuxt/kit": "npm:@nuxt/kit-nightly@latest",
+    "@nuxt/kit": "^3.0.0",
     "@nuxtjs/seo": "^3.3.0",
     "@nuxtjs/sitemap": "^7.5.0",
     "@pinia/nuxt": "^0.11.2",
