@@ -2543,7 +2543,7 @@
   resolved "https://registry.npmmirror.com/@schedule-x/calendar/-/calendar-4.3.1.tgz"
   integrity sha512-lArCIoRmTXLrJcq9VDKLfo1E3h8AwWLXvkEQt3o7rhc8qp9py4xfyjGMBP635eYzRoe3q9iaOS+WzglMz8EefQ==
 
-"@schedule-x/date-picker@^4.5.0":
+"@schedule-x/date-picker@^4.2.0":
   version "4.5.0"
   resolved "https://registry.npmmirror.com/@schedule-x/date-picker/-/date-picker-4.5.0.tgz#3c9eef414da2c1a2cf70ea5135d9f2734949316d"
   integrity sha512-5gTYfojAhDtoOShPYfPo/psiMRBKawiTj/difhuLrpnsBpmSs6+CtNnDM9EP4dylNSyudRaZ7dJLNHHdWi6osw==
@@ -9084,7 +9084,7 @@ teex@^1.0.1:
   dependencies:
     streamx "^2.12.5"
 
-temporal-polyfill@^0.3.2:
+temporal-polyfill@^0.3.0:
   version "0.3.2"
   resolved "https://registry.npmmirror.com/temporal-polyfill/-/temporal-polyfill-0.3.2.tgz#eb0f4fd36c77eac43d6e5b52851bee3648234b81"
   integrity sha512-TzHthD/heRK947GNiSu3Y5gSPpeUDH34+LESnfsq8bqpFhsB79HFBX8+Z834IVX68P3EUyRPZK5bL/1fh437Eg==
