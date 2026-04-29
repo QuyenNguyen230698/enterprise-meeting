@@ -1,0 +1,271 @@
+@import "tailwindcss";
+@tailwind utilities;
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Base Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Sidebar Transitions */
+aside {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+/* Navigation Styles */
+
+
+/* Dropdown Animation */
+.nav-dropdown {
+  transition: all 0.15s ease-in-out;
+}
+
+.nav-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Space between summary and content */
+.nav-dropdown summary~* {
+  margin-top: 0.5rem;
+  transition: all 0.15s ease-in-out;
+  transform-origin: top;
+}
+
+/* Hover effect */
+.nav-dropdown summary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Active state */
+.nav-dropdown[open] summary {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.nav-dropdown[open] summary~* {
+  animation: slideDown 0.15s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Collapsed Sidebar Styles */
+.w-20 .nav-dropdown[open] summary~* {
+  display: none;
+}
+
+.w-20 .nav-dropdown summary i.bi-chevron-down {
+  display: none;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white rounded-lg border border-gray-200 shadow-sm;
+}
+
+.card-header {
+  @apply px-4 py-3 border-b border-gray-200;
+}
+
+.card-body {
+  @apply p-4;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply px-6 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+}
+
+/* Utility Classes */
+.text-truncate {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.shadow-soft {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@font-face {
+  font-family: 'SFUFuturaBook';
+  font-style: normal;
+  src: local('SFUFuturaBook'), url('/fonts/SFUFuturaBook.TTF') format('truetype');
+}
+@layer components {
+  .font-playfair {
+    font-family: "Playfair Display", serif;
+  }
+}
+/* Base styles */
+body {
+  background-color: #ffffff;
+  background: #ffffff;
+  margin: 0; /* Reset body margin to avoid extra gaps */
+}
+.bg-image-main-section {
+  background-image: url('/image/background/bg-main.webp');
+  background-size: contain;
+  background-position: center;
+}
+.font-sans{
+  font-family: 'SFUFuturaBook' sans-serif;
+}
+/* Font family classes */
+.font-sans, .font-serif {
+  font-weight: 400; /* Default weight for sans-serif */
+}
+.font-serif {
+  font-family: "Playfair Display", serif;
+  font-weight: 400; /* Adjust weight according to your design */
+}
+.text-main-primary{
+  color: #f8c67e ;
+}
+/* Typography using Tailwind CSS classes */
+h1, h2, h3{
+  font-family: 'SFUFuturaBook', sans-serif;
+}
+h4, h5, h6, p, small{
+  font-family: 'SFUFuturaBook', sans-serif;
+}
+a {
+  font-family: 'SFUFuturaBook', sans-serif;
+}
+
+span { @apply text-sm; }
+small { @apply text-xs text-gray-500; }
+b, strong {
+  @apply font-normal; /* Sử dụng lớp Tailwind để thay đổi độ đậm của chữ */
+}
+.bg-black-gray{
+  background: #222222;
+  background-color: #222222;
+}
+.btn{
+  font-weight: 400 !important;
+  height: 2rem !important;
+  min-height: 2rem !important;
+}
+/* Banner styles */
+.textBanner, .textSubBanner, .textTitle, .textTitleImage {
+  @apply font-serif font-thin;
+}
+.textBanner { @apply text-4xl md:text-5xl lg:text-6xl; }
+.textSubBanner { @apply text-3xl md:text-4xl lg:text-5xl; }
+.textTitle { @apply text-lg md:text-xl lg:text-3xl; }
+.textTitleImage { @apply text-base md:text-lg lg:text-xl; }
+
+/* Height and background styles */
+.heightBanner { height: 50rem !important; }
+.bg-primary-tdc, .bg-list-project-tdc, .bg-header-list-project-tdc, .bg-main-image-project-list {
+  color: #ffffff;
+}
+.bg-primary-tdc { background: #222222; }
+.bg-contact-tdc { background: #13151B; }
+
+.bg-list-project-tdc { background: #1f1f1f; color: #000; }
+.bg-header-list-project-tdc { background: #2e2e2e; }
+.bg-main-image-project-list { background: #141414; }
+
+/* Button styles */
+
+
+.btnFormTDC-rounded-sm { @apply text-sm px-8 py-3; }
+.btnFormTDC-rounded-md { @apply text-base px-8 py-3; }
+.btnFormTDC-rounded-lg { @apply text-lg px-8 py-3; }
+.btnFormTDC-sm { @apply text-sm px-2 py-1; }
+.btnFormTDC-md { @apply text-base px-6 py-1.5; }
+.btnFormTDC-lg { @apply text-lg px-8 py-3; }
+.image-light {
+  filter: invert(100%) brightness(1.5) !important; /* Increase brightness to make it whiter */
+  -webkit-filter: invert(100%) brightness(1.5) !important;
+}
+
+.image-dark {
+  filter: invert(0%) !important; /* Revert the inversion for hover effect */
+  -webkit-filter: invert(0%) !important;
+}
+
+.hover\:image-dark:hover {
+  filter: invert(0%) !important; /* Apply the dark filter on hover */
+  -webkit-filter: invert(0%) !important;
+}
+.hover\:image-light:hover  {
+  filter: invert(100%) !important; /* Ensure this style is applied only to elements with this class */
+  -webkit-filter: invert(100%) !important;
+}
+
+
+
+.heightBanner { height: 50rem !important; }
+.bg-primary-tdc, .bg-list-project-tdc, .bg-header-list-project-tdc, .bg-main-image-project-list {
+  color: #ffffff;
+}
+.bg-primary-tdc { background: #222222; }
+.bg-contact-tdc { background: #13151B; }
+
+.bg-list-project-tdc { background: #1f1f1f; color: #000; }
+.bg-header-list-project-tdc { background: #2e2e2e; }
+.bg-main-image-project-list { background: #141414; }
+
+/* Button styles */
+
+
+.btnFormTDC-rounded-sm { @apply text-sm px-8 py-3; }
+.btnFormTDC-rounded-md { @apply text-base px-8 py-3; }
+.btnFormTDC-rounded-lg { @apply text-lg px-8 py-3; }
+.btnFormTDC-sm { @apply text-sm px-2 py-1; }
+.btnFormTDC-md { @apply text-base px-6 py-1.5; }
+.btnFormTDC-lg { @apply text-lg px-8 py-3; }
+.image-light {
+  filter: invert(100%) brightness(1.5) !important; /* Increase brightness to make it whiter */
+  -webkit-filter: invert(100%) brightness(1.5) !important;
+}
+
+.image-dark {
+  filter: invert(0%) !important; /* Revert the inversion for hover effect */
+  -webkit-filter: invert(0%) !important;
+}
+
+.hover\:image-dark:hover {
+  filter: invert(0%) !important; /* Apply the dark filter on hover */
+  -webkit-filter: invert(0%) !important;
+}
+.hover\:image-light:hover  {
+  filter: invert(100%) !important; /* Ensure this style is applied only to elements with this class */
+  -webkit-filter: invert(100%) !important;
+}
+
+
+

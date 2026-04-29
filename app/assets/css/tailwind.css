@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@tailwind utilities;
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #a0aec0;
+    border-radius: 2px;
+  }
+}
+
+.scrollbar-none {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+

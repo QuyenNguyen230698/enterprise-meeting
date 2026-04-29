@@ -1,0 +1,13 @@
+User-Agent: *
+Allow: /
+
+# Block admin and private areas
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /callback/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /settings/
+
+Sitemap: https://datools.info/api/sitemap.xml
+Sitemap: https://datools.info/api/sitemap-images.xml

@@ -1,0 +1,115 @@
+{
+  "templates": [
+    {
+      "id": "elearning-course-promo-1",
+      "name": "Khóa Học E-Learning Chuyên Nghiệp",
+      "description": "Template quảng bá khóa học trực tuyến với HTML banner và CTA mạnh",
+      "icon": "bi bi-mortarboard",
+      "category": "Education",
+      "gradient": "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+      "previewBg": "#eff6ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "EduTech Academy", "logo": "https://placehold.co/140x45/3b82f6/ffffff?text=EDU", "bgColor": "#3b82f6", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "html", "props": { "children": "<div style='background: linear-gradient(135deg, #3b82f6, #8b5cf6); text-align: center; border-radius: 12px;'><h1 style='color: white; font-size: 32px; margin: 0 0 10px 0;'>Học Lập Trình Python 2026</h1><p style='color: #e0e7ff; font-size: 18px; margin: 0;'>Từ Zero đến Hero chỉ trong 8 tuần</p></div>" }, "style": { "margin": "0", "padding": "0 4% 3% 4%" } },
+        { "id": 3, "type": "image", "props": { "src": "https://a.storyblok.com/f/262429/1080x1920/35b3fb1bb0/blogpost-e-learnings.jpg/m/", "alt": "E-learning Platform" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "course-card", "props": { "children": "Python cho Người Mới Bắt Đầu", "instructor": "Nguyễn Văn Dev", "thumbnail": "https://www.elucidat.com/wp-content/uploads/2023/06/Elearning-best-practice-1024x765.webp", "duration": "56 giờ", "lessons": 120, "level": "Cơ bản", "rating": 4.9, "price": "1.499.000đ", "originalPrice": "2.999.000đ", "href": "#" }, "style": { "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Bạn Sẽ Học Được", "benefits": ["Lập trình Python từ A-Z", "Xây dựng ứng dụng thực tế", "Data Analysis & Visualization", "Web Development với Flask", "Chứng chỉ hoàn thành khóa học"], "iconColor": "#3b82f6", "iconBgColor": "#dbeafe" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 6, "type": "coupon-code", "props": { "children": "PYTHON50", "discount": "Giảm 50%", "description": "Áp dụng đến hết tháng này", "expiryDate": "31/01/2026", "bgColor": "#eff6ff", "borderColor": "#3b82f6", "codeColor": "#3b82f6" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 7, "type": "cta-block", "props": { "children": "Đăng Ký Ngay Hôm Nay!", "subtitle": "Số lượng có hạn - Nhanh tay", "buttonText": "Học Ngay", "href": "#", "bgColor": "#eff6ff", "buttonBgColor": "#3b82f6" }, "style": { "margin": "0", "padding": "3% 4%" } },
+        { "id": 8, "type": "footer", "props": { "children": "© 2026 EduTech Academy", "companyName": "EduTech", "email": "hello@edutech.vn" }, "style": { "margin": "0", "padding": "3% 4%", "backgroundColor": "#1e293b" } }
+      ]
+    },
+    {
+      "id": "online-meeting-invitation",
+      "name": "Lời Mời Họp Trực Tuyến",
+      "description": "Template HTML hiện đại cho lời mời meeting online",
+      "icon": "bi bi-camera-video",
+      "category": "Event",
+      "gradient": "linear-gradient(135deg, #10b981, #06b6d4)",
+      "previewBg": "#ecfdf5",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Team Meeting", "logo": "https://placehold.co/140x45/10b981/ffffff?text=MEET", "bgColor": "#10b981", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2%" } },
+        { "id": 2, "type": "html", "props": { "children": "<div style='background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 8px;'><h2 style='color: #065f46; margin: 0 0 15px 0; font-size: 24px;'>🎯 Họp Kick-off Dự Án Q1/2026</h2><p style='color: #047857; font-size: 16px; margin: 0 0 10px 0;'><strong>Thời gian:</strong> 09:00 - 10:30, Thứ 2, 06/01/2026</p><p style='color: #047857; font-size: 16px; margin: 0;'><strong>Nền tảng:</strong> Microsoft Teams</p></div>" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 3, "type": "image", "props": { "src": "https://www.shutterstock.com/image-vector/video-conference-user-interface-calls-260nw-2492301741.jpg", "alt": "Online Meeting" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "heading2", "props": { "children": "Nội Dung Cuộc Họp" }, "style": { "fontSize": "20px", "color": "#065f46", "textAlign": "left", "margin": "0", "padding": "0 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Agenda", "benefits": ["Review KPI Q4/2025", "Lên kế hoạch Q1/2026", "Phân công nhiệm vụ", "Q&A và thảo luận"], "iconColor": "#10b981", "iconBgColor": "#d1fae5" }, "style": { "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 6, "type": "button", "props": { "children": "Tham Gia Họp", "href": "#" }, "style": { "backgroundColor": "#10b981", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 7, "type": "text", "props": { "children": "Link meeting sẽ được gửi 15 phút trước giờ họp. Vui lòng chuẩn bị tài liệu và đúng giờ." }, "style": { "fontSize": "14px", "color": "#6b7280", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "fontStyle": "italic" } },
+        { "id": 8, "type": "footer", "props": { "children": "© 2026 Company", "companyName": "Company", "email": "meeting@company.vn" }, "style": { "margin": "0", "padding": "3% 4%", "backgroundColor": "#1f2937" } }
+      ]
+    },
+    {
+      "id": "office-space-announcement",
+      "name": "Thông Báo Văn Phòng Mới",
+      "description": "Email HTML thông báo khai trương văn phòng",
+      "icon": "bi bi-building",
+      "category": "Event",
+      "gradient": "linear-gradient(135deg, #f59e0b, #f97316)",
+      "previewBg": "#fffbeb",
+      "elements": [
+        { "id": 1, "type": "html", "props": { "children": "<div style='background: linear-gradient(to right, #f59e0b, #f97316); color: white; text-align: center;'><h1 style='margin: 0; font-size: 36px; font-weight: bold;'><img src='https://cdn-icons-png.flaticon.com/512/3294/3294480.png' style='width: 32px; height: 32px; vertical-align: middle; margin-right: 8px;' alt='celebration'> Khai Trương Văn Phòng Mới!</h1><p style='margin: 10px 0 0 0; font-size: 18px; opacity: 0.95;'>Không gian làm việc hiện đại - Sáng tạo - Chuyên nghiệp</p></div>" }, "style": { "margin": "0", "padding": "0" } },
+        { "id": 2, "type": "spacer", "props": {}, "style": { "height": "24px" } },
+        { "id": 3, "type": "image", "props": { "src": "https://media.istockphoto.com/id/1591225732/photo/modern-open-plan-office-space-with-tables-office-chairs-creeper-plants-and-manager-room.jpg?s=612x612&w=0&k=20&c=E4eoy343CGfIbbpJXE0jJogXsHdJP2AWpeZ5fSI-ltk=", "alt": "New Office" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "16px" } },
+        { "id": 4, "type": "heading2", "props": { "children": "Địa Chỉ Mới" }, "style": { "fontSize": "24px", "color": "#92400e", "textAlign": "center", "margin": "0", "padding": "2% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 5, "type": "html", "props": { "children": "<div style='background: #fffbeb; border: 2px dashed #f59e0b; border-radius: 12px; text-align: center;'><p style='margin: 0 0 10px 0; color: #78350f; font-size: 18px; font-weight: bold;'><img src='https://cdn-icons-png.flaticon.com/512/684/684908.png' style='width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;' alt='location'> Tòa nhà ABC Tower, Tầng 15</p><p style='margin: 0; color: #92400e; font-size: 16px;'>123 Đường Nguyễn Văn Linh, Quận 7, TP.HCM</p></div>" }, "style": { "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 6, "type": "benefits-list", "props": { "children": "Tiện Ích Văn Phòng", "benefits": ["Diện tích 500m² rộng rãi", "Phòng họp hiện đại 3 phòng", "Khu vực thư giãn & Pantry", "Hệ thống bảo mật 24/7", "Bãi đỗ xe miễn phí"], "iconColor": "#f59e0b", "iconBgColor": "#fef3c7" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 7, "type": "cta-block", "props": { "children": "Lễ Khai Trương", "subtitle": "Thứ 7, 11/01/2026 - 09:00 AM", "buttonText": "Xác Nhận Tham Dự", "href": "#", "bgColor": "#fffbeb", "buttonBgColor": "#f59e0b" }, "style": { "margin": "0", "padding": "3% 4%" } },
+        { "id": 8, "type": "footer", "props": { "children": "© 2026", "email": "info@company.vn" }, "style": { "margin": "0", "padding": "3% 4%", "backgroundColor": "#78350f" } }
+      ]
+    },
+    {
+      "id": "job-opening-html",
+      "name": "Thông Báo Tuyển Dụng Sáng Tạo",
+      "description": "Template HTML tuyển dụng với phong cách trẻ trung",
+      "icon": "bi bi-person-plus",
+      "category": "HR",
+      "gradient": "linear-gradient(135deg, #ec4899, #8b5cf6)",
+      "previewBg": "#fdf4ff",
+      "elements": [
+        { "id": 1, "type": "html", "props": { "children": "<div style='background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); text-align: center; position: relative;'><div style='font-size: 48px; margin-bottom: 10px;'><img src='https://cdn-icons-png.flaticon.com/512/1828/1828425.png' style='width: 48px; height: 48px;' alt='wave'></div><h1 style='color: white; font-size: 32px; margin: 0 0 10px 0; font-weight: bold;'>Chúng Tôi Đang Tìm Bạn!</h1><p style='color: #fae8ff; font-size: 18px; margin: 0;'>Join our awesome team and build amazing things</p></div>" }, "style": { "margin": "0", "padding": "0" } },
+        { "id": 2, "type": "job-listing", "props": { "children": "Senior Frontend Developer", "company": "TechViet Innovations", "location": "Hà Nội / Remote", "type": "Full-time", "salary": "30-50 triệu VNĐ", "deadline": "20/01/2026", "href": "#" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 3, "type": "image", "props": { "src": "https://ml8zah6bcpx3.i.optimole.com/cb:K-V2.17e04/w:1000/h:600/q:90/g:sm/f:best/ig:avif/https://11recruitment.com.au/wp-content/uploads/2023/07/Do-you-shake-hands-at-an-interview.png", "alt": "Join Our Team" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "heading2", "props": { "children": "Yêu Cầu Công Việc" }, "style": { "fontSize": "22px", "color": "#86198f", "textAlign": "left", "margin": "0", "padding": "2% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 5, "type": "html", "props": { "children": "<ul style='color: #4b5563; font-size: 16px; line-height: 1.8; padding-left: 20px; margin: 0;'><li>3+ năm kinh nghiệm React.js, Vue.js hoặc Angular</li><li>Thành thạo HTML5, CSS3, JavaScript ES6+</li><li>Có kinh nghiệm với JavaScript, Tailwind CSS</li><li>Hiểu biết về UI/UX và responsive design</li><li>Khả năng làm việc nhóm tốt, tiếng Anh giao tiếp</li></ul>" }, "style": { "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 6, "type": "benefits-list", "props": { "children": "Quyền Lợi", "benefits": ["Lương tháng 13 + thưởng KPI", "Bảo hiểm sức khỏe Platinum", "Làm việc hybrid 3 ngày/tuần", "Macbook Pro cấp phát", "Team building, du lịch hàng năm", "Cơ hội thăng tiến rõ ràng"], "iconColor": "#ec4899", "iconBgColor": "#fce7f3" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 7, "type": "cta-block", "props": { "children": "Sẵn Sàng Ứng Tuyển?", "subtitle": "Gửi CV ngay hôm nay!", "buttonText": "Apply Now", "href": "#", "bgColor": "#fdf4ff", "buttonBgColor": "#ec4899" }, "style": { "margin": "0", "padding": "3% 4%" } },
+        { "id": 8, "type": "footer", "props": { "children": "© 2026 TechViet", "email": "hr@techviet.vn" }, "style": { "margin": "0", "padding": "3% 4%", "backgroundColor": "#581c87" } }
+      ]
+    },
+    {
+      "id": "bank-promo-html",
+      "name": "Khuyến Mãi Ngân Hàng Hiện Đại",
+      "description": "Email HTML sang trọng cho ngành banking",
+      "icon": "bi bi-bank2",
+      "category": "Banking",
+      "gradient": "linear-gradient(135deg, #0ea5e9, #3b82f6)",
+      "previewBg": "#f0f9ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "VietBank Digital", "logo": "https://placehold.co/150x50/0ea5e9/ffffff?text=BANK", "bgColor": "#0ea5e9", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2%" } },
+        { "id": 2, "type": "html", "props": { "children": "<div style='position: relative; background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%); text-align: center; border-radius: 16px; overflow: hidden;'><div style='position: absolute; top: -20px; right: -20px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;'></div><h1 style='color: white; font-size: 36px; margin: 0 0 15px 0; position: relative; z-index: 1;'><img src='https://cdn-icons-png.flaticon.com/512/3082/3082504.png' style='width: 36px; height: 36px; vertical-align: middle; margin-right: 12px;' alt='credit-card'> Mở Thẻ Tín Dụng</h1><p style='color: #dbeafe; font-size: 20px; margin: 0; position: relative; z-index: 1; font-weight: bold;'>Nhận Ngay 1.000.000đ</p></div>" }, "style": { "margin": "0", "padding": "2% 4% 3% 4%" } },
+        { "id": 3, "type": "image", "props": { "src": "https://www.shutterstock.com/image-photo/indoor-photo-bank-modern-interior-600nw-2581877259.jpg", "alt": "Bank Interior" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "credit-card-info", "props": { "children": "Thẻ VietBank Platinum", "cardType": "visa", "cardNumber": "**** **** **** 8888", "cardHolder": "NGUYEN VAN A", "expiryDate": "12/29", "creditLimit": "200.000.000đ", "bgColor": "#1e40af", "textColor": "#ffffff" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Ưu Đãi Đặc Biệt", "benefits": ["Miễn phí thường niên trọn đời", "Hoàn tiền 10% mọi giao dịch", "Tích điểm đổi quà hấp dẫn", "Bảo hiểm du lịch 5 tỷ", "Lãi suất 0% trong 6 tháng đầu", "Ưu đãi golf, spa cao cấp"], "iconColor": "#0ea5e9", "iconBgColor": "#e0f2fe" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Đăng Ký Ngay!", "subtitle": "Chỉ 5 phút duyệt online", "buttonText": "Mở Thẻ Ngay", "href": "#", "bgColor": "#f0f9ff", "buttonBgColor": "#0ea5e9" }, "style": { "margin": "0", "padding": "3% 4%" } },
+        { "id": 7, "type": "footer", "props": { "children": "© 2026 VietBank", "email": "support@vietbank.vn" }, "style": { "margin": "0", "padding": "3% 4%", "backgroundColor": "#1e3a8a" } }
+      ]
+    },
+    {
+      "id": "real-estate-luxury",
+      "name": "Bất Động Sản Cao Cấp",
+      "description": "Template HTML sang trọng cho dự án BĐS",
+      "icon": "bi bi-building-fill-up",
+      "category": "Real Estate",
+      "gradient": "linear-gradient(135deg, #059669, #10b981)",
+      "previewBg": "#f0fdf4",
+      "elements": [
+        { "id": 1, "type": "html", "props": { "children": "<div style='background-image: url(\"https://media.istockphoto.com/id/1269776313/photo/suburban-house.jpg?s=612x612&w=0&k=20&c=iNaSdrxJt7H37rjQZumXYScrmSTRm2fDJrqZzxpDL_k=\"); background-size: cover; background-position: center; height: 400px; position: relative; border-radius: 16px; overflow: hidden;'><div style='position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));'></div><div style='position: absolute; bottom: 30px; left: 30px; right: 30px; color: white;'><h1 style='font-size: 42px; margin: 0 0 10px 0; font-weight: bold;'>Emerald Villas</h1><p style='font-size: 20px; margin: 0; color: #d1fae5;'>Biệt thự đơn lập - Khu đô thị sinh thái</p></div></div>" }, "style": { "margin": "0", "padding": "2% 4% 3% 4%" } },
+        { "id": 2, "type": "property-card", "props": { "children": "Villa Sang Trọng 3 Tầng", "price": "15.8 tỷ", "location": "Thủ Đức, TP.HCM", "area": "250m²", "bedrooms": 4, "bathrooms": 5, "badge": "Hot", "image": "https://thumbs.dreamstime.com/b/exterior-luxury-home-manicured-lawn-dusk-palm-trees-frame-house-illuminated-windows-walkway-real-estate-property-modern-410774230.jpg" }, "style": { "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 3, "type": "property-features", "props": { "children": "Tiện Ích Đẳng Cấp", "features": ["Hồ bơi riêng 80m²", "Sân vườn 100m²", "Smart Home tích hợp", "Gara 2 xe", "Phòng gym riêng", "Rooftop BBQ", "Bảo vệ 24/7", "Gần trường quốc tế"], "layout": "grid", "columns": 2 }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 4, "type": "html", "props": { "children": "<div style='background: #ecfdf5; border-left: 4px solid #059669; border-radius: 8px;'><h3 style='color: #065f46; margin: 0 0 12px 0; font-size: 20px;'><img src='https://cdn-icons-png.flaticon.com/512/2950/2950545.png' style='width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' alt='gift'> Ưu Đãi Đặc Biệt Tháng Này</h3><ul style='color: #047857; margin: 0; padding-left: 20px; line-height: 1.8;'><li>Chiết khấu 5% thanh toán nhanh</li><li>Miễn phí 2 năm phí quản lý</li><li>Tặng voucher nội thất 200 triệu</li><li>Hỗ trợ vay 70% lãi suất 0%</li></ul></div>" }, "style": { "margin": "0", "padding": "2% 4%" } },
+        { "id": 5, "type": "cta-block", "props": { "children": "Đăng Ký Tham Quan", "subtitle": "Nhận ngay bảng giá & sơ đồ căn hộ", "buttonText": "Liên Hệ Ngay", "href": "#", "bgColor": "#f0fdf4", "buttonBgColor": "#059669" }, "style": { "margin": "0", "padding": "3% 4%" } },
+        { "id": 6, "type": "footer", "props": { "children": "© 2026 Emerald Villas", "email": "sales@emeraldvillas.vn" }, "style": { "margin": "0", "padding": "3% 4%", "backgroundColor": "#064e3b" } }
+      ]
+    }
+  ]
+}

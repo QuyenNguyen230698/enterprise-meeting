@@ -1,0 +1,414 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+
+
+
+@font-face {
+  font-family: "MTTMilanoBold";
+  font-style: normal;
+  src: local("MTTMilanoBold"),
+    url("/fonts/MTTMilano-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MTTMilanoBlack";
+  font-style: normal;
+  src: local("MTTMilanoBlack"),
+    url("/fonts/MTTMilano-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MTTMilanoMedium";
+  font-style: normal;
+  src: local("MTTMilanoMedium"),
+    url("/fonts/MTTMilano-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MTTMilanoRegular";
+  font-style: normal;
+  src: local("MTTMilanoRegular"),
+    url("/fonts/MTTMilano-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "TaiHeritageProRegular";
+  font-style: normal;
+  src: local("TaiHeritageProRegular"),
+    url("/fonts/TaiHeritagePro-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Oz";
+  font-style: normal;
+  src: local("Oz"),
+    url("/fonts/fz.otf") format("opentype");
+}
+div[style*="z-index:999999999"], div[style*="z-index: 999999999"] {
+display: none !important;
+}
+.scrollable-hidden-scrollbar {
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling if not needed */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.scrollable-hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.body {
+  margin: 0;
+  background-color: #ffffff;
+}
+.text-small{
+  font-size: 10px !important;
+}
+.no-scroll {
+  overflow: none; /* Ngăn cuộn */
+  touch-action: none; /* Ngăn cuộn trên mobile */
+}
+.drawer-overlay{
+  cursor: default !important;
+}
+.font-title {
+  font-family: "TaiHeritageProRegular", "Times New Roman", serif;
+}
+.font-oz {
+  font-family: "Oz", "Times New Roman", serif;
+}
+.font-body-regular {
+  font-family: "MTTMilanoRegular", "Helvetica Neue", Arial, sans-serif;
+}
+
+.font-body-medium {
+  font-family: "MTTMilanoMedium", "Helvetica Neue", Arial, sans-serif;
+}
+
+.font-body-bold {
+  font-family: "MTTMilanoBold", "Helvetica Neue", Arial, sans-serif;
+}
+
+.font-body-black {
+  font-family: "MTTMilanoBlack", "Helvetica Neue", Arial, sans-serif;
+}
+.color-main {
+  color: #002f38;
+}
+.color-text-main {
+  color: #00809b;
+}
+
+.text-body-main {
+  color: #002f38;
+}
+.border-main {
+  color: #002f38;
+}
+.color-line {
+  color: #00809b;
+}
+.bg-main {
+  background-color: #002f38;
+  background: #002f38;
+  color: #ffffff;
+}
+.bg-icon-main {
+  background-color: #00809b;
+  background: #00809b;
+  color: #00809b;
+}
+.gap-small {
+  gap: 0.05rem;
+}
+/* Base styles */
+html {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body {
+  height: 100dvh;
+  overflow: hidden;
+  @apply m-0 w-full;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    height: auto !important;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+.ml-28 {
+margin-left: calc(var(--spacing) * 28);
+}
+
+
+
+/* Typography using Tailwind CSS classes */
+h1,
+h2,
+h3 {
+  font-family: "MTTMilanoRegular", "Helvetica Neue", Arial, sans-serif;
+}
+
+h4,
+h5,
+h6,
+small {
+  font-family: "MTTMilanoRegular", "Helvetica Neue", Arial, sans-serif;
+}
+
+.priceBold {
+  font-family: "MTTMilanoRegular", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100 !important;
+  transform: scaleY(1.2);
+}
+
+a {
+  font-family: "MTTMilanoRegular", "Helvetica Neue", Arial, sans-serif;
+  @apply text-xs
+}
+
+.title-expo {
+  font-family: "MTTMilanoBold", "Helvetica Neue", Arial, sans-serif;
+  @apply text-2xl md:text-3xl lg:text-4xl text-stone-900 uppercase;
+}
+
+.top-10percent {
+  top: 10% !important;
+}
+
+.top-45percent {
+  top: 45% !important;
+}
+
+h1 {
+  @apply text-xl;
+}
+h2 {
+  @apply text-lg
+}
+h3 {
+  @apply text-lg;
+}
+h4 {
+  @apply text-base;
+}
+h5 {
+  @apply text-sm;
+}
+h6 {
+  @apply text-xs;
+}
+p {
+  @apply text-xs;
+}
+span {
+  @apply text-xs;
+}
+.text-small {
+ font-size: 12px !important;
+}
+
+button{
+  @apply cursor-pointer
+}
+.text-stone-900-gray {
+  @apply text-[#222222];
+}
+
+.text-xss {
+  font-size: 10px !important;
+}
+
+.textTitle {
+  @apply text-lg md:text-xl lg:text-3xl;
+}
+
+.textCardTitle {
+  @apply text-lg lg:text-xl;
+}
+.textCardItemTitle {
+  @apply text-lg lg:text-xl;
+}
+.textCollectionItemTitle {
+  @apply text-xl lg:text-2xl;
+}
+
+
+.textTitleImage {
+  @apply text-base md:text-lg lg:text-xl;
+}
+
+.text-small{
+  font-size: 10px !important;
+}
+
+/* Button styles */
+
+
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  @apply absolute left-5  bottom-0 w-0 h-0 bg-stone-700 transition-all duration-500;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  @apply w-full;
+}
+
+.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+  @apply backdrop-blur-sm;
+}
+
+/* scroll down btn */
+.isHover {
+  position: relative;
+  animation: isHover 0.8s;
+  &:hover span {
+    animation: moveSpan 0.8s forwards;
+    background-color: white;
+    scale: 0.6;
+  }
+  &:hover div {
+    opacity: 100;
+  }
+  &:hover svg {
+    opacity: 0;
+  }
+}
+@keyframes moveSpan {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(90px);
+  }
+}
+
+/* see more btn hover */
+.seeMoreHover {
+  &:hover svg {
+    animation: seeMoreHover 0.6s forwards;
+    opacity: 100;
+  }
+  &:hover span {
+    width: 16px;
+    height: 16px;
+  }
+}
+@keyframes seeMoreHover {
+  0% {
+    transform: translateX(-35px);
+  }
+  50% {
+    transform: translateX(-35px);
+  }
+  100% {
+    transform: translateX(-18px);
+  }
+}
+
+
+/*  ms-scroll
+/*----------------------------------------------------------------*/
+/* Custom Scrollbar Styles */
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin; /* Mỏng nhất cho Firefox */
+}
+
+/* Đảm bảo thanh cuộn mỏng và hiển thị ở Firefox */
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: thin; /* Mỏng và hiển thị */
+  }
+}
+summary {
+  list-style: none;                    /* Ẩn marker chuẩn */
+}
+
+summary::-webkit-details-marker {
+  display: none;                       /* Chrome, Safari, Edge */
+}
+
+summary::marker {
+  display: none !important;            /* Firefox, các trình duyệt mới */
+  content: none !important;
+}
+.input{
+  font-size: 16px !important;
+}
+/* Override DaisyUI base input/select styles */
+input:not([type="checkbox"]):not([type="radio"]):not(.daisy),
+select:not(.daisy),
+textarea:not(.daisy) {
+  font-size: 16px !important;
+  line-height: 1.25rem !important;
+  color: #374151 !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not(.daisy):focus,
+select:not(.daisy):focus,
+textarea:not(.daisy):focus {
+  outline: none !important;
+  border-color: #222222 !important;
+  /* box-shadow: 0 0 0 0.5px rgba(1, 0.5, 0.5, 1) !important; */
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not(.daisy):disabled,
+select:not(.daisy):disabled,
+textarea:not(.daisy):disabled {
+  background-color: #f3f4f6 !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+}
+
+/* Fix select arrow */
+select:not(.daisy) {
+  appearance: none !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+  background-position: right 0.5rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.5em 1.5em !important;
+  padding-right: 2.5rem !important;
+}
+
+/* Checkbox and radio styles */
+input[type="checkbox"]:not(.daisy),
+input[type="radio"]:not(.daisy) {
+  width: 1rem !important;
+  height: 1rem !important;
+  border: 1px solid #d1d5db !important;
+  background-color: white !important;
+  cursor: pointer !important;
+}
+
+input[type="radio"]:not(.daisy) {
+  border-radius: 50% !important;
+}
+
+input[type="checkbox"]:not(.daisy):checked,
+input[type="radio"]:not(.daisy):checked {
+  background-color: #222222 !important;
+  border-color: #222222 !important;
+}

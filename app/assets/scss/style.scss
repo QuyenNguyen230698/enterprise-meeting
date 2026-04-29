@@ -1,0 +1,87 @@
+/* Import Module Crop Image */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");/* Import Module */
+/* In Place Edit */
+.tran-duc-in-place-editor {
+  .tran-duc-in-place-labor {
+    label {
+      margin: 0;
+      font-size: 0.85rem;
+      padding: 0.125rem 0.25rem 0.125rem 0rem !important;
+      font-weight: 600 !important;
+    }
+
+    button {
+      padding: 0.1rem 0.25rem !important;
+    }
+  }
+
+  .tran-duc-in-place-value-wrapper {
+    min-height: 32px !important;
+
+    .tran-duc-in-place-value {
+      font-size: 1rem !important;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+
+    .tran-duc-html-text {
+      p {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+}
+
+.tran-duc-in-place-editor.tran-duc-required {
+  .tran-duc-in-place-labor {
+    label::after {
+      content: "(*)";
+      padding-left: 0.25rem;
+      color: red;
+    }
+  }
+}
+
+a.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Custom CKEditor Inline Height */
+:host ::ng-deep .ck-editor__editable_inline {
+  min-height: 500px;
+}
+/* Ẩn thanh cuộn trên Safari */
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE và Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+#__nuxt {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+}
+
+.e-btn.e-flat.e-primary:hover,
+.e-css.e-btn.e-flat.e-primary:hover {
+  background: #4338ca;
+  border-color: #4338ca;
+  color: #000;
+}
+
+.e-btn.e-flat.e-primary:hover,
+.e-css.e-btn.e-flat.e-primary {
+  background: #4338ca;
+  border-color: #4338ca;
+  color: #fff;
+}

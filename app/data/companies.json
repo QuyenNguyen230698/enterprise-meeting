@@ -1,0 +1,11 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Enterprise Meeting",
+      "logo": "https://lh3.googleusercontent.com/a/ACg8ocLoLcUhHu7f4f9k2l4rlQJAK3P7XQ-SB4Um73a64Odk4e3mSA=s400-c",
+      "website": "http://localhost:4995",
+      "industry": "Head Application"
+    }
+  ]
+}

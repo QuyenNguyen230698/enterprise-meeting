@@ -1,0 +1,620 @@
+
+{
+  "templates": [
+    {
+      "id": "welcome-modern",
+      "name": "Welcome Modern",
+      "description": "Email chao mung hien dai voi gradient header",
+      "icon": "bi bi-hand-thumbs-up",
+      "category": "Welcome",
+      "gradient": "linear-gradient(135deg, #667eea, #764ba2)",
+      "previewBg": "#f5f3ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Welcome", "logo": "https://placehold.co/140x45/667eea/ffffff?text=BRAND", "bgColor": "#667eea", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Chao Mung Ban Da Den Voi Chung Toi!" }, "style": { "fontSize": "26px", "color": "#667eea", "textAlign": "center", "margin": "0", "padding": "4% 4% 1% 4%", "fontWeight": "bold", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 3, "type": "text", "props": { "children": "Hanh trinh tuyet voi dang cho don ban. Chung toi rat vui duoc dong hanh cung ban." }, "style": { "fontSize": "15px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=280&fit=crop", "alt": "Welcome" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Loi Ich Khi Tham Gia", "benefits": ["Bat dau nhanh trong vai phut", "Ho tro 24/7 tu doi ngu", "Tinh nang da dang", "Bao mat toi uu"], "iconColor": "#667eea", "iconBgColor": "#ede9fe" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "San Sang Kham Pha?", "subtitle": "Bat dau hanh trinh cua ban ngay hom nay", "buttonText": "Bat Dau Ngay", "href": "#", "bgColor": "#f5f3ff", "buttonBgColor": "#667eea" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Brand Inc.", "companyName": "Brand Inc", "email": "hello@brand.com", "socials": [{ "platform": "facebook", "url": "#", "logo": "" }] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none", "backgroundColor": "#1e293b" } }
+      ]
+    },
+    {
+      "id": "product-features",
+      "name": "Product Features",
+      "description": "Gioi thieu san pham voi product card va benefits",
+      "icon": "bi bi-box-seam",
+      "category": "Product",
+      "gradient": "linear-gradient(135deg, #8b5cf6, #ec4899)",
+      "previewBg": "#faf5ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "San Pham Moi", "logo": "https://placehold.co/140x45/8b5cf6/ffffff?text=BRAND", "bgColor": "#8b5cf6", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 2, "type": "heading1", "props": { "children": "San Pham Moi Ra Mat" }, "style": { "fontSize": "26px", "color": "#8b5cf6", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 3, "type": "text", "props": { "children": "Dot pha cong nghe - Thiet ke tinh te - Chat luong vuot troi" }, "style": { "fontSize": "15px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 4, "type": "product-card", "props": { "children": "Tai Nghe Khong Day Premium", "price": "2.990.000d", "oldPrice": "3.990.000d", "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop", "badge": "Moi", "inStock": true }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Tinh Nang Noi Bat", "benefits": ["Pin 40 gio su dung lien tuc", "Chong on chu dong ANC", "Bluetooth 5.3 ket noi nhanh", "Dem tai cao cap sieu em"], "iconColor": "#8b5cf6", "iconBgColor": "#f3e8ff" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 6, "type": "coupon-code", "props": { "children": "NEWPROD30", "discount": "Giam 30%", "description": "Ap dung cho san pham moi", "expiryDate": "31/12/2025", "bgColor": "#faf5ff", "borderColor": "#8b5cf6", "codeColor": "#8b5cf6" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 7, "type": "cta-block", "props": { "children": "Dat Hang Ngay!", "subtitle": "Mien phi van chuyen toan quoc", "buttonText": "Mua Ngay", "href": "#", "bgColor": "#faf5ff", "buttonBgColor": "#8b5cf6" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 8, "type": "footer", "props": { "children": "2025 Brand", "companyName": "Brand", "email": "support@brand.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none", "backgroundColor": "#1e1b4b" } }
+      ]
+    },
+    {
+      "id": "ecommerce-sale",
+      "name": "Flash Sale",
+      "description": "Email khuyen mai voi countdown va product grid",
+      "icon": "bi bi-lightning-charge",
+      "category": "E-Commerce",
+      "gradient": "linear-gradient(135deg, #ef4444, #f97316)",
+      "previewBg": "#fef2f2",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Flash Sale", "logo": "https://placehold.co/140x45/ef4444/ffffff?text=SHOP", "bgColor": "#ef4444", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 2, "type": "heading1", "props": { "children": "GIAM DEN 70%" }, "style": { "fontSize": "32px", "color": "#ef4444", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 3, "type": "product-grid", "props": { "children": "San pham khuyen mai", "products": [{ "name": "Smart Watch Pro", "price": "1.490.000d", "oldPrice": "2.990.000d", "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop", "badge": "-50%" }, { "name": "Premium Headphones", "price": "890.000d", "oldPrice": "1.490.000d", "image": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300&h=200&fit=crop", "badge": "-40%" }], "columns": 2 }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 4, "type": "cta-block", "props": { "children": "Mua Sam Ngay!", "subtitle": "Uu dai co han - Nhanh tay len", "buttonText": "Xem Tat Ca Uu Dai", "href": "#", "bgColor": "#fef2f2", "buttonBgColor": "#ef4444" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 5, "type": "footer", "props": { "children": "2025 Shop", "companyName": "Shop", "email": "shop@email.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none", "backgroundColor": "#1c1917" } }
+      ]
+    },
+    {
+      "id": "simple",
+      "name": "Email Don Gian",
+      "description": "Clean and minimal text-only email",
+      "icon": "bi bi-file-text",
+      "category": "Basic",
+      "gradient": "linear-gradient(135deg, #6b7280, #9ca3af)",
+      "previewBg": "#f9fafb",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "", "logo": "https://placehold.co/150x50/6b7280/ffffff?text=LOGO", "bgColor": "#ffffff", "textColor": "#1f2937", "layout": "left" }, "style": { "margin": "0", "padding": "1% 1% 1% 1%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 2, "type": "spacer", "props": {}, "style": { "height": "24px" } },
+        { "id": 3, "type": "heading2", "props": { "children": "Xin chao!" }, "style": { "fontSize": "24px", "color": "#1f2937", "textAlign": "left", "margin": "0", "padding": "0 4% 0 4%", "fontWeight": "bold", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 4, "type": "text", "props": { "children": "Day la mau email don gian voi noi dung van ban. Hoan hao cho cac tin nhan ca nhan hoac thong bao." }, "style": { "fontSize": "16px", "color": "#4b5563", "lineHeight": "1.7", "margin": "0", "padding": "2% 4% 2% 4%" } },
+        { "id": 5, "type": "text", "props": { "children": "Ban co the tuy chinh noi dung nay theo y muon. Them hinh anh, nut bam hoac cac thanh phan khac de lam email cua ban hap dan hon." }, "style": { "fontSize": "16px", "color": "#4b5563", "lineHeight": "1.7", "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 6, "type": "divider", "props": {}, "style": { "margin": "0 4%", "borderColor": "#e5e7eb" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Cong ty cua ban.", "companyName": "Cong ty cua ban", "email": "contact@company.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 2% 3% 2%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "name": "Ban Tin Tuan",
+      "description": "Clean newsletter template with image and content",
+      "icon": "bi bi-newspaper",
+      "category": "Newsletter",
+      "gradient": "linear-gradient(135deg, #10b981, #34d399)",
+      "previewBg": "#ecfdf5",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Ban Tin Tuan", "logo": "https://placehold.co/150x50/10b981/ffffff?text=NEWS", "bgColor": "#10b981", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "1% 1% 1% 1%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 2, "type": "spacer", "props": {}, "style": { "height": "24px" } },
+        { "id": 3, "type": "heading1", "props": { "children": "Tin Tuc Tuan Nay" }, "style": { "fontSize": "28px", "color": "#1f2937", "textAlign": "center", "margin": "0", "padding": "1% 2% 1% 2%", "fontWeight": "bold", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 4, "type": "text", "props": { "children": "Cap nhat nhung tin tuc va su kien quan trong nhat" }, "style": { "fontSize": "16px", "color": "#6b7280", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 5, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=250&fit=crop", "alt": "Newsletter Header" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderWidth": "0px", "borderRadius": "16px", "boxShadow": "none" } },
+        { "id": 6, "type": "heading2", "props": { "children": "Tin Noi Bat" }, "style": { "fontSize": "20px", "color": "#1f2937", "textAlign": "left", "margin": "0", "padding": "0 4% 1% 4%", "fontWeight": "bold", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 7, "type": "text", "props": { "children": "Day la nhung cap nhat va tin tuc moi nhat tu doi ngu cua chung toi. Hay theo doi de khong bo lo nhung thong tin quan trong." }, "style": { "fontSize": "16px", "color": "#4b5563", "lineHeight": "1.7", "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 8, "type": "cta-block", "props": { "children": "Doc Them Tin Tuc", "subtitle": "Kham pha tat ca cac bai viet moi nhat", "buttonText": "Xem Tat Ca", "href": "#", "bgColor": "#ecfdf5", "buttonBgColor": "#10b981" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 9, "type": "footer", "props": { "children": "2025 Newsletter.", "companyName": "Newsletter", "email": "news@company.com", "socials": [{ "platform": "facebook", "url": "#", "logo": "" }] }, "style": { "margin": "0", "padding": "3% 2% 3% 2%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } }
+      ]
+    },
+    {
+      "id": "birthday",
+      "name": "Chuc Mung Sinh Nhat",
+      "description": "Birthday greeting email with coupon",
+      "icon": "bi bi-gift",
+      "category": "Customer",
+      "gradient": "linear-gradient(135deg, #f59e0b, #fbbf24)",
+      "previewBg": "#fffbeb",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Happy Birthday!", "logo": "https://placehold.co/150x50/f59e0b/ffffff?text=BRAND", "bgColor": "#f59e0b", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "1% 1% 1% 1%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } },
+        { "id": 2, "type": "spacer", "props": {}, "style": { "height": "24px" } },
+        { "id": 3, "type": "heading1", "props": { "children": "Chuc Mung Sinh Nhat!" }, "style": { "fontSize": "32px", "color": "#f59e0b", "textAlign": "center", "margin": "0", "padding": "1% 2% 1% 2%", "fontWeight": "bold" } },
+        { "id": 4, "type": "text", "props": { "children": "Chuc ban mot ngay sinh nhat that vui ve va hanh phuc!" }, "style": { "fontSize": "18px", "color": "#6b7280", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 5, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1558637008-e0db3814bd1d?w=600&h=300&fit=crop", "alt": "Birthday" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderWidth": "0px", "borderRadius": "16px", "boxShadow": "none" } },
+        { "id": 6, "type": "text", "props": { "children": "Nhan dip sinh nhat cua ban, chung toi gui tang ban mot mon qua dac biet!" }, "style": { "fontSize": "16px", "color": "#4b5563", "lineHeight": "1.8", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 7, "type": "coupon-code", "props": { "children": "BIRTHDAY25", "discount": "Giam 25%", "description": "Qua tang sinh nhat danh rieng cho ban", "expiryDate": "Co hieu luc 7 ngay", "bgColor": "#fffbeb", "borderColor": "#f59e0b", "codeColor": "#f59e0b" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 8, "type": "cta-block", "props": { "children": "Nhan Qua Ngay!", "subtitle": "Su dung ma giam gia khi thanh toan", "buttonText": "Mua Sam Ngay", "href": "#", "bgColor": "#fffbeb", "buttonBgColor": "#f59e0b" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderWidth": "0px", "borderRadius": "12px", "boxShadow": "none" } },
+        { "id": 9, "type": "footer", "props": { "children": "2025 Brand.", "companyName": "Brand", "email": "hello@brand.com", "socials": [{ "platform": "facebook", "url": "#", "logo": "" }] }, "style": { "margin": "0", "padding": "3% 2% 3% 2%", "borderWidth": "0px", "borderRadius": "0px", "boxShadow": "none" } }
+      ]
+    },
+    {
+      "id": "banking-promotion",
+      "name": "Khuyen Mai Ngan Hang",
+      "description": "Email khuyen mai dich vu ngan hang voi uu dai hap dan",
+      "icon": "bi bi-bank",
+      "category": "Banking",
+      "gradient": "linear-gradient(135deg, #0ea5e9, #0284c7)",
+      "previewBg": "#f0f9ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Ngan Hang ABC", "logo": "https://placehold.co/140x45/0ea5e9/ffffff?text=BANK", "bgColor": "#0ea5e9", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Uu Dai Dac Biet Thang Nay" }, "style": { "fontSize": "28px", "color": "#0ea5e9", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Mo the tin dung ngay hom nay de nhan 500.000d vao tai khoan!" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&h=280&fit=crop", "alt": "Banking" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Quyen Loi Khi Mo The", "benefits": ["Mien phi thuong nien nam dau", "Hoan tien 5% moi giao dich", "Lai suat chi 0.99%/thang", "Bao hiem du lich mien phi"], "iconColor": "#0ea5e9", "iconBgColor": "#e0f2fe" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Dang Ky Ngay!", "subtitle": "Chi can 5 phut de hoan tat", "buttonText": "Mo The Ngay", "href": "#", "bgColor": "#f0f9ff", "buttonBgColor": "#0ea5e9" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Ngan Hang ABC", "companyName": "Ngan Hang ABC", "email": "hotro@bank.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#0c4a6e" } }
+      ]
+    },
+    {
+      "id": "loan-approval",
+      "name": "Phe Duyet Khoan Vay",
+      "description": "Thong bao phe duyet khoan vay thanh cong",
+      "icon": "bi bi-check2-circle",
+      "category": "Banking",
+      "gradient": "linear-gradient(135deg, #22c55e, #16a34a)",
+      "previewBg": "#f0fdf4",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Thong Bao Vay", "logo": "https://placehold.co/140x45/22c55e/ffffff?text=BANK", "bgColor": "#22c55e", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Khoan Vay Da Duoc Phe Duyet!" }, "style": { "fontSize": "26px", "color": "#22c55e", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Kinh gui Quy khach, ho so vay cua ban da duoc phe duyet thanh cong voi so tien 500.000.000 VND, lai suat 7.5%/nam, ky han 36 thang." }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.7" } },
+        { "id": 4, "type": "button", "props": { "children": "Xem Chi Tiet Tai Khoan", "href": "#" }, "style": { "backgroundColor": "#22c55e", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 5, "type": "text", "props": { "children": "Neu can ho tro, vui long lien he hotline: 1900 1234" }, "style": { "fontSize": "14px", "color": "#6b7280", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%" } },
+        { "id": 6, "type": "footer", "props": { "children": "2025 Ngan Hang ABC", "companyName": "Ngan Hang ABC", "email": "support@bank.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#14532d" } }
+      ]
+    },
+    {
+      "id": "savings-account",
+      "name": "Tai Khoan Tiet Kiem",
+      "description": "Gioi thieu goi tiet kiem lai suat cao",
+      "icon": "bi bi-piggy-bank",
+      "category": "Banking",
+      "gradient": "linear-gradient(135deg, #6366f1, #8b5cf6)",
+      "previewBg": "#eef2ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Tiet Kiem Thong Minh", "logo": "https://placehold.co/140x45/6366f1/ffffff?text=BANK", "bgColor": "#6366f1", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Goi Tiet Kiem Linh Hoat" }, "style": { "fontSize": "26px", "color": "#6366f1", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Lai suat hap dan len den 8%/nam - An toan va linh hoat" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Uu Diem Noi Bat", "benefits": ["Ky han 6 thang: 6.5%/nam", "Ky han 12 thang: 8%/nam", "Rut truoc han khong mat lai", "Quan ly qua app tien loi"], "iconColor": "#6366f1", "iconBgColor": "#e0e7ff" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "cta-block", "props": { "children": "Bat Dau Tiet Kiem", "subtitle": "Mo tai khoan chi trong 2 phut", "buttonText": "Mo Tai Khoan", "href": "#", "bgColor": "#eef2ff", "buttonBgColor": "#6366f1" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "unsubscribe", "props": { "children": "Huy dang ky nhan email", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Ngan Hang ABC", "companyName": "Ngan Hang ABC", "email": "savings@bank.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#312e81" } }
+      ]
+    },
+    {
+      "id": "finance-update",
+      "name": "Cap Nhat Tai Chinh",
+      "description": "Bao cao va cap nhat thi truong tai chinh",
+      "icon": "bi bi-graph-up",
+      "category": "Finance",
+      "gradient": "linear-gradient(135deg, #14b8a6, #0d9488)",
+      "previewBg": "#f0fdfa",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Tai Chinh 360", "logo": "https://placehold.co/140x45/14b8a6/ffffff?text=FIN360", "bgColor": "#14b8a6", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Bao Cao Thi Truong Tuan" }, "style": { "fontSize": "26px", "color": "#14b8a6", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Tong hop bien dong quan trong tren thi truong tai chinh tuan qua va du bao xu huong." }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.7" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=300&fit=crop", "alt": "Finance Chart" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Chi So Chinh", "benefits": ["VN-Index: 1,245.32 (+1.2%)", "USD/VND: 24,850 (-0.3%)", "Vang SJC: 78.5tr (+2.1%)", "Lai suat: 6.5%/nam"], "iconColor": "#14b8a6", "iconBgColor": "#ccfbf1" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "button", "props": { "children": "Xem Bao Cao Day Du", "href": "#" }, "style": { "backgroundColor": "#14b8a6", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Tai Chinh 360", "companyName": "Tai Chinh 360", "email": "info@finance360.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#134e4a" } }
+      ]
+    },
+    {
+      "id": "investment-opportunities",
+      "name": "Co Hoi Dau Tu",
+      "description": "Gioi thieu cac co hoi dau tu hap dan",
+      "icon": "bi bi-bar-chart-line",
+      "category": "Finance",
+      "gradient": "linear-gradient(135deg, #f59e0b, #d97706)",
+      "previewBg": "#fffbeb",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Dau Tu Thong Minh", "logo": "https://placehold.co/140x45/f59e0b/ffffff?text=INVEST", "bgColor": "#f59e0b", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Co Hoi Dau Tu Hang Thang" }, "style": { "fontSize": "26px", "color": "#f59e0b", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Kham pha cac quy dau tu hang dau voi loi nhuan vuot troi" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "product-grid", "props": { "children": "Quy Dau Tu Noi Bat", "products": [{ "name": "Quy Co Phieu VN30", "price": "+18.5%/nam", "oldPrice": "", "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=300&h=200&fit=crop", "badge": "Hot" }, { "name": "Quy Trai Phieu", "price": "+9.2%/nam", "oldPrice": "", "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=200&fit=crop", "badge": "An Toan" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Tai Sao Chon Chung Toi", "benefits": ["Quan ly boi chuyen gia hang dau", "Mien phi giao dich 6 thang dau", "Theo doi danh muc 24/7", "Rut von linh hoat"], "iconColor": "#f59e0b", "iconBgColor": "#fef3c7" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Bat Dau Dau Tu!", "subtitle": "Chi tu 1 trieu dong", "buttonText": "Dang Ky Tu Van", "href": "#", "bgColor": "#fffbeb", "buttonBgColor": "#f59e0b" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Dau Tu Thong Minh", "companyName": "Dau Tu Thong Minh", "email": "invest@example.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#78350f" } }
+      ]
+    },
+    {
+      "id": "market-insights",
+      "name": "Phan Tich Thi Truong",
+      "description": "Bao cao phan tich xu huong thi truong",
+      "icon": "bi bi-clipboard-data",
+      "category": "Finance",
+      "gradient": "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+      "previewBg": "#faf5ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Market Insights", "logo": "https://placehold.co/140x45/8b5cf6/ffffff?text=INSIGHTS", "bgColor": "#8b5cf6", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Xu Huong Thi Truong Q1/2026" }, "style": { "fontSize": "26px", "color": "#8b5cf6", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop", "alt": "Market Analysis" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "text", "props": { "children": "Thi truong cho thay tin hieu tich cuc voi dong tien manh vao nhom co phieu cong nghe va tai chinh. Du bao VN-Index vuot 1,300 diem trong Q1." }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "left", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.8" } },
+        { "id": 5, "type": "divider", "props": {}, "style": { "margin": "0 4%", "borderColor": "#e9d5ff" } },
+        { "id": 6, "type": "text", "props": { "children": "Nganh tiem nang: Cong nghe (+25%), Ngan hang (+18%), Bat dong san (+15%), Nang luong (+22%)" }, "style": { "fontSize": "15px", "color": "#64748b", "textAlign": "left", "margin": "0", "padding": "2% 4% 2% 4%", "lineHeight": "1.8" } },
+        { "id": 7, "type": "unsubscribe", "props": { "children": "Huy dang ky nhan ban tin", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 8, "type": "footer", "props": { "children": "2025 Market Insights", "companyName": "Market Insights", "email": "research@insights.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#4c1d95" } }
+      ]
+    },
+    {
+      "id": "travel-deals",
+      "name": "Uu Dai Du Lich",
+      "description": "Khuyen mai tour du lich hap dan",
+      "icon": "bi bi-airplane",
+      "category": "Travel",
+      "gradient": "linear-gradient(135deg, #06b6d4, #0891b2)",
+      "previewBg": "#ecfeff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Du Lich Viet", "logo": "https://placehold.co/140x45/06b6d4/ffffff?text=TRAVEL", "bgColor": "#06b6d4", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Kham Pha Viet Nam Tuyet Dep" }, "style": { "fontSize": "28px", "color": "#06b6d4", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Uu dai len den 40% cho cac tour trong nuoc!" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&h=300&fit=crop", "alt": "Ha Long Bay" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "product-grid", "props": { "children": "Tour Hot Nhat", "products": [{ "name": "Ha Long 3N2D", "price": "2.990.000d", "oldPrice": "4.500.000d", "image": "https://images.unsplash.com/photo-1573790387438-4da905039392?w=300&h=200&fit=crop", "badge": "-35%" }, { "name": "Da Nang 4N3D", "price": "3.490.000d", "oldPrice": "5.200.000d", "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=300&h=200&fit=crop", "badge": "-33%" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "coupon-code", "props": { "children": "TRAVEL40", "discount": "Giam 40%", "description": "Ap dung tu 5 trieu", "expiryDate": "31/01/2026", "bgColor": "#ecfeff", "borderColor": "#06b6d4", "codeColor": "#06b6d4" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "unsubscribe", "props": { "children": "Huy nhan uu dai", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 8, "type": "footer", "props": { "children": "2025 Du Lich Viet", "companyName": "Du Lich Viet", "email": "booking@dulichviet.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#164e63" } }
+      ]
+    },
+    {
+      "id": "adventure-packages",
+      "name": "Tour Phieu Luu",
+      "description": "Cac goi tour mao hiem thu vi",
+      "icon": "bi bi-compass",
+      "category": "Travel",
+      "gradient": "linear-gradient(135deg, #22c55e, #16a34a)",
+      "previewBg": "#f0fdf4",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Adventure Tours", "logo": "https://placehold.co/140x45/22c55e/ffffff?text=ADVENT", "bgColor": "#22c55e", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading2", "props": { "children": "Kham Pha Nhung Vung Dat Moi" }, "style": { "fontSize": "26px", "color": "#22c55e", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Trai nghiem hanh trinh day thu thach va ky niem kho quen" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "product-grid", "props": { "children": "Tour Phieu Luu", "products": [{ "name": "Leo Nui Fansipan", "price": "4.990.000d", "oldPrice": "", "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=300&h=200&fit=crop", "badge": "3N2D" }, { "name": "Lan Bien Phu Quoc", "price": "6.500.000d", "oldPrice": "", "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop", "badge": "4N3D" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "button", "props": { "children": "Dat Tour Ngay", "href": "#" }, "style": { "backgroundColor": "#22c55e", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 6, "type": "footer", "props": { "children": "2025 Adventure Tours", "companyName": "Adventure Tours", "email": "adventure@tours.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#14532d" } }
+      ]
+    },
+    {
+      "id": "last-minute-flights",
+      "name": "Ve May Bay Gia Re",
+      "description": "Uu dai ve may bay phut chot",
+      "icon": "bi bi-ticket-perforated",
+      "category": "Travel",
+      "gradient": "linear-gradient(135deg, #ef4444, #dc2626)",
+      "previewBg": "#fef2f2",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Flash Flight", "logo": "https://placehold.co/140x45/ef4444/ffffff?text=FLY", "bgColor": "#ef4444", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Ve May Bay Giam 50%!" }, "style": { "fontSize": "30px", "color": "#ef4444", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Chi con 24 gio - Nhanh tay dat ve ngay!" }, "style": { "fontSize": "18px", "color": "#ef4444", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "fontWeight": "600" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Chuyen Bay Hot", "benefits": ["Ha Noi - Sai Gon: 990.000d", "Ha Noi - Da Nang: 790.000d", "Sai Gon - Phu Quoc: 690.000d", "Ha Noi - Nha Trang: 890.000d"], "iconColor": "#ef4444", "iconBgColor": "#fee2e2" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "spacer", "props": {}, "style": { "height": "16px" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Dat Ve Ngay!", "subtitle": "Gia da bao gom thue", "buttonText": "Tim Chuyen Bay", "href": "#", "bgColor": "#fef2f2", "buttonBgColor": "#ef4444" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Flash Flight", "companyName": "Flash Flight", "email": "support@flashflight.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#7f1d1d" } }
+      ]
+    },
+    {
+      "id": "resort-booking",
+      "name": "Dat Phong Resort",
+      "description": "Uu dai dat phong resort cao cap",
+      "icon": "bi bi-water",
+      "category": "Resort",
+      "gradient": "linear-gradient(135deg, #0ea5e9, #0284c7)",
+      "previewBg": "#f0f9ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Paradise Resort", "logo": "https://placehold.co/140x45/0ea5e9/ffffff?text=RESORT", "bgColor": "#0ea5e9", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading2", "props": { "children": "Ky Nghi Tuyet Voi Dang Cho Ban" }, "style": { "fontSize": "26px", "color": "#0ea5e9", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Giam 35% khi dat phong tu 2 dem tro len" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=350&fit=crop", "alt": "Resort Pool" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Dich Vu Bao Gom", "benefits": ["An sang buffet hang ngay", "Xe dua don san bay", "Ho boi vo cuc view bien", "Spa giam 20%"], "iconColor": "#0ea5e9", "iconBgColor": "#e0f2fe" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "button", "props": { "children": "Dat Phong Ngay", "href": "#" }, "style": { "backgroundColor": "#0ea5e9", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Paradise Resort", "companyName": "Paradise Resort", "email": "reservation@paradise.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#0c4a6e" } }
+      ]
+    },
+    {
+      "id": "luxury-resort",
+      "name": "Resort Sang Trong",
+      "description": "Trai nghiem nghi duong 5 sao",
+      "icon": "bi bi-star",
+      "category": "Resort",
+      "gradient": "linear-gradient(135deg, #a855f7, #9333ea)",
+      "previewBg": "#faf5ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Luxury Escape", "logo": "https://placehold.co/140x45/a855f7/ffffff?text=LUXURY", "bgColor": "#a855f7", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Trai Nghiem 5 Sao" }, "style": { "fontSize": "28px", "color": "#a855f7", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "product-card", "props": { "children": "Ocean Villa Suite", "description": "Villa rieng voi ho boi view bien", "price": "12.000.000d/dem", "oldPrice": "18.000.000d/dem", "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=500&h=350&fit=crop", "badge": "-33%", "inStock": true }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "coupon-code", "props": { "children": "LUXURY2026", "discount": "Giam 2 trieu", "description": "Dat tu 3 dem", "expiryDate": "28/02/2026", "bgColor": "#faf5ff", "borderColor": "#a855f7", "codeColor": "#a855f7" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "text", "props": { "children": "Butler rieng 24/7, xe dien di chuyen, am thuc Michelin" }, "style": { "fontSize": "15px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "2% 4% 2% 4%", "lineHeight": "1.7" } },
+        { "id": 6, "type": "unsubscribe", "props": { "children": "Huy dang ky", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Luxury Escape", "companyName": "Luxury Escape", "email": "vip@luxuryescape.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#581c87" } }
+      ]
+    },
+    {
+      "id": "family-resort",
+      "name": "Resort Gia Dinh",
+      "description": "Goi nghi duong cho ca gia dinh",
+      "icon": "bi bi-people",
+      "category": "Resort",
+      "gradient": "linear-gradient(135deg, #f97316, #ea580c)",
+      "previewBg": "#fff7ed",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Family Paradise", "logo": "https://placehold.co/140x45/f97316/ffffff?text=FAMILY", "bgColor": "#f97316", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Ky Nghi Gia Dinh Hanh Phuc" }, "style": { "fontSize": "26px", "color": "#f97316", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Tre em duoi 12 tuoi o mien phi - Hang tram hoat dong vui choi" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&h=350&fit=crop", "alt": "Family Resort" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "benefits-list", "props": { "children": "Tien Ich Gia Dinh", "benefits": ["Kids Club chuyen nghiep", "Ho boi tre em rieng", "Buffet da dang", "Hoat dong ngoai troi"], "iconColor": "#f97316", "iconBgColor": "#ffedd5" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Dat Phong Ngay!", "subtitle": "Goi gia dinh tu 4.500.000d/dem", "buttonText": "Xem Chi Tiet", "href": "#", "bgColor": "#fff7ed", "buttonBgColor": "#f97316" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Family Paradise", "companyName": "Family Paradise", "email": "family@paradise.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#9a3412" } }
+      ]
+    },
+    {
+      "id": "hotel-specials",
+      "name": "Uu Dai Khach San",
+      "description": "Khuyen mai dat phong khach san",
+      "icon": "bi bi-building",
+      "category": "Hotel",
+      "gradient": "linear-gradient(135deg, #3b82f6, #2563eb)",
+      "previewBg": "#eff6ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Grand Hotel", "logo": "https://placehold.co/140x45/3b82f6/ffffff?text=HOTEL", "bgColor": "#3b82f6", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Uu Dai Dac Biet Cuoi Tuan" }, "style": { "fontSize": "26px", "color": "#3b82f6", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Giam 30% tat ca loai phong - Chi ap dung T6-CN" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Tien Ich Khach San", "benefits": ["Phong rong 35m2+", "WiFi toc do cao", "Gym & Spa", "Nha hang buffet sang"], "iconColor": "#3b82f6", "iconBgColor": "#dbeafe" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "cta-block", "props": { "children": "Dat Phong Ngay!", "subtitle": "Chi tu 1.200.000d/dem", "buttonText": "Xem Phong Trong", "href": "#", "bgColor": "#eff6ff", "buttonBgColor": "#3b82f6" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "footer", "props": { "children": "2025 Grand Hotel", "companyName": "Grand Hotel", "email": "booking@grandhotel.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#1e3a8a" } }
+      ]
+    },
+    {
+      "id": "weekend-hotel",
+      "name": "Nghi Duong Cuoi Tuan",
+      "description": "Goi nghi duong cuoi tuan gia tot",
+      "icon": "bi bi-calendar-weekend",
+      "category": "Hotel",
+      "gradient": "linear-gradient(135deg, #ec4899, #db2777)",
+      "previewBg": "#fdf2f8",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Weekend Getaway", "logo": "https://placehold.co/140x45/ec4899/ffffff?text=WEEKEND", "bgColor": "#ec4899", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Tron Xa Pho Thi Cuoi Tuan" }, "style": { "fontSize": "26px", "color": "#ec4899", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "product-grid", "props": { "children": "Khach San Noi Bat", "products": [{ "name": "Boutique Hotel Da Lat", "price": "1.500.000d", "oldPrice": "2.200.000d", "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=300&h=200&fit=crop", "badge": "-32%" }, { "name": "Beach Hotel Vung Tau", "price": "1.800.000d", "oldPrice": "2.500.000d", "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=300&h=200&fit=crop", "badge": "-28%" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "divider", "props": {}, "style": { "margin": "0 4%", "borderColor": "#fbcfe8" } },
+        { "id": 5, "type": "cta-block", "props": { "children": "Dat Ngay!", "subtitle": "Gia da bao gom an sang", "buttonText": "Tim Khach San", "href": "#", "bgColor": "#fdf2f8", "buttonBgColor": "#ec4899" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "footer", "props": { "children": "2025 Weekend Getaway", "companyName": "Weekend Getaway", "email": "info@weekendgetaway.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#831843" } }
+      ]
+    },
+    {
+      "id": "business-hotel",
+      "name": "Khach San Doanh Nhan",
+      "description": "Dat phong cho chuyen cong tac",
+      "icon": "bi bi-briefcase",
+      "category": "Hotel",
+      "gradient": "linear-gradient(135deg, #64748b, #475569)",
+      "previewBg": "#f8fafc",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Business Inn", "logo": "https://placehold.co/140x45/64748b/ffffff?text=BUSINESS", "bgColor": "#64748b", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Goi Cong Tac Chuyen Nghiep" }, "style": { "fontSize": "26px", "color": "#475569", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Khach san tien nghi - Trung tam thanh pho - WiFi toc do cao" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Tien Ich Doanh Nhan", "benefits": ["Phong hop mien phi 2h", "Dua don san bay", "Check-in/out linh hoat", "Lounge Executive"], "iconColor": "#64748b", "iconBgColor": "#f1f5f9" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "button", "props": { "children": "Dat Phong Ngay", "href": "#" }, "style": { "backgroundColor": "#64748b", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 6, "type": "unsubscribe", "props": { "children": "Huy dang ky", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Business Inn", "companyName": "Business Inn", "email": "corporate@businessinn.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#1e293b" } }
+      ]
+    },
+    {
+      "id": "real-estate-listings",
+      "name": "Bat Dong San Moi",
+      "description": "Gioi thieu cac bat dong san moi nhat",
+      "icon": "bi bi-house-door",
+      "category": "Real Estate",
+      "gradient": "linear-gradient(135deg, #10b981, #059669)",
+      "previewBg": "#ecfdf5",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Land Home", "logo": "https://placehold.co/140x45/10b981/ffffff?text=LAND", "bgColor": "#10b981", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Bat Dong San Moi Ra Mat" }, "style": { "fontSize": "26px", "color": "#10b981", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "product-card", "props": { "children": "Biet Thu Ecopark", "description": "4PN, 3WC, San vuon 200m2, Vi tri dac dia", "price": "8.5 ty", "oldPrice": "9.2 ty", "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500&h=350&fit=crop", "badge": "Hot", "inStock": true }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=300&fit=crop", "alt": "Property" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "text", "props": { "children": "Vi tri: Khu do thi Ecopark, Hung Yen. Phap ly ro rang, so do chinh chu. Ho tro vay ngan hang len den 70%." }, "style": { "fontSize": "15px", "color": "#64748b", "textAlign": "left", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.7" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Lien He Ngay!", "subtitle": "Nhan tu van mien phi", "buttonText": "Dat Lich Xem Nha", "href": "#", "bgColor": "#ecfdf5", "buttonBgColor": "#10b981" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "unsubscribe", "props": { "children": "Huy nhan thong tin", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 8, "type": "footer", "props": { "children": "2025 Land Home", "companyName": "Land Home", "email": "info@landhome.vn", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#064e3b" } }
+      ]
+    },
+    {
+      "id": "property-alerts",
+      "name": "Thong Bao BDS Moi",
+      "description": "Cap nhat bat dong san theo yeu cau",
+      "icon": "bi bi-bell",
+      "category": "Real Estate",
+      "gradient": "linear-gradient(135deg, #f59e0b, #d97706)",
+      "previewBg": "#fffbeb",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Property Alert", "logo": "https://placehold.co/140x45/f59e0b/ffffff?text=ALERT", "bgColor": "#f59e0b", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading3", "props": { "children": "BDS Phu Hop Voi Yeu Cau Cua Ban" }, "style": { "fontSize": "24px", "color": "#f59e0b", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Chung toi tim thay 3 bat dong san moi phu hop voi tieu chi tim kiem cua ban." }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "product-grid", "props": { "children": "BDS Moi Nhat", "products": [{ "name": "Can ho 2PN Vinhomes", "price": "3.2 ty", "oldPrice": "", "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=300&h=200&fit=crop", "badge": "Moi" }, { "name": "Nha pho Binh Thanh", "price": "5.8 ty", "oldPrice": "", "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=300&h=200&fit=crop", "badge": "Moi" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "button", "props": { "children": "Xem Tat Ca BDS", "href": "#" }, "style": { "backgroundColor": "#f59e0b", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 6, "type": "footer", "props": { "children": "2025 Property Alert", "companyName": "Property Alert", "email": "alert@property.vn", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#78350f" } }
+      ]
+    },
+    {
+      "id": "investment-property",
+      "name": "BDS Dau Tu",
+      "description": "Co hoi dau tu bat dong san sinh loi",
+      "icon": "bi bi-graph-up-arrow",
+      "category": "Real Estate",
+      "gradient": "linear-gradient(135deg, #6366f1, #4f46e5)",
+      "previewBg": "#eef2ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Invest Property", "logo": "https://placehold.co/140x45/6366f1/ffffff?text=INVEST", "bgColor": "#6366f1", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Co Hoi Dau Tu Sinh Loi" }, "style": { "fontSize": "26px", "color": "#6366f1", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Loi nhuan cho thue len den 8%/nam - Tang gia tri 15%/nam" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Uu Diem Dau Tu", "benefits": ["Vi tri trung tam, thanh khoan cao", "Phap ly ro rang, so hong rieng", "Tiem nang tang gia manh", "Ho tro vay 70% gia tri"], "iconColor": "#6366f1", "iconBgColor": "#e0e7ff" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "product-grid", "props": { "children": "Du An Noi Bat", "products": [{ "name": "Shophouse Phu My Hung", "price": "12 ty", "oldPrice": "", "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&h=200&fit=crop", "badge": "8%/nam" }, { "name": "Officetel Quan 7", "price": "2.8 ty", "oldPrice": "", "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop", "badge": "6%/nam" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Tu Van Mien Phi!", "subtitle": "Chuyen gia ho tro 24/7", "buttonText": "Lien He Ngay", "href": "#", "bgColor": "#eef2ff", "buttonBgColor": "#6366f1" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "2025 Invest Property", "companyName": "Invest Property", "email": "invest@property.vn", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#312e81" } }
+      ]
+    },
+    {
+      "id": "recruitment-opportunities",
+      "name": "Co Hoi Viec Lam",
+      "description": "Thong bao tuyen dung vi tri moi",
+      "icon": "bi bi-person-badge",
+      "category": "Recruitment",
+      "gradient": "linear-gradient(135deg, #0ea5e9, #0284c7)",
+      "previewBg": "#f0f9ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Career Hub", "logo": "https://placehold.co/140x45/0ea5e9/ffffff?text=CAREER", "bgColor": "#0ea5e9", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Co Hoi Nghe Nghiep Moi" }, "style": { "fontSize": "26px", "color": "#0ea5e9", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Chung toi dang tim kiem nhung tai nang xuat sac de gia nhap doi ngu" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Vi Tri Tuyen Dung", "benefits": ["Senior Developer - 25-40tr", "Product Manager - 30-50tr", "UI/UX Designer - 20-35tr", "Data Analyst - 18-30tr"], "iconColor": "#0ea5e9", "iconBgColor": "#e0f2fe" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "button", "props": { "children": "Ung Tuyen Ngay", "href": "#" }, "style": { "backgroundColor": "#0ea5e9", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 6, "type": "footer", "props": { "children": "2025 Career Hub", "companyName": "Career Hub", "email": "hr@careerhub.vn", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#0c4a6e" } }
+      ]
+    },
+    {
+      "id": "job-fair-invitation",
+      "name": "Moi Tham Du Ngay Hoi Viec Lam",
+      "description": "Thu moi tham du su kien tuyen dung",
+      "icon": "bi bi-calendar-event",
+      "category": "Recruitment",
+      "gradient": "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+      "previewBg": "#faf5ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Job Fair 2026", "logo": "https://placehold.co/140x45/8b5cf6/ffffff?text=FAIR", "bgColor": "#8b5cf6", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Ngay Hoi Viec Lam 2026" }, "style": { "fontSize": "26px", "color": "#8b5cf6", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Gap go 50+ doanh nghiep hang dau - 1000+ co hoi viec lam\nThoi gian: 15/02/2026 | Dia diem: GEM Center, Q.1" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.8" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=300&fit=crop", "alt": "Job Fair" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "cta-block", "props": { "children": "Dang Ky Tham Du!", "subtitle": "Mien phi vao cua - Co qua tang", "buttonText": "Dang Ky Ngay", "href": "#", "bgColor": "#faf5ff", "buttonBgColor": "#8b5cf6" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "unsubscribe", "props": { "children": "Huy dang ky", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 7, "type": "footer", "props": { "children": "2026 Job Fair", "companyName": "Job Fair VN", "email": "event@jobfair.vn", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#4c1d95" } }
+      ]
+    },
+    {
+      "id": "career-development",
+      "name": "Phat Trien Su Nghiep",
+      "description": "Cac vi tri thang tien trong cong ty",
+      "icon": "bi bi-award",
+      "category": "Recruitment",
+      "gradient": "linear-gradient(135deg, #22c55e, #16a34a)",
+      "previewBg": "#f0fdf4",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Career Growth", "logo": "https://placehold.co/140x45/22c55e/ffffff?text=GROWTH", "bgColor": "#22c55e", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Phat Trien Su Nghiep Cung Chung Toi" }, "style": { "fontSize": "26px", "color": "#22c55e", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Tham gia chuong trinh dao tao va phat trien nhan su hang dau" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Che Do Hap Dan", "benefits": ["Luong thang 13, 14", "Bao hiem suc khoe cao cap", "Laptop + dien thoai cong ty", "Ngay phep 15+/nam"], "iconColor": "#22c55e", "iconBgColor": "#dcfce7" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "cta-block", "props": { "children": "Gia Nhap Doi Ngu!", "subtitle": "Gui CV ngay hom nay", "buttonText": "Nop Ho So", "href": "#", "bgColor": "#f0fdf4", "buttonBgColor": "#22c55e" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "footer", "props": { "children": "2025 Career Growth", "companyName": "Career Growth", "email": "jobs@careergrowth.vn", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#14532d" } }
+      ]
+    },
+    {
+      "id": "new-year-celebration",
+      "name": "Chuc Mung Nam Moi",
+      "description": "Email chuc mung nam moi voi uu dai",
+      "icon": "bi bi-stars",
+      "category": "Seasonal",
+      "gradient": "linear-gradient(135deg, #ef4444, #f59e0b)",
+      "previewBg": "#fef2f2",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Happy New Year 2026", "logo": "https://placehold.co/140x45/ef4444/ffffff?text=2026", "bgColor": "#ef4444", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Chuc Mung Nam Moi 2026!" }, "style": { "fontSize": "30px", "color": "#ef4444", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Chuc ban va gia dinh mot nam moi An Khang - Thinh Vuong - Hanh Phuc!" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=600&h=300&fit=crop", "alt": "New Year Fireworks" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "coupon-code", "props": { "children": "NEWYEAR26", "discount": "Giam 26%", "description": "Mung nam moi 2026", "expiryDate": "15/01/2026", "bgColor": "#fef2f2", "borderColor": "#ef4444", "codeColor": "#ef4444" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Nhan Qua Nam Moi!", "subtitle": "Uu dai co han", "buttonText": "Mua Sam Ngay", "href": "#", "bgColor": "#fef2f2", "buttonBgColor": "#ef4444" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "2026 Happy New Year", "companyName": "Brand", "email": "hello@brand.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#7f1d1d" } }
+      ]
+    },
+    {
+      "id": "christmas-sale",
+      "name": "Khuyen Mai Giang Sinh",
+      "description": "Email khuyen mai mua Giang Sinh",
+      "icon": "bi bi-gift",
+      "category": "Seasonal",
+      "gradient": "linear-gradient(135deg, #22c55e, #ef4444)",
+      "previewBg": "#f0fdf4",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Merry Christmas", "logo": "https://placehold.co/140x45/22c55e/ffffff?text=XMAS", "bgColor": "#22c55e", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Giang Sinh An Lanh!" }, "style": { "fontSize": "28px", "color": "#22c55e", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Tang qua yeu thuong - Giam gia sieu khung len den 50%!" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "product-grid", "props": { "children": "Qua Tang Giang Sinh", "products": [{ "name": "Set Qua Cao Cap", "price": "990.000d", "oldPrice": "1.500.000d", "image": "https://images.unsplash.com/photo-1512909006721-3d6018887383?w=300&h=200&fit=crop", "badge": "-34%" }, { "name": "Hop Qua Noel", "price": "590.000d", "oldPrice": "890.000d", "image": "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=300&h=200&fit=crop", "badge": "-34%" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "button", "props": { "children": "Mua Qua Ngay", "href": "#" }, "style": { "backgroundColor": "#ef4444", "color": "#ffffff", "padding": "14px 32px", "borderRadius": "8px", "fontSize": "16px", "fontWeight": "bold", "textAlign": "center", "margin": "0 auto 2% auto" } },
+        { "id": 6, "type": "unsubscribe", "props": { "children": "Huy nhan uu dai", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 7, "type": "footer", "props": { "children": "Merry Christmas 2025", "companyName": "Brand", "email": "hello@brand.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#14532d" } }
+      ]
+    },
+    {
+      "id": "spring-offers",
+      "name": "Uu Dai Mua Xuan",
+      "description": "Khuyen mai dip xuan moi",
+      "icon": "bi bi-flower1",
+      "category": "Seasonal",
+      "gradient": "linear-gradient(135deg, #ec4899, #f472b6)",
+      "previewBg": "#fdf2f8",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Spring Sale", "logo": "https://placehold.co/140x45/ec4899/ffffff?text=SPRING", "bgColor": "#ec4899", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Xuan Sang Ruc Ro" }, "style": { "fontSize": "28px", "color": "#ec4899", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&h=300&fit=crop", "alt": "Spring Flowers" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "text", "props": { "children": "Don xuan voi hang ngan uu dai hap dan - Lam moi phong cach!" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 5, "type": "product-card", "props": { "children": "Bo Suu Tap Xuan", "description": "Thoi trang xuan he moi nhat", "price": "499.000d", "oldPrice": "899.000d", "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=500&h=350&fit=crop", "badge": "-44%", "inStock": true }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Kham Pha Ngay!", "subtitle": "Uu dai den het thang 3", "buttonText": "Mua Sam", "href": "#", "bgColor": "#fdf2f8", "buttonBgColor": "#ec4899" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "Spring Collection 2026", "companyName": "Brand", "email": "spring@brand.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#831843" } }
+      ]
+    },
+    {
+      "id": "summer-vacation",
+      "name": "Ky Nghi He",
+      "description": "Uu dai du lich mua he",
+      "icon": "bi bi-sun",
+      "category": "Seasonal",
+      "gradient": "linear-gradient(135deg, #f59e0b, #f97316)",
+      "previewBg": "#fffbeb",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Summer Deals", "logo": "https://placehold.co/140x45/f59e0b/ffffff?text=SUMMER", "bgColor": "#f59e0b", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Mua He Soi Dong!" }, "style": { "fontSize": "28px", "color": "#f59e0b", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop", "alt": "Beach" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "product-grid", "props": { "children": "Tour Mua He", "products": [{ "name": "Phu Quoc 4N3D", "price": "4.990.000d", "oldPrice": "6.500.000d", "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=300&h=200&fit=crop", "badge": "-23%" }, { "name": "Nha Trang 3N2D", "price": "2.990.000d", "oldPrice": "3.900.000d", "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop", "badge": "-23%" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "coupon-code", "props": { "children": "SUMMER26", "discount": "Giam 500K", "description": "Tour tu 3 trieu", "expiryDate": "31/08/2026", "bgColor": "#fffbeb", "borderColor": "#f59e0b", "codeColor": "#f59e0b" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "unsubscribe", "props": { "children": "Huy nhan uu dai", "href": "{{UNSUBSCRIBE_URL}}" }, "style": { "textAlign": "center", "padding": "2% 4%", "fontSize": "12px", "color": "#9ca3af" } },
+        { "id": 7, "type": "footer", "props": { "children": "Summer 2026", "companyName": "Travel", "email": "summer@travel.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#78350f" } }
+      ]
+    },
+    {
+      "id": "winter-wonderland",
+      "name": "Mua Dong Am Ap",
+      "description": "Uu dai mua dong",
+      "icon": "bi bi-snow",
+      "category": "Seasonal",
+      "gradient": "linear-gradient(135deg, #0ea5e9, #6366f1)",
+      "previewBg": "#f0f9ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Winter Sale", "logo": "https://placehold.co/140x45/0ea5e9/ffffff?text=WINTER", "bgColor": "#0ea5e9", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Mua Dong Am Ap" }, "style": { "fontSize": "28px", "color": "#0ea5e9", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "image", "props": { "src": "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=600&h=300&fit=crop", "alt": "Winter" }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 4, "type": "product-grid", "props": { "children": "Thoi Trang Mua Dong", "products": [{ "name": "Ao Khoac Long", "price": "1.290.000d", "oldPrice": "1.890.000d", "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=300&h=200&fit=crop", "badge": "-32%" }, { "name": "Ao Len Cao Cap", "price": "590.000d", "oldPrice": "890.000d", "image": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&h=200&fit=crop", "badge": "-34%" }], "columns": 2 }, "style": { "margin": "0", "padding": "0 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "text", "props": { "children": "Don mua dong voi bo suu tap am ap - Giam gia len den 40%!" }, "style": { "fontSize": "15px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.7" } },
+        { "id": 6, "type": "cta-block", "props": { "children": "Mua Sam Ngay!", "subtitle": "Mien phi ship don tu 500K", "buttonText": "Kham Pha", "href": "#", "bgColor": "#f0f9ff", "buttonBgColor": "#0ea5e9" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 7, "type": "footer", "props": { "children": "Winter 2025", "companyName": "Brand", "email": "winter@brand.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#0c4a6e" } }
+      ]
+    },
+    {
+      "id": "festival-promotion",
+      "name": "Le Hoi Truyen Thong",
+      "description": "Khuyen mai dip le hoi",
+      "icon": "bi bi-balloon",
+      "category": "Seasonal",
+      "gradient": "linear-gradient(135deg, #a855f7, #ec4899)",
+      "previewBg": "#faf5ff",
+      "elements": [
+        { "id": 1, "type": "header", "props": { "children": "Festival Sale", "logo": "https://placehold.co/140x45/a855f7/ffffff?text=FEST", "bgColor": "#a855f7", "textColor": "#ffffff", "layout": "center" }, "style": { "margin": "0", "padding": "2% 2% 2% 2%" } },
+        { "id": 2, "type": "heading1", "props": { "children": "Mung Le Hoi Lon!" }, "style": { "fontSize": "28px", "color": "#a855f7", "textAlign": "center", "margin": "0", "padding": "3% 4% 1% 4%", "fontWeight": "bold" } },
+        { "id": 3, "type": "text", "props": { "children": "Uu dai dac biet mung le hoi - Hang ngan qua tang cho ban!" }, "style": { "fontSize": "16px", "color": "#64748b", "textAlign": "center", "margin": "0", "padding": "0 4% 2% 4%", "lineHeight": "1.6" } },
+        { "id": 4, "type": "benefits-list", "props": { "children": "Hoat Dong Le Hoi", "benefits": ["Ruoc den trung thu", "Van hoa am thuc", "Trinh dien nghe thuat", "Qua tang may man"], "iconColor": "#a855f7", "iconBgColor": "#f3e8ff" }, "style": { "margin": "0", "padding": "2% 4% 2% 4%", "borderRadius": "12px" } },
+        { "id": 5, "type": "cta-block", "props": { "children": "Tham Gia Ngay!", "subtitle": "Thoi gian co han", "buttonText": "Dang Ky", "href": "#", "bgColor": "#faf5ff", "buttonBgColor": "#a855f7" }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "borderRadius": "12px" } },
+        { "id": 6, "type": "footer", "props": { "children": "Festival 2026", "companyName": "Events", "email": "festival@events.com", "socials": [] }, "style": { "margin": "0", "padding": "3% 4% 3% 4%", "backgroundColor": "#581c87" } }
+      ]
+    }
+  ],
+
+  "categoryIcons": {
+    "Welcome": "bi bi-hand-thumbs-up",
+    "Product": "bi bi-box-seam",
+    "E-Commerce": "bi bi-cart4",
+    "Real Estate": "bi bi-house-door",
+    "HR / Recruitment": "bi bi-people",
+    "Sales": "bi bi-graph-up-arrow",
+    "Marketing": "bi bi-megaphone",
+    "Event": "bi bi-calendar-event",
+    "Feedback": "bi bi-chat-heart",
+    "Education": "bi bi-book",
+    "Customer": "bi bi-person-heart",
+    "Basic": "bi bi-file-text",
+    "Newsletter": "bi bi-newspaper",
+    "Banking": "bi bi-bank",
+    "Finance": "bi bi-graph-up",
+    "Travel": "bi bi-airplane",
+    "Resort": "bi bi-water",
+    "Hotel": "bi bi-building",
+    "Recruitment": "bi bi-person-badge",
+    "Seasonal": "bi bi-calendar-heart"
+  }
+}
