@@ -276,6 +276,8 @@ export default defineNuxtConfig({
       API_IMAGE_BASE_URL: process.env.API_IMAGE_BASE_URL,
       DISABLE_SOCKET: process.env.DISABLE_SOCKET,
       useMockTickets: process.env.NUXT_PUBLIC_USE_MOCK_TICKETS || 'true',
+      googleClientId: process.env.GOOGLE_CLIENT_ID,
+      googleRedirectUri: process.env.GOOGLE_REDIRECT_URI,
     },
   },
   sitemap: {

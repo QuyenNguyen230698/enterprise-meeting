@@ -72,11 +72,11 @@
 definePageMeta({ layout: false });
 
 const loginWithGoogle = () => {
-  const { googleAuth } = useAppConfig();
+  const config = useRuntimeConfig();
   const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
   const options = {
-    redirect_uri: googleAuth.redirectUri,
-    client_id: googleAuth.clientId,
+    redirect_uri: config.public.googleRedirectUri,
+    client_id: config.public.googleClientId,
     access_type: 'offline',
     response_type: 'code',
     prompt: 'consent',
