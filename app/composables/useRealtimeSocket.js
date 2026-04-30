@@ -21,7 +21,7 @@ export const useRealtimeSocket = () => {
       return socket;
     }
 
-    const REALTIME_URL = config.public.realtimeServer || 'http://localhost:3001';
+    const REALTIME_URL = config.public.realtimeServer;
     const token = authStore.accessToken;
 
     if (!token) {

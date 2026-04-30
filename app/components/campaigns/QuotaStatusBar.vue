@@ -110,7 +110,7 @@ const fetchQuotaStatus = async () => {
     loading.value = true;
     const token = localStorage.getItem('token');
     const config = useRuntimeConfig();
-    const apiUrl = config.public.apiUrl || 'http://localhost:3000';
+    const apiUrl = config.public.apiBase;
     
     const response = await $fetch(`${apiUrl}/api/quota/status`, {
       headers: {

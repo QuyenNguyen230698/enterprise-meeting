@@ -15,7 +15,7 @@ export const useSocketIO = () => {
   const isConnecting = ref(false);
   const error = ref(null);
 
-  const REALTIME_SERVER = config.public.realtimeServer || 'http://localhost:3001';
+  const REALTIME_SERVER = config.public.realtimeServer;
 
   const connect = () => {
     // Nếu Socket.IO bị disable, return null và không kết nối

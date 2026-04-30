@@ -80,10 +80,10 @@ export const useAuthStore = defineStore('auth', {
       this.isLoading = true;
       try {
         const config = useRuntimeConfig();
-        const apiBase = config.public.apiBase ;
+        const apiBase = config.public.apiBase;
         const response = await $fetch(`${apiBase}/v1/auth/google`, {
           method: 'POST',
-          body: { code },
+          body: { code, redirect_uri: config.public.googleRedirectUri },
         });
 
         const responseData = response?.data || response;
