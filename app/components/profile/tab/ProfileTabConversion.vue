@@ -7,7 +7,7 @@
       >
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-3">
-            <div class="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
+            <div class="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
               <i class="bi bi-bar-chart-fill"></i>
             </div>
             <h3 class="font-bold text-slate-900">Mức sử dụng</h3>
@@ -110,7 +110,7 @@
           <!-- Popular Badge -->
           <div
             v-if="pkg.isPopular"
-            class="absolute top-0 right-0 bg-gradient-to-l from-indigo-500 to-purple-500 text-white text-xs uppercase font-bold px-3 py-1 rounded-bl-xl shadow-sm"
+            class="absolute top-0 right-0 bg-gradient-to-l from-emerald-500 to-purple-500 text-white text-xs uppercase font-bold px-3 py-1 rounded-bl-xl shadow-sm"
           >
             Phổ biến
           </div>
@@ -205,7 +205,7 @@
                 : isConversionDowngrade(pkg)
                   ? 'bg-slate-100 text-slate-400'
                   : pkg.isPopular
-                    ? 'bg-white text-slate-900 hover:bg-indigo-50'
+                    ? 'bg-white text-slate-900 hover:bg-emerald-50'
                     : 'bg-slate-900 text-white hover:bg-slate-800',
             ]"
           >

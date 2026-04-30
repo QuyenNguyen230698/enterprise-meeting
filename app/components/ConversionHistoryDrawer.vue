@@ -53,7 +53,7 @@
                     'h-16 relative overflow-hidden',
                     item.conversionType === 'pdf-to-word' 
                       ? 'bg-linear-to-br from-red-400 via-red-500 to-pink-500' 
-                      : 'bg-linear-to-br from-blue-400 via-blue-500 to-indigo-500'
+                      : 'bg-linear-to-br from-blue-400 via-blue-500 to-lime-500'
                   ]"
                 >
                                     

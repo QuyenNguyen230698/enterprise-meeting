@@ -44,17 +44,17 @@
                 class="nav-link relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-full group"
                 :class="[
                   isDarkTheme
-                    ? 'text-gray-300 hover:text-indigo-400'
-                    : 'text-gray-600 hover:text-indigo-600',
+                    ? 'text-gray-300 hover:text-emerald-400'
+                    : 'text-gray-600 hover:text-emerald-600',
                   isActiveLink(link.path) &&
-                    (isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'),
+                    (isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'),
                 ]"
               >
                 <span class="relative z-10">{{ link.name }}</span>
                 <div
                   class="absolute inset-0 top-2 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"
                   :class="[
-                    isDarkTheme ? 'bg-indigo-500/10' : 'bg-indigo-100',
+                    isDarkTheme ? 'bg-emerald-500/10' : 'bg-emerald-100',
                     isActiveLink(link.path) && 'scale-100',
                   ]"
                 ></div>
@@ -71,8 +71,8 @@
                   class="nav-link relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-full group flex items-center gap-2"
                   :class="[
                     isDarkTheme
-                      ? 'text-gray-300 hover:text-indigo-400'
-                      : 'text-gray-600 hover:text-indigo-600',
+                      ? 'text-gray-300 hover:text-emerald-400'
+                      : 'text-gray-600 hover:text-emerald-600',
                   ]"
                 >
                   <span class="relative z-10">{{ link.name }}</span>
@@ -82,7 +82,7 @@
                   ></i>
                   <div
                     class="absolute inset-0 top-2 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"
-                    :class="isDarkTheme ? 'bg-indigo-500/10' : 'bg-indigo-100'"
+                    :class="isDarkTheme ? 'bg-emerald-500/10' : 'bg-emerald-100'"
                   ></div>
                 </button>
 
@@ -101,7 +101,7 @@
                       to="/editor?mode=public"
                       class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                     >
-                      <i class="bi bi-pencil-square text-indigo-500"></i>
+                      <i class="bi bi-pencil-square text-emerald-500"></i>
                       <span>Thiết kế Email</span>
                     </NuxtLink>
                     <NuxtLink
@@ -109,7 +109,7 @@
                       to="/editor"
                       class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                     >
-                      <i class="bi bi-pencil-square text-indigo-500"></i>
+                      <i class="bi bi-pencil-square text-emerald-500"></i>
                       <span>Thiết kế Email</span>
                     </NuxtLink>
                   </div>
@@ -123,25 +123,25 @@
             <template v-if="isLoggedIn">
               <NuxtLink
                 to="/dashboard"
-                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-indigo-600 to-purple-600 rounded-full hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 overflow-hidden group"
+                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-2">
                   <i class="bi bi-grid-3x3-gap"></i>
                   Dashboard
                 </span>
                 <div
-                  class="absolute inset-0 bg-linear-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 bg-linear-to-r from-purple-600 to-lime-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
               </NuxtLink>
             </template>
             <template v-else>
               <NuxtLink
                 to="/login"
-                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-indigo-600 to-purple-600 rounded-full hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 overflow-hidden group"
+                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 overflow-hidden group"
               >
                 <span class="relative z-10">Đăng nhập</span>
                 <div
-                  class="absolute inset-0 bg-linear-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 bg-linear-to-r from-purple-600 to-lime-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
               </NuxtLink>
             </template>
@@ -253,12 +253,12 @@
                   class="flex items-center gap-4 px-4 py-4 rounded-xl transition-all duration-300"
                   :class="[
                     isDarkTheme
-                      ? 'text-gray-300 hover:text-indigo-400 hover:bg-white/5'
-                      : 'text-gray-600 hover:text-indigo-600 hover:bg-indigo-50',
+                      ? 'text-gray-300 hover:text-emerald-400 hover:bg-white/5'
+                      : 'text-gray-600 hover:text-emerald-600 hover:bg-emerald-50',
                     isActiveLink(link.path) &&
                       (isDarkTheme
-                        ? 'bg-white/10 text-indigo-400'
-                        : 'bg-indigo-50 text-indigo-600'),
+                        ? 'bg-white/10 text-emerald-400'
+                        : 'bg-emerald-50 text-emerald-600'),
                   ]"
                 >
                   <i :class="link.icon" class="text-lg"></i>
@@ -272,8 +272,8 @@
                     class="w-full flex items-center gap-4 px-4 py-4 rounded-xl transition-all duration-300"
                     :class="[
                       isDarkTheme
-                        ? 'text-gray-300 hover:text-indigo-400 hover:bg-white/5'
-                        : 'text-gray-600 hover:text-indigo-600 hover:bg-indigo-50',
+                        ? 'text-gray-300 hover:text-emerald-400 hover:bg-white/5'
+                        : 'text-gray-600 hover:text-emerald-600 hover:bg-emerald-50',
                     ]"
                   >
                     <i :class="link.icon" class="text-lg"></i>
@@ -302,7 +302,7 @@
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       "
                     >
-                      <i class="bi bi-pencil-square text-indigo-500"></i>
+                      <i class="bi bi-pencil-square text-emerald-500"></i>
                       <span class="text-sm">Thiết kế Email</span>
                     </NuxtLink>
                     <NuxtLink
@@ -316,7 +316,7 @@
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       "
                     >
-                      <i class="bi bi-pencil-square text-indigo-500"></i>
+                      <i class="bi bi-pencil-square text-emerald-500"></i>
                       <span class="text-sm">Thiết kế Email</span>
                     </NuxtLink>
                   </div>
@@ -334,7 +334,7 @@
               <NuxtLink
                 to="/dashboard"
                 @click="mobileMenuOpen = false"
-                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-indigo-600 to-purple-600 rounded-xl font-medium"
+                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-xl font-medium"
               >
                 <i class="bi bi-grid-3x3-gap"></i>
                 Dashboard
@@ -344,7 +344,7 @@
               <NuxtLink
                 to="/login"
                 @click="mobileMenuOpen = false"
-                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-indigo-600 to-purple-600 rounded-xl font-medium"
+                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-xl font-medium"
               >
                 <i class="bi bi-box-arrow-in-right"></i>
                 Đăng nhập

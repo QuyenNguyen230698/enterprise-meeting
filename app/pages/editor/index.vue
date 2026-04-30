@@ -3909,8 +3909,8 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.editor-theme :deep(.bg-indigo-600),
-.editor-theme :deep(.bg-indigo-500),
+.editor-theme :deep(.bg-emerald-600),
+.editor-theme :deep(.bg-emerald-500),
 .editor-theme :deep(.bg-purple-600),
 .editor-theme :deep(.bg-blue-600),
 .editor-theme :deep(.bg-blue-500) {
@@ -3918,8 +3918,8 @@ useSeoMeta({
   color: #ffffff !important;
 }
 
-.editor-theme :deep(.text-indigo-700),
-.editor-theme :deep(.text-indigo-600),
+.editor-theme :deep(.text-emerald-700),
+.editor-theme :deep(.text-emerald-600),
 .editor-theme :deep(.text-purple-700),
 .editor-theme :deep(.text-purple-600),
 .editor-theme :deep(.text-blue-700),
@@ -3927,15 +3927,15 @@ useSeoMeta({
   color: #059669 !important;
 }
 
-.editor-theme :deep(.bg-indigo-50),
+.editor-theme :deep(.bg-emerald-50),
 .editor-theme :deep(.bg-purple-50),
 .editor-theme :deep(.bg-blue-50) {
   background-color: #ecfdf5 !important;
 }
 
-.editor-theme :deep(.border-indigo-500),
-.editor-theme :deep(.border-indigo-300),
-.editor-theme :deep(.border-indigo-200),
+.editor-theme :deep(.border-emerald-500),
+.editor-theme :deep(.border-emerald-300),
+.editor-theme :deep(.border-emerald-200),
 .editor-theme :deep(.border-purple-500),
 .editor-theme :deep(.border-blue-500),
 .editor-theme :deep(.border-blue-300),
@@ -3943,14 +3943,14 @@ useSeoMeta({
   border-color: #34d399 !important;
 }
 
-.editor-theme :deep(.focus\:border-indigo-500:focus),
+.editor-theme :deep(.focus\:border-emerald-500:focus),
 .editor-theme :deep(.focus\:border-purple-500:focus),
 .editor-theme :deep(.focus\:border-blue-500:focus) {
   border-color: #10b981 !important;
 }
 
-.editor-theme :deep(.focus\:ring-indigo-200:focus),
-.editor-theme :deep(.focus\:ring-indigo-500:focus),
+.editor-theme :deep(.focus\:ring-emerald-200:focus),
+.editor-theme :deep(.focus\:ring-emerald-500:focus),
 .editor-theme :deep(.focus\:ring-purple-200:focus),
 .editor-theme :deep(.focus\:ring-blue-200:focus),
 .editor-theme :deep(.focus\:ring-blue-500:focus) {
@@ -3960,31 +3960,31 @@ useSeoMeta({
 .editor-theme :deep([class*="from-purple-"]) { --tw-gradient-from: #34d399 var(--tw-gradient-from-position) !important; }
 .editor-theme :deep([class*="to-purple-"]) { --tw-gradient-to: #84cc16 var(--tw-gradient-to-position) !important; }
 
-.editor-theme :deep([class*="hover:bg-indigo-700"]:hover),
+.editor-theme :deep([class*="hover:bg-emerald-700"]:hover),
 .editor-theme :deep([class*="hover:bg-purple-700"]:hover),
 .editor-theme :deep([class*="hover:bg-blue-700"]:hover) {
   background-image: linear-gradient(to right, #10b981, #14b8a6, #84cc16) !important;
 }
 
-.editor-theme :deep([class*="hover:text-indigo-600"]:hover),
+.editor-theme :deep([class*="hover:text-emerald-600"]:hover),
 .editor-theme :deep([class*="hover:text-purple-600"]:hover),
 .editor-theme :deep([class*="hover:text-blue-600"]:hover) {
   color: #047857 !important;
 }
 
-.editor-theme :deep([class*="hover:border-indigo-300"]:hover),
+.editor-theme :deep([class*="hover:border-emerald-300"]:hover),
 .editor-theme :deep([class*="hover:border-purple-300"]:hover),
 .editor-theme :deep([class*="hover:border-blue-300"]:hover) {
   border-color: #34d399 !important;
 }
 
-.editor-theme :deep([class*="shadow-indigo"]),
+.editor-theme :deep([class*="shadow-emerald"]),
 .editor-theme :deep([class*="shadow-purple"]),
 .editor-theme :deep([class*="shadow-blue"]) {
   --tw-shadow-color: rgba(16, 185, 129, 0.3) !important;
 }
 
-.editor-theme :deep([class*="ring-indigo"]),
+.editor-theme :deep([class*="ring-emerald"]),
 .editor-theme :deep([class*="ring-purple"]),
 .editor-theme :deep([class*="ring-blue"]) {
   --tw-ring-color: rgba(52, 211, 153, 0.35) !important;

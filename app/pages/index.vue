@@ -22,13 +22,13 @@
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <NuxtLink 
               to="/dashboard" 
-              class="w-full sm:w-auto px-8 py-4 bg-linear-to-r from-emerald-500 via-teal-500 to-lime-500 hover:from-lime-500 hover:via-teal-500 hover:to-emerald-500 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/25 hover:scale-105"
+              class="w-full sm:w-auto px-8 py-4 bg-linear-to-r from-emerald-500 via-teal-500 to-lime-500 hover:from-lime-500 hover:via-teal-500 hover:to-emerald-500 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105"
             >
               Vào Dashboard
             </NuxtLink>
             <NuxtLink 
               to="/about" 
-              class="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/25 hover:scale-105"
+              class="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105"
             >
               Tìm hiểu thêm
             </NuxtLink>

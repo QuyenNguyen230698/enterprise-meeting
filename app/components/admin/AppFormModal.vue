@@ -6,7 +6,7 @@
     <!-- Modal panel -->
     <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[95vh] flex flex-col">
       <!-- Header -->
-      <div class="bg-linear-to-r  from-blue-600 to-indigo-600 px-8 py-6 text-white shrink-0">
+      <div class="bg-linear-to-r  from-blue-600 to-lime-600 px-8 py-6 text-white shrink-0">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
@@ -320,7 +320,7 @@
                     class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
                   >
                     <!-- Permission Header -->
-                    <div class="bg-linear-to-r  from-purple-50 to-indigo-50 px-6 py-4 border-b border-gray-100">
+                    <div class="bg-linear-to-r  from-purple-50 to-lime-50 px-6 py-4 border-b border-gray-100">
                       <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
                           <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -495,7 +495,7 @@ const currentTab = ref('basic');
 
 const themeOptions = [
   { name: 'Ocean Blue', bgColor: 'bg-blue-100', textColor: 'text-blue-700' },
-  { name: 'Royal Indigo', bgColor: 'bg-indigo-100', textColor: 'text-indigo-700' },
+  { name: 'Royal Indigo', bgColor: 'bg-emerald-100', textColor: 'text-emerald-700' },
   { name: 'Emerald', bgColor: 'bg-emerald-100', textColor: 'text-emerald-700' },
   { name: 'Sunrise', bgColor: 'bg-amber-100', textColor: 'text-amber-700' },
   { name: 'Violet', bgColor: 'bg-violet-100', textColor: 'text-violet-700' },

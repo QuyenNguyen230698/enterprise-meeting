@@ -631,7 +631,7 @@
               v-if="canAct"
               :disabled="!canSign || !workflow.verified || !workflow.authenticated || workflow.signed || offboardingStore.submitting"
               @click="markSigned"
-              class="px-3 py-1.5 text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-xl disabled:opacity-50"
+              class="px-3 py-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl disabled:opacity-50"
             >
               Ký tên
             </button>

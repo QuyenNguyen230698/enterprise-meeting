@@ -37,7 +37,7 @@ export const ducAnhEnData: PortfolioData = {
       {
         name: 'Frontend & Creative',
         icon: 'bi-code-slash',
-        gradient: { from: 'indigo-500', to: 'blue-500' },
+        gradient: { from: 'emerald-500', to: 'blue-500' },
         skills: [
           { name: 'VueJS', highlight: true },
           { name: 'NuxtJS', highlight: true },
@@ -218,7 +218,7 @@ export const ducAnhViData: PortfolioData = {
       {
         name: 'Frontend & Creative',
         icon: 'bi-code-slash',
-        gradient: { from: 'indigo-500', to: 'blue-500' },
+        gradient: { from: 'emerald-500', to: 'blue-500' },
         skills: [
           { name: 'VueJS', highlight: true },
           { name: 'NuxtJS', highlight: true },

@@ -8,7 +8,7 @@
       </div>
       <button
         @click="openAddModal"
-        class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+        class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
       >
         <i class="bi bi-plus-lg"></i>
         <span>Thêm Trường</span>
@@ -35,7 +35,7 @@
           <div class="flex items-center gap-1 ml-2">
             <button
               @click="openEditModal(field)"
-              class="p-1.5 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded transition-colors"
+              class="p-1.5 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded transition-colors"
               title="Chỉnh sửa"
             >
               <i class="bi bi-pencil text-sm"></i>
@@ -73,7 +73,7 @@
       <p class="text-gray-600 mb-4">Chưa có trường tùy chỉnh nào</p>
       <button
         @click="openAddModal"
-        class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg text-sm font-medium transition-colors"
+        class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-sm font-medium transition-colors"
       >
         <i class="bi bi-plus-lg mr-2"></i>
         Tạo trường đầu tiên
@@ -111,22 +111,22 @@
                 v-model="fieldForm.fieldName"
                 type="text"
                 placeholder="Ví dụ: Địa chỉ, Tuổi, Website..."
-                class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 :disabled="saving"
               />
             </div>
 
             <!-- Auto-generated Key Preview -->
-            <div v-if="!editingField && generatedKey" class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <div v-if="!editingField && generatedKey" class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center shrink-0">
+                <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center shrink-0">
                   <i class="bi bi-key text-white"></i>
                 </div>
                 <div class="flex-1">
-                  <p class="text-xs text-indigo-700 font-medium mb-1">Key tự động:</p>
-                  <code class="text-sm text-indigo-900 font-mono font-semibold">{{ generatedKey }}</code>
+                  <p class="text-xs text-emerald-700 font-medium mb-1">Key tự động:</p>
+                  <code class="text-sm text-emerald-900 font-mono font-semibold">{{ generatedKey }}</code>
                 </div>
-                <i class="bi bi-check-circle-fill text-indigo-600 text-xl"></i>
+                <i class="bi bi-check-circle-fill text-emerald-600 text-xl"></i>
               </div>
             </div>
 
@@ -158,7 +158,7 @@
               </label>
               <select
                 v-model="fieldForm.fieldType"
-                class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+                class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white"
                 :disabled="saving"
               >
                 <option value="text">Văn bản (Text)</option>
@@ -180,7 +180,7 @@
                 v-model="fieldForm.description"
                 rows="3"
                 placeholder="Mô tả ngắn về trường này..."
-                class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none"
+                class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none"
                 :disabled="saving"
               ></textarea>
             </div>
@@ -193,7 +193,7 @@
                   v-model="fieldForm.required"
                   type="checkbox"
                   id="field-required"
-                  class="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500"
                   :disabled="saving"
                 />
                 <label for="field-required" class="text-sm font-medium text-gray-700 cursor-pointer">
@@ -210,7 +210,7 @@
                   v-model="fieldForm.defaultValue"
                   type="text"
                   placeholder="Tùy chọn..."
-                  class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                   :disabled="saving"
                 />
               </div>
@@ -229,7 +229,7 @@
           </button>
           <button
             @click="saveField"
-            class="px-6 py-2.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            class="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             :disabled="!canSave || saving"
           >
             <i v-if="saving" class="bi bi-arrow-repeat animate-spin"></i>
@@ -425,7 +425,7 @@ const getTypeClass = (type) => {
     phone: 'bg-orange-100 text-orange-700',
     url: 'bg-cyan-100 text-cyan-700',
     date: 'bg-pink-100 text-pink-700',
-    image: 'bg-indigo-100 text-indigo-700'
+    image: 'bg-emerald-100 text-emerald-700'
   }
   return classes[type] || 'bg-gray-100 text-gray-700'
 }

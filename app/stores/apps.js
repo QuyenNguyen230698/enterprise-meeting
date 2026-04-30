@@ -4,8 +4,8 @@ import { defineStore } from "pinia";
 const APP_THEME_MAP = {
   "asset-handover":{ gradientClass: "bg-linear-to-br from-teal-500 via-teal-400 to-teal-700", textColor: "text-white" },
   "offboarding":   { gradientClass: "bg-linear-to-br from-orange-500 via-red-500 to-pink-500", textColor: "text-white" },
-  "sign-hub":      { gradientClass: "bg-linear-to-br from-indigo-500 via-indigo-400 to-violet-500", textColor: "text-white" },
-  "bookings":      { gradientClass: "bg-linear-to-br from-indigo-500 via-indigo-400 to-violet-500", textColor: "text-white" },
+  "sign-hub":      { gradientClass: "bg-linear-to-br from-emerald-500 via-teal-400 to-violet-500", textColor: "text-white" },
+  "bookings":      { gradientClass: "bg-linear-to-br from-emerald-500 via-teal-400 to-violet-500", textColor: "text-white" },
   "editor":        { gradientClass: "bg-linear-to-br from-sky-500 via-sky-400 to-sky-700", textColor: "text-white" },
   "email-lists":   { gradientClass: "bg-linear-to-br from-emerald-500 via-emerald-400 to-emerald-700", textColor: "text-white" },
   "templates":     { gradientClass: "bg-linear-to-br from-amber-500 via-amber-400 to-amber-700", textColor: "text-white" },

@@ -19,11 +19,11 @@ const props = defineProps({
 })
 
 const COLOR_MAP = {
-  violet:  'bg-linear-to-br from-violet-500 to-indigo-500 shadow-violet-500/25',
+  violet:  'bg-linear-to-br from-violet-500 to-lime-500 shadow-violet-500/25',
   amber:   'bg-linear-to-br from-amber-500 to-orange-500 shadow-amber-500/25',
   emerald: 'bg-linear-to-br from-emerald-500 to-teal-500 shadow-emerald-500/25',
   red:     'bg-linear-to-br from-red-500 to-pink-500 shadow-red-500/25',
-  blue:    'bg-linear-to-br from-blue-500 to-indigo-500 shadow-blue-500/25',
+  blue:    'bg-linear-to-br from-blue-500 to-lime-500 shadow-blue-500/25',
 }
 
 const iconBg = computed(() => COLOR_MAP[props.color] ?? COLOR_MAP.violet)

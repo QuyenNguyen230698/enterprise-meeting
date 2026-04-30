@@ -56,7 +56,7 @@ export const myDieuViData: PortfolioData = {
       {
         name: 'Kỹ Năng Chuyên Môn',
         icon: 'bi-briefcase',
-        gradient: { from: 'indigo-500', to: 'blue-500' },
+        gradient: { from: 'emerald-500', to: 'blue-500' },
         skills: [
           { name: 'Kỹ năng làm việc độc lập', highlight: true },
           { name: 'Kỹ năng làm việc nhóm', highlight: true },
@@ -305,7 +305,7 @@ export const myDieuEnData: PortfolioData = {
       {
         name: 'Professional Skills',
         icon: 'bi-briefcase',
-        gradient: { from: 'indigo-500', to: 'blue-500' },
+        gradient: { from: 'emerald-500', to: 'blue-500' },
         skills: [
           { name: 'Independent Working Skills', highlight: true },
           { name: 'Teamwork Skills', highlight: true },

@@ -6,11 +6,11 @@
         <div class="relative group shrink-0">
           <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg bg-slate-100 ring-1 ring-slate-200">
             <img v-if="profile.avatar_url" :src="profile.avatar_url" class="w-full h-full object-cover" />
-            <div v-else class="w-full h-full bg-linear-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-3xl font-bold">
+            <div v-else class="w-full h-full bg-linear-to-br from-emerald-500 to-purple-600 flex items-center justify-center text-white text-3xl font-bold">
               {{ getInitials(profile.full_name, profile.email) }}
             </div>
           </div>
-          <label class="absolute bottom-0 right-0 w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-indigo-600 transition-all shadow-md active:scale-95">
+          <label class="absolute bottom-0 right-0 w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-emerald-600 transition-all shadow-md active:scale-95">
             <i class="bi bi-camera-fill text-sm"></i>
             <input type="file" accept="image/jpeg,image/png,image/gif" class="hidden" @change="$emit('avatar-upload', $event)" />
           </label>
@@ -25,7 +25,7 @@
             <span v-if="profile.e_code || profile.hr_code" class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-mono font-medium border border-slate-200">
               E-Code: {{ profile.e_code || profile.hr_code }}
             </span>
-            <span v-if="profile.dept_code || profile.department" class="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 text-xs font-semibold border border-indigo-100">
+            <span v-if="profile.dept_code || profile.department" class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-100">
               {{ profile.department || profile.dept_code }}
             </span>
             <span v-if="profile.title" class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-600 text-xs border border-slate-200">
@@ -48,7 +48,7 @@
               v-model="profile.full_name"
               type="text"
               placeholder="Nguyễn Văn A"
-              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all outline-none text-sm text-slate-900"
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all outline-none text-sm text-slate-900"
             />
           </div>
 
@@ -59,7 +59,7 @@
               v-model="profile.display_name"
               type="text"
               placeholder="Tên hiển thị trong hệ thống"
-              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all outline-none text-sm text-slate-900"
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all outline-none text-sm text-slate-900"
             />
           </div>
 
@@ -71,7 +71,7 @@
                 v-model="profile.phone"
                 type="tel"
                 placeholder="0912 345 678"
-                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all outline-none text-sm text-slate-900 font-mono"
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all outline-none text-sm text-slate-900 font-mono"
               />
             </div>
             <!-- Email (readonly) -->

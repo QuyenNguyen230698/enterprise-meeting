@@ -2,7 +2,7 @@
   <div v-if="isVisible" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
     <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
       <!-- Header -->
-      <div class="sticky top-0 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-5 rounded-t-3xl">
+      <div class="sticky top-0 bg-gradient-to-r from-emerald-600 to-purple-600 text-white px-6 py-5 rounded-t-3xl">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
             <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
@@ -10,7 +10,7 @@
             </div>
             <div>
               <h2 class="text-xl font-bold">Đánh Giá Ứng Viên</h2>
-              <p class="text-sm text-indigo-100">{{ match.employee?.fullName }}</p>
+              <p class="text-sm text-emerald-100">{{ match.employee?.fullName }}</p>
             </div>
           </div>
           <button @click="$emit('close')" class="p-2 hover:bg-white/20 rounded-lg transition">
@@ -22,9 +22,9 @@
       <!-- Content -->
       <div class="p-6 space-y-6">
         <!-- Candidate Summary -->
-        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-5 border border-indigo-200">
+        <div class="bg-gradient-to-br from-emerald-50 to-purple-50 rounded-2xl p-5 border border-emerald-200">
           <div class="flex items-start gap-4">
-            <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-2xl font-bold text-indigo-600 shrink-0 shadow-sm">
+            <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-100 to-purple-100 flex items-center justify-center text-2xl font-bold text-emerald-600 shrink-0 shadow-sm">
               {{ match.employee?.fullName?.charAt(0)?.toUpperCase() }}
             </div>
             <div class="flex-1">
@@ -50,7 +50,7 @@
         <!-- Feedback Options -->
         <div class="space-y-3">
           <h3 class="font-bold text-gray-900 flex items-center gap-2">
-            <i class="bi bi-hand-thumbs-up text-indigo-600"></i>
+            <i class="bi bi-hand-thumbs-up text-emerald-600"></i>
             Đánh giá của bạn
           </h3>
           <p class="text-sm text-gray-600">Chọn một trong các lựa chọn sau:</p>
@@ -152,7 +152,7 @@
             v-model="note"
             rows="3"
             placeholder="Thêm ghi chú về ứng viên này..."
-            class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none text-sm"
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none text-sm"
             maxlength="500"
           ></textarea>
           <p class="text-xs text-gray-500">{{ note.length }}/500 ký tự</p>
@@ -170,7 +170,7 @@
         <button
           @click="handleSubmit"
           :disabled="!selectedStatus || loading"
-          class="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 font-semibold transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          class="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-purple-600 text-white rounded-xl hover:from-emerald-700 hover:to-purple-700 font-semibold transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           <i class="bi bi-send-fill"></i>
           <span v-if="loading">Đang gửi...</span>

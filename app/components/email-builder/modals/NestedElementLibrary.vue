@@ -6,7 +6,7 @@
   >
     <div class="bg-white rounded-lg shadow-xl w-full max-w-lg max-h-[80vh] flex flex-col">
       <!-- Header -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-linear-to-r from-blue-50 to-indigo-50">
+      <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-linear-to-r from-blue-50 to-lime-50">
         <div>
           <h3 class="text-lg font-semibold text-gray-900">Add Element</h3>
           <p class="text-xs text-gray-600 mt-1">Choose an element to add</p>

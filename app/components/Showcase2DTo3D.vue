@@ -61,7 +61,7 @@
       <!-- Right: 3D Viewer -->
       <div class="relative group h-full">
         <div
-          class="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-xl sm:rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity"
+          class="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-lime-500/20 rounded-xl sm:rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity"
         ></div>
         <div
           class="relative bg-slate-800/80 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden h-full flex flex-col"
@@ -85,7 +85,7 @@
               <button
                 v-if="arSupported && !loading && !error"
                 @click="toggleAR"
-                class="p-1 sm:p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/30 to-purple-500/30 hover:from-indigo-500/50 hover:to-purple-500/50 text-indigo-300 hover:text-white transition-all border border-indigo-500/30"
+                class="p-1 sm:p-1.5 rounded-lg bg-gradient-to-r from-emerald-500/30 to-purple-500/30 hover:from-emerald-500/50 hover:to-purple-500/50 text-emerald-300 hover:text-white transition-all border border-emerald-500/30"
                 :title="
                   isIOS
                     ? 'Xem AR (Quick Look)'

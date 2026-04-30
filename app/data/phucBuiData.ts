@@ -41,7 +41,7 @@ export const phucBuiEnData: PortfolioData = {
       {
         name: 'Graphic Design',
         icon: 'bi-palette',
-        gradient: { from: 'indigo-500', to: 'blue-500' },
+        gradient: { from: 'emerald-500', to: 'blue-500' },
         skills: [
           { name: 'Communication materials: poster, banner, standee, brochure', highlight: true },
           { name: 'Social media graphics (Facebook, Instagram, TikTok)', highlight: true },
@@ -203,7 +203,7 @@ export const phucBuiViData: PortfolioData = {
       {
         name: 'Graphic Design',
         icon: 'bi-palette',
-        gradient: { from: 'indigo-500', to: 'blue-500' },
+        gradient: { from: 'emerald-500', to: 'blue-500' },
         skills: [
           { name: 'Thiết kế ấn phẩm truyền thông: poster, banner, standee, brochure', highlight: true },
           { name: 'Thiết kế hình ảnh mạng xã hội (Facebook, Instagram, TikTok)', highlight: true },

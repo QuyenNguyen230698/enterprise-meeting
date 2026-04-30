@@ -434,7 +434,7 @@
           v-if="showHistoryDrawer"
           class="fixed right-0 top-0 h-full w-full sm:w-1/3 min-w-90 max-w-140 bg-white shadow-2xl z-9999 flex flex-col border-l border-zinc-200 overflow-hidden"
         >
-          <div class="px-5 py-4 border-b border-zinc-200 bg-linear-to-r from-blue-50 to-indigo-50 flex items-center justify-between shrink-0">
+          <div class="px-5 py-4 border-b border-zinc-200 bg-linear-to-r from-blue-50 to-lime-50 flex items-center justify-between shrink-0">
             <div>
               <h3 class="text-base font-black text-zinc-900 tracking-tight">
                 Lịch sử ký duyệt
@@ -910,7 +910,7 @@ const documentTypeBadgeClass = (documentType) => {
     DEVICE:         'bg-yellow-50 text-yellow-700 border-yellow-200',
     PENALTY:        'bg-red-50 text-red-700 border-red-200',
   }
-  return map[documentType] || 'bg-indigo-50 text-indigo-700 border-indigo-200'
+  return map[documentType] || 'bg-emerald-50 text-emerald-700 border-emerald-200'
 }
 
 const statusBadgeClass = (status) => {

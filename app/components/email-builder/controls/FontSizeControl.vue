@@ -9,7 +9,7 @@
         :class="[
           'px-2 py-1 rounded-lg text-xs transition-all',
           (modelValue || defaultSize) === size
-            ? 'bg-indigo-600 text-white shadow-sm'
+            ? 'bg-emerald-600 text-white shadow-sm'
             : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
         ]"
       >

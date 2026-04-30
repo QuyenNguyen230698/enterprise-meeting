@@ -121,7 +121,7 @@
                     Tài Liệu Đính Kèm
                   </h5>
                   <label
-                    class="text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer flex items-center gap-1 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 transition-colors"
+                    class="text-xs font-bold text-emerald-600 hover:text-emerald-800 cursor-pointer flex items-center gap-1 bg-emerald-50 px-2 py-1 rounded-md border border-emerald-100 transition-colors"
                   >
                     <i class="bi bi-upload"></i> Tải Lên
                     <input

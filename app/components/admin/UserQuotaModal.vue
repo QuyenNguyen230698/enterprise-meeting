@@ -52,7 +52,7 @@
         <!-- Email Package Tab -->
         <div v-if="activeTab === 'email'" class="space-y-6">
         <!-- Subscription Plan Selection -->
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-200">
+        <div class="bg-gradient-to-r from-blue-50 to-lime-50 rounded-lg p-4 border border-blue-200">
           <div class="flex items-center gap-2 mb-3">
             <i class="bi bi-star-fill text-yellow-500"></i>
             <h3 class="font-semibold text-gray-900">Gói dịch vụ</h3>

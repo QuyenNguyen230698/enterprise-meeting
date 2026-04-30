@@ -37,7 +37,7 @@ export const huyenTrangViData: PortfolioData = {
       {
         name: 'Tài Chính & Kế Toán',
         icon: 'bi-calculator',
-        gradient: { from: 'blue-600', to: 'indigo-500' },
+        gradient: { from: 'blue-600', to: 'lime-500' },
         skills: [
           { name: 'Lập kế hoạch tài chính', highlight: true },
           { name: 'Phân tích tài chính (FP&A)', highlight: true },
@@ -250,7 +250,7 @@ export const huyenTrangEnData: PortfolioData = {
       {
         name: 'Finance & Accounting',
         icon: 'bi-calculator',
-        gradient: { from: 'blue-600', to: 'indigo-500' },
+        gradient: { from: 'blue-600', to: 'lime-500' },
         skills: [
           { name: 'Financial Planning', highlight: true },
           { name: 'Financial Analysis (FP&A)', highlight: true },

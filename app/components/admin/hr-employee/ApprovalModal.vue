@@ -48,14 +48,14 @@
               <label
                 v-for="role in filteredRoles"
                 :key="role._id"
-                class="relative flex items-start p-4 border-2 rounded-xl cursor-pointer transition-all hover:border-indigo-300 hover:bg-indigo-50/50"
-                :class="selectedRoles.includes(role._id) ? 'border-indigo-500 bg-indigo-50' : 'border-gray-200 bg-white'"
+                class="relative flex items-start p-4 border-2 rounded-xl cursor-pointer transition-all hover:border-emerald-300 hover:bg-emerald-50/50"
+                :class="selectedRoles.includes(role._id) ? 'border-emerald-500 bg-emerald-50' : 'border-gray-200 bg-white'"
               >
                 <input
                   type="checkbox"
                   :value="role._id"
                   v-model="selectedRoles"
-                  class="w-5 h-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 mt-0.5"
+                  class="w-5 h-5 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500 mt-0.5"
                 />
                 <div class="ml-3 flex-1">
                   <div class="font-semibold text-gray-900 flex items-center gap-2">
@@ -85,7 +85,7 @@
             <textarea
               v-model="notes"
               rows="3"
-              class="w-full rounded-xl border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              class="w-full rounded-xl border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
               placeholder="Thêm ghi chú nội bộ về quyết định phê duyệt..."
             ></textarea>
           </div>

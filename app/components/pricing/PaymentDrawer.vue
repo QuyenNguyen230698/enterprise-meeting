@@ -19,7 +19,7 @@
         <div class="flex h-full flex-col bg-white shadow-xl">
           <!-- Header -->
           <div
-            class="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 sm:px-6 py-4 sm:py-6"
+            class="bg-gradient-to-r from-blue-600 to-lime-600 px-4 sm:px-6 py-4 sm:py-6"
           >
             <div class="flex items-center justify-between">
               <h2 class="text-xl sm:text-2xl font-bold text-white">
@@ -575,7 +575,7 @@
                 v-if="currentStep < steps.length - 1"
                 @click="handleNext"
                 :disabled="!canProceed || loading"
-                class="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                class="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-white bg-gradient-to-r from-blue-600 to-lime-600 rounded-lg hover:from-blue-700 hover:to-lime-700 transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
               >
                 Tiếp tục
                 <i class="bi bi-arrow-right ml-1 sm:ml-2"></i>

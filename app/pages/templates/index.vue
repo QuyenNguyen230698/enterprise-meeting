@@ -645,31 +645,31 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.templates-theme :deep(.bg-indigo-600),
-.templates-theme :deep(.bg-indigo-500),
+.templates-theme :deep(.bg-emerald-600),
+.templates-theme :deep(.bg-emerald-500),
 .templates-theme :deep(.bg-purple-600),
 .templates-theme :deep(.bg-blue-600) {
   background-image: linear-gradient(to right, #34d399, #2dd4bf, #a3e635) !important;
   color: #ffffff !important;
 }
 
-.templates-theme :deep(.text-indigo-700),
-.templates-theme :deep(.text-indigo-600),
+.templates-theme :deep(.text-emerald-700),
+.templates-theme :deep(.text-emerald-600),
 .templates-theme :deep(.text-purple-700),
 .templates-theme :deep(.text-blue-700),
 .templates-theme :deep(.text-blue-600) {
   color: #059669 !important;
 }
 
-.templates-theme :deep(.bg-indigo-50),
+.templates-theme :deep(.bg-emerald-50),
 .templates-theme :deep(.bg-purple-50),
 .templates-theme :deep(.bg-blue-50) {
   background-color: #ecfdf5 !important;
 }
 
-.templates-theme :deep(.border-indigo-500),
-.templates-theme :deep(.border-indigo-300),
-.templates-theme :deep(.border-indigo-200),
+.templates-theme :deep(.border-emerald-500),
+.templates-theme :deep(.border-emerald-300),
+.templates-theme :deep(.border-emerald-200),
 .templates-theme :deep(.border-purple-500),
 .templates-theme :deep(.border-blue-500),
 .templates-theme :deep(.border-blue-300),
@@ -677,14 +677,14 @@ onMounted(() => {
   border-color: #34d399 !important;
 }
 
-.templates-theme :deep(.focus\:border-indigo-500:focus),
+.templates-theme :deep(.focus\:border-emerald-500:focus),
 .templates-theme :deep(.focus\:border-purple-500:focus),
 .templates-theme :deep(.focus\:border-blue-500:focus) {
   border-color: #10b981 !important;
 }
 
-.templates-theme :deep(.focus\:ring-indigo-200:focus),
-.templates-theme :deep(.focus\:ring-indigo-500:focus),
+.templates-theme :deep(.focus\:ring-emerald-200:focus),
+.templates-theme :deep(.focus\:ring-emerald-500:focus),
 .templates-theme :deep(.focus\:ring-purple-200:focus),
 .templates-theme :deep(.focus\:ring-blue-200:focus),
 .templates-theme :deep(.focus\:ring-blue-500:focus) {
@@ -694,31 +694,31 @@ onMounted(() => {
 .templates-theme :deep([class*="from-purple-500"]) { --tw-gradient-from: #34d399 var(--tw-gradient-from-position) !important; }
 .templates-theme :deep([class*="to-purple-600"]) { --tw-gradient-to: #84cc16 var(--tw-gradient-to-position) !important; }
 
-.templates-theme :deep([class*="hover:bg-indigo-700"]:hover),
+.templates-theme :deep([class*="hover:bg-emerald-700"]:hover),
 .templates-theme :deep([class*="hover:bg-purple-700"]:hover),
 .templates-theme :deep([class*="hover:bg-blue-700"]:hover) {
   background-image: linear-gradient(to right, #10b981, #14b8a6, #84cc16) !important;
 }
 
-.templates-theme :deep([class*="hover:text-indigo-600"]:hover),
+.templates-theme :deep([class*="hover:text-emerald-600"]:hover),
 .templates-theme :deep([class*="hover:text-purple-600"]:hover),
 .templates-theme :deep([class*="hover:text-blue-600"]:hover) {
   color: #047857 !important;
 }
 
-.templates-theme :deep([class*="hover:border-indigo-300"]:hover),
+.templates-theme :deep([class*="hover:border-emerald-300"]:hover),
 .templates-theme :deep([class*="hover:border-purple-300"]:hover),
 .templates-theme :deep([class*="hover:border-blue-300"]:hover) {
   border-color: #34d399 !important;
 }
 
-.templates-theme :deep([class*="shadow-indigo"]),
+.templates-theme :deep([class*="shadow-emerald"]),
 .templates-theme :deep([class*="shadow-purple"]),
 .templates-theme :deep([class*="shadow-blue"]) {
   --tw-shadow-color: rgba(16, 185, 129, 0.3) !important;
 }
 
-.templates-theme :deep([class*="ring-indigo"]),
+.templates-theme :deep([class*="ring-emerald"]),
 .templates-theme :deep([class*="ring-purple"]),
 .templates-theme :deep([class*="ring-blue"]) {
   --tw-ring-color: rgba(52, 211, 153, 0.35) !important;

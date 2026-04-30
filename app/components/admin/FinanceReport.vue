@@ -335,7 +335,7 @@
               <td class="px-5 py-4">
                 <div class="flex items-center gap-2">
                   <div
-                    class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center"
+                    class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center"
                   >
                     <i class="bi bi-person-badge"></i>
                   </div>
@@ -362,7 +362,7 @@
                   class="w-full bg-gray-100 rounded-full h-2 overflow-hidden"
                 >
                   <div
-                    class="bg-indigo-500 h-full rounded-full transition-all duration-500"
+                    class="bg-emerald-500 h-full rounded-full transition-all duration-500"
                     :style="{
                       width: `${(adminAssignedRevenue / (userPaidRevenue + adminAssignedRevenue || 1)) * 100}%`,
                     }"

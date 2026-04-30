@@ -139,7 +139,7 @@
           <!-- Popular Badge -->
           <div
             v-if="pkg.isPopular"
-            class="absolute top-0 right-0 bg-gradient-to-l from-indigo-500 to-purple-500 text-white text-xs uppercase font-bold px-3 py-1 rounded-bl-xl shadow-sm"
+            class="absolute top-0 right-0 bg-gradient-to-l from-emerald-500 to-purple-500 text-white text-xs uppercase font-bold px-3 py-1 rounded-bl-xl shadow-sm"
           >
             Phổ biến
           </div>
@@ -230,7 +230,7 @@
                 : isEmailDowngrade(pkg)
                   ? 'bg-slate-100 text-slate-400'
                   : pkg.slug === 'email-pro'
-                    ? 'bg-white text-slate-900 hover:bg-indigo-50 border border-slate-200'
+                    ? 'bg-white text-slate-900 hover:bg-emerald-50 border border-slate-200'
                     : 'bg-slate-900 text-white hover:bg-slate-800',
             ]"
           >

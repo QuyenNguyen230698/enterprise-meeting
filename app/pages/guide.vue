@@ -682,7 +682,7 @@
                     <!-- Marker -->
                     <div class="absolute left-0 w-16 flex justify-center">
                       <div
-                        class="w-10 h-10 bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center z-10 shadow-sm shadow-indigo-100"
+                        class="w-10 h-10 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10 shadow-sm shadow-emerald-100"
                       >
                         <span class="text-teal-600 font-bold text-sm"
                           >04</span
@@ -713,7 +713,7 @@
                           </div>
                         </div>
                         <span
-                          class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full w-fit self-start sm:self-center"
+                          class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full w-fit self-start sm:self-center"
                         >
                           Bắt buộc
                         </span>
@@ -724,7 +724,7 @@
                           class="flex flex-col items-center text-center p-4 rounded-xl bg-gray-50 border border-gray-100"
                         >
                           <div
-                            class="w-8 h-8 rounded-full bg-indigo-100 text-teal-600 flex items-center justify-center font-bold text-sm mb-2"
+                            class="w-8 h-8 rounded-full bg-emerald-100 text-teal-600 flex items-center justify-center font-bold text-sm mb-2"
                           >
                             1
                           </div>
@@ -739,7 +739,7 @@
                           class="flex flex-col items-center text-center p-4 rounded-xl bg-gray-50 border border-gray-100"
                         >
                           <div
-                            class="w-8 h-8 rounded-full bg-indigo-100 text-teal-600 flex items-center justify-center font-bold text-sm mb-2"
+                            class="w-8 h-8 rounded-full bg-emerald-100 text-teal-600 flex items-center justify-center font-bold text-sm mb-2"
                           >
                             2
                           </div>
@@ -754,7 +754,7 @@
                           class="flex flex-col items-center text-center p-4 rounded-xl bg-gray-50 border border-gray-100"
                         >
                           <div
-                            class="w-8 h-8 rounded-full bg-indigo-100 text-teal-600 flex items-center justify-center font-bold text-sm mb-2"
+                            class="w-8 h-8 rounded-full bg-emerald-100 text-teal-600 flex items-center justify-center font-bold text-sm mb-2"
                           >
                             3
                           </div>
@@ -1046,24 +1046,24 @@
                       </div>
 
                       <div
-                        class="bg-teal-50 rounded-xl p-4 border border-indigo-100"
+                        class="bg-teal-50 rounded-xl p-4 border border-emerald-100"
                       >
                         <div class="flex items-center justify-between mb-2">
                           <h4
-                            class="font-bold text-indigo-900 text-sm flex items-center gap-2"
+                            class="font-bold text-emerald-900 text-sm flex items-center gap-2"
                           >
                             <span
-                              class="w-6 h-6 bg-indigo-200 text-indigo-800 rounded-full flex items-center justify-center text-xs"
+                              class="w-6 h-6 bg-emerald-200 text-emerald-800 rounded-full flex items-center justify-center text-xs"
                               >2</span
                             >
                             Tuần 2: Tăng Dần
                           </h4>
                           <span
-                            class="text-xs font-mono bg-indigo-200 text-indigo-800 px-2 py-1 rounded"
+                            class="text-xs font-mono bg-emerald-200 text-emerald-800 px-2 py-1 rounded"
                             >50-100 emails/ngày</span
                           >
                         </div>
-                        <p class="text-xs text-indigo-700 pl-8">
+                        <p class="text-xs text-emerald-700 pl-8">
                           Mở rộng danh sách, theo dõi bounce rate (<2%). Duy trì
                           engagement tốt.
                         </p>
@@ -1552,11 +1552,11 @@
                       </div>
 
                       <div
-                        class="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-xl p-5 border border-indigo-200"
+                        class="bg-gradient-to-r from-emerald-50 via-purple-50 to-pink-50 rounded-xl p-5 border border-emerald-200"
                       >
                         <div class="flex items-center gap-3 mb-3">
                           <i class="bi bi-stars text-2xl text-teal-600"></i>
-                          <h4 class="font-bold text-indigo-900 text-sm">
+                          <h4 class="font-bold text-emerald-900 text-sm">
                             Kết Quả Thực Tế
                           </h4>
                         </div>
@@ -1565,7 +1565,7 @@
                             <div class="text-xl font-bold text-teal-600">
                               95%+
                             </div>
-                            <div class="text-xs text-indigo-700 mt-1">
+                            <div class="text-xs text-emerald-700 mt-1">
                               Inbox Rate
                             </div>
                           </div>
@@ -2198,7 +2198,7 @@
                   <!-- Marker -->
                   <div class="absolute left-0 w-16 flex justify-center">
                     <div
-                      class="w-10 h-10 bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center z-10 shadow-sm shadow-indigo-100"
+                      class="w-10 h-10 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10 shadow-sm shadow-emerald-100"
                     >
                       <span class="text-teal-600 font-bold text-sm">01</span>
                     </div>
@@ -2227,7 +2227,7 @@
                         </div>
                       </div>
                       <span
-                        class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full w-fit self-start sm:self-center"
+                        class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full w-fit self-start sm:self-center"
                       >
                         Quan trọng
                       </span>
@@ -2242,7 +2242,7 @@
                             class="flex items-center gap-2 font-semibold text-gray-900 text-sm"
                           >
                             <span
-                              class="w-6 h-6 bg-indigo-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
+                              class="w-6 h-6 bg-emerald-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
                               >1</span
                             >
                             Chọn Template
@@ -2258,7 +2258,7 @@
                             class="flex items-center gap-2 font-semibold text-gray-900 text-sm"
                           >
                             <span
-                              class="w-6 h-6 bg-indigo-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
+                              class="w-6 h-6 bg-emerald-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
                               >2</span
                             >
                             Chọn Danh Sách
@@ -2274,7 +2274,7 @@
                             class="flex items-center gap-2 font-semibold text-gray-900 text-sm"
                           >
                             <span
-                              class="w-6 h-6 bg-indigo-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
+                              class="w-6 h-6 bg-emerald-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
                               >3</span
                             >
                             Cấu Hình
@@ -2290,7 +2290,7 @@
                             class="flex items-center gap-2 font-semibold text-gray-900 text-sm"
                           >
                             <span
-                              class="w-6 h-6 bg-indigo-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
+                              class="w-6 h-6 bg-emerald-100 text-teal-600 rounded-full flex items-center justify-center text-xs"
                               >4</span
                             >
                             Gửi Test
@@ -2478,7 +2478,7 @@
                   <!-- Marker -->
                   <div class="absolute left-0 w-16 flex justify-center">
                     <div
-                      class="w-10 h-10 bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center z-10 shadow-sm shadow-indigo-100"
+                      class="w-10 h-10 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10 shadow-sm shadow-emerald-100"
                     >
                       <span class="text-teal-600 font-bold text-sm">01</span>
                     </div>
@@ -2507,7 +2507,7 @@
                         </div>
                       </div>
                       <span
-                        class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full w-fit self-start sm:self-center"
+                        class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full w-fit self-start sm:self-center"
                       >
                         Bắt buộc
                       </span>
@@ -2515,15 +2515,15 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div
-                        class="p-4 rounded-xl bg-teal-50 border border-indigo-100 group hover:bg-indigo-100 transition-colors"
+                        class="p-4 rounded-xl bg-teal-50 border border-emerald-100 group hover:bg-emerald-100 transition-colors"
                       >
                         <i
                           class="bi bi-collection text-2xl text-teal-600 mb-2 block group-hover:scale-110 transition-transform"
                         ></i>
-                        <h4 class="font-semibold text-indigo-900 text-sm">
+                        <h4 class="font-semibold text-emerald-900 text-sm">
                           Mẫu Đa Dạng
                         </h4>
-                        <p class="text-xs text-indigo-700 mt-1">
+                        <p class="text-xs text-emerald-700 mt-1">
                           Nhiều chủ đề: Newsletter, Sales, Welcome...
                         </p>
                       </div>

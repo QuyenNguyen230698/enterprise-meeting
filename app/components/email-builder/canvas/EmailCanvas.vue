@@ -384,7 +384,7 @@
                                   ></div>
                                   
                                   <!-- CTA Block -->
-                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded text-center">
+                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r from-blue-50 to-lime-50 border border-blue-200 rounded text-center">
                                     <h4 class="text-xs font-bold mb-1 text-gray-800">{{ item.props.children || 'Call to Action' }}</h4>
                                     <button class="px-3 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700">
                                       {{ item.props.buttonText || 'Get Started' }}
@@ -710,7 +710,7 @@
                                   ></div>
                                   
                                   <!-- CTA Block -->
-                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-indigo-50 border border-blue-200 rounded text-center">
+                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-lime-50 border border-blue-200 rounded text-center">
                                     <h4 class="text-xs font-bold mb-1 text-gray-800">{{ item.props.children || 'Call to Action' }}</h4>
                                     <button class="px-3 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700">
                                       {{ item.props.buttonText || 'Get Started' }}
@@ -976,7 +976,7 @@
                           </div>
                           
                           <!-- CTA Block -->
-                          <div v-else-if="childElement.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-indigo-50 border border-blue-200 rounded text-center">
+                          <div v-else-if="childElement.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-lime-50 border border-blue-200 rounded text-center">
                             <h4 class="text-xs font-bold mb-1 text-gray-800">{{ childElement.props.children || 'Call to Action' }}</h4>
                             <button class="px-3 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700">
                               {{ childElement.props.buttonText || 'Get Started' }}
@@ -1331,7 +1331,7 @@
                                   ></div>
                                   
                                   <!-- CTA Block -->
-                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-indigo-50 border border-blue-200 rounded text-center">
+                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-lime-50 border border-blue-200 rounded text-center">
                                     <h4 class="text-xs font-bold mb-1 text-gray-800">{{ item.props.children || 'Call to Action' }}</h4>
                                     <button class="px-3 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700">
                                       {{ item.props.buttonText || 'Get Started' }}
@@ -1567,7 +1567,7 @@
                                   ></div>
                                   
                                   <!-- CTA Block -->
-                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-indigo-50 border border-blue-200 rounded text-center">
+                                  <div v-else-if="item.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-lime-50 border border-blue-200 rounded text-center">
                                     <h4 class="text-xs font-bold mb-1 text-gray-800">{{ item.props.children || 'Call to Action' }}</h4>
                                     <button class="px-3 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700">
                                       {{ item.props.buttonText || 'Get Started' }}
@@ -1776,7 +1776,7 @@
                           </div>
                           
                           <!-- CTA Block -->
-                          <div v-else-if="childElement.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-indigo-50 border border-blue-200 rounded text-center">
+                          <div v-else-if="childElement.type === 'cta-block'" class="p-3 bg-linear-to-r  from-blue-50 to-lime-50 border border-blue-200 rounded text-center">
                             <h4 class="text-xs font-bold mb-1 text-gray-800">{{ childElement.props.children || 'Call to Action' }}</h4>
                             <button class="px-3 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700">
                               {{ childElement.props.buttonText || 'Get Started' }}

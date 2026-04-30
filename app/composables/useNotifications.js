@@ -138,7 +138,7 @@ export const useNotifications = () => {
       'ticket_status': 'text-amber-600 bg-amber-100',
       'ticket_resolved': 'text-emerald-600 bg-emerald-100',
       'system': 'text-gray-600 bg-gray-100',
-      'broadcast': 'text-indigo-600 bg-indigo-100',
+      'broadcast': 'text-emerald-600 bg-emerald-100',
       'info': 'text-blue-600 bg-blue-100',
       'warning': 'text-amber-600 bg-amber-100',
       'success': 'text-emerald-600 bg-emerald-100'

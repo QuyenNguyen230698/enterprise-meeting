@@ -2342,8 +2342,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.email-lists-theme :deep(.bg-indigo-600),
-.email-lists-theme :deep(.bg-indigo-500),
+.email-lists-theme :deep(.bg-emerald-600),
+.email-lists-theme :deep(.bg-emerald-500),
 .email-lists-theme :deep(.bg-purple-600),
 .email-lists-theme :deep(.bg-blue-600),
 .email-lists-theme :deep(.bg-blue-500) {
@@ -2351,8 +2351,8 @@ onMounted(() => {
   color: #ffffff !important;
 }
 
-.email-lists-theme :deep(.text-indigo-700),
-.email-lists-theme :deep(.text-indigo-600),
+.email-lists-theme :deep(.text-emerald-700),
+.email-lists-theme :deep(.text-emerald-600),
 .email-lists-theme :deep(.text-purple-700),
 .email-lists-theme :deep(.text-purple-600),
 .email-lists-theme :deep(.text-blue-700),
@@ -2360,15 +2360,15 @@ onMounted(() => {
   color: #059669 !important;
 }
 
-.email-lists-theme :deep(.bg-indigo-50),
+.email-lists-theme :deep(.bg-emerald-50),
 .email-lists-theme :deep(.bg-purple-50),
 .email-lists-theme :deep(.bg-blue-50) {
   background-color: #ecfdf5 !important;
 }
 
-.email-lists-theme :deep(.border-indigo-500),
-.email-lists-theme :deep(.border-indigo-300),
-.email-lists-theme :deep(.border-indigo-200),
+.email-lists-theme :deep(.border-emerald-500),
+.email-lists-theme :deep(.border-emerald-300),
+.email-lists-theme :deep(.border-emerald-200),
 .email-lists-theme :deep(.border-purple-500),
 .email-lists-theme :deep(.border-blue-500),
 .email-lists-theme :deep(.border-blue-300),
@@ -2376,45 +2376,45 @@ onMounted(() => {
   border-color: #34d399 !important;
 }
 
-.email-lists-theme :deep(.focus\:border-indigo-500:focus),
+.email-lists-theme :deep(.focus\:border-emerald-500:focus),
 .email-lists-theme :deep(.focus\:border-purple-500:focus),
 .email-lists-theme :deep(.focus\:border-blue-500:focus) {
   border-color: #10b981 !important;
 }
 
-.email-lists-theme :deep(.focus\:ring-indigo-200:focus),
-.email-lists-theme :deep(.focus\:ring-indigo-500:focus),
+.email-lists-theme :deep(.focus\:ring-emerald-200:focus),
+.email-lists-theme :deep(.focus\:ring-emerald-500:focus),
 .email-lists-theme :deep(.focus\:ring-purple-200:focus),
 .email-lists-theme :deep(.focus\:ring-blue-200:focus),
 .email-lists-theme :deep(.focus\:ring-blue-500:focus) {
   --tw-ring-color: rgba(52, 211, 153, 0.35) !important;
 }
 
-.email-lists-theme :deep([class*="hover:bg-indigo-700"]:hover),
+.email-lists-theme :deep([class*="hover:bg-emerald-700"]:hover),
 .email-lists-theme :deep([class*="hover:bg-purple-700"]:hover),
 .email-lists-theme :deep([class*="hover:bg-blue-700"]:hover) {
   background-image: linear-gradient(to right, #10b981, #14b8a6, #84cc16) !important;
 }
 
-.email-lists-theme :deep([class*="hover:text-indigo-600"]:hover),
+.email-lists-theme :deep([class*="hover:text-emerald-600"]:hover),
 .email-lists-theme :deep([class*="hover:text-purple-600"]:hover),
 .email-lists-theme :deep([class*="hover:text-blue-600"]:hover) {
   color: #047857 !important;
 }
 
-.email-lists-theme :deep([class*="hover:border-indigo-300"]:hover),
+.email-lists-theme :deep([class*="hover:border-emerald-300"]:hover),
 .email-lists-theme :deep([class*="hover:border-purple-300"]:hover),
 .email-lists-theme :deep([class*="hover:border-blue-300"]:hover) {
   border-color: #34d399 !important;
 }
 
-.email-lists-theme :deep([class*="shadow-indigo"]),
+.email-lists-theme :deep([class*="shadow-emerald"]),
 .email-lists-theme :deep([class*="shadow-purple"]),
 .email-lists-theme :deep([class*="shadow-blue"]) {
   --tw-shadow-color: rgba(16, 185, 129, 0.3) !important;
 }
 
-.email-lists-theme :deep([class*="ring-indigo"]),
+.email-lists-theme :deep([class*="ring-emerald"]),
 .email-lists-theme :deep([class*="ring-purple"]),
 .email-lists-theme :deep([class*="ring-blue"]) {
   --tw-ring-color: rgba(52, 211, 153, 0.35) !important;

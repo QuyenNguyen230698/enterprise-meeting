@@ -12,7 +12,7 @@
           >
             <i class="bi bi-arrow-left text-gray-600"></i>
           </NuxtLink>
-          <div class="w-10 h-10 bg-linear-to-br from-purple-500 via-violet-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/20">
+          <div class="w-10 h-10 bg-linear-to-br from-purple-500 via-violet-500 to-lime-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/20">
             <i class="bi bi-box-arrow-right text-white text-lg"></i>
           </div>
           <div>

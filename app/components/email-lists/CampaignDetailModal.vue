@@ -23,7 +23,7 @@
                 <div class="text-xs text-gray-500 sm:hidden">M</div>
               </div>
               <div class="text-center">
-                <div class="text-xs sm:text-sm font-bold text-indigo-600">{{ stats.clicked || 0 }}</div>
+                <div class="text-xs sm:text-sm font-bold text-emerald-600">{{ stats.clicked || 0 }}</div>
                 <div class="text-xs text-gray-500 hidden sm:block">Đã click</div>
                 <div class="text-xs text-gray-500 sm:hidden">C</div>
               </div>
@@ -428,7 +428,7 @@ const getStatusClass = (status) => {
     sent: 'bg-blue-100 text-blue-800',
     delivered: 'bg-green-100 text-green-800',
     opened: 'bg-purple-100 text-purple-800',
-    clicked: 'bg-indigo-100 text-indigo-800',
+    clicked: 'bg-emerald-100 text-emerald-800',
     failed: 'bg-red-100 text-red-800',
     bounced: 'bg-orange-100 text-orange-800'
   }

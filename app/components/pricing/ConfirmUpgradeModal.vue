@@ -15,12 +15,12 @@
         >
           <!-- Header with gradient -->
           <div
-            class="relative p-6 pb-4 bg-linear-to-br from-indigo-600/20 to-purple-600/20"
+            class="relative p-6 pb-4 bg-linear-to-br from-emerald-600/20 to-purple-600/20"
           >
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
                 <div
-                  class="w-12 h-12 rounded-full bg-linear-to-br from-indigo-600 to-purple-600 flex items-center justify-center"
+                  class="w-12 h-12 rounded-full bg-linear-to-br from-emerald-600 to-purple-600 flex items-center justify-center"
                 >
                   <i
                     :class="
@@ -58,7 +58,7 @@
               <form @submit.prevent="onConfirm">
                 <!-- Payment Provider Selection -->
                 <div class="mb-6">
-                  <div class="text-sm font-semibold text-indigo-400 mb-3">
+                  <div class="text-sm font-semibold text-emerald-400 mb-3">
                     Chọn phương thức thanh toán
                   </div>
                   <div class="grid grid-cols-2 gap-3">
@@ -168,7 +168,7 @@
                 <div class="grid grid-cols-2 gap-6">
                   <!-- Left Column - Personal Info -->
                   <div class="space-y-4">
-                    <div class="text-sm font-semibold text-indigo-400 mb-3">
+                    <div class="text-sm font-semibold text-emerald-400 mb-3">
                       Thông tin cá nhân
                     </div>
 
@@ -182,7 +182,7 @@
                       <input
                         v-model="formData.firstName"
                         type="text"
-                        class="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500"
+                        class="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500"
                         placeholder="Nguyễn"
                       />
                     </div>
@@ -197,7 +197,7 @@
                       <input
                         v-model="formData.lastName"
                         type="text"
-                        class="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500"
+                        class="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500"
                         placeholder="Văn A"
                       />
                     </div>
@@ -216,7 +216,7 @@
                           'w-full px-4 py-2.5 rounded-lg bg-white/5 border text-white placeholder-gray-500 focus:outline-none',
                           errors.phone
                             ? 'border-red-500'
-                            : 'border-white/10 focus:border-indigo-500',
+                            : 'border-white/10 focus:border-emerald-500',
                         ]"
                         placeholder="0987654321"
                         @input="validatePhone"
@@ -230,7 +230,7 @@
 
                   <!-- Right Column - Address -->
                   <div class="space-y-4">
-                    <div class="text-sm font-semibold text-indigo-400 mb-3">
+                    <div class="text-sm font-semibold text-emerald-400 mb-3">
                       Địa chỉ
                     </div>
                     <div>
@@ -248,14 +248,14 @@
                   class="mt-6 space-y-4"
                 >
                   <div class="flex items-center justify-between">
-                    <div class="text-sm font-semibold text-indigo-400">
+                    <div class="text-sm font-semibold text-emerald-400">
                       Phương thức thanh toán
                     </div>
                     <button
                       v-if="savedCards.length > 0"
                       type="button"
                       @click="showCardDrawer = true"
-                      class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 transition-colors"
+                      class="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 transition-colors"
                     >
                       <i class="bi bi-credit-card"></i>
                       <span>Danh sách thẻ ({{ savedCards.length }})</span>
@@ -268,7 +268,7 @@
                     class="flex items-center justify-center p-4"
                   >
                     <div
-                      class="w-6 h-6 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"
+                      class="w-6 h-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"
                     ></div>
                   </div>
 
@@ -283,11 +283,11 @@
                       :class="[
                         'md:col-span-1 cursor-pointer transition-all group',
                         formData.useExistingCard
-                          ? 'ring-1 ring-indigo-500'
+                          ? 'ring-1 ring-emerald-500'
                           : 'hover:ring-1 hover:ring-white/20',
                       ]"
                       style="padding: 2px"
-                      class="relative overflow-hidden rounded-xl bg-linear-to-br from-indigo-600 via-purple-600 to-pink-600"
+                      class="relative overflow-hidden rounded-xl bg-linear-to-br from-emerald-600 via-purple-600 to-pink-600"
                     >
                       <div class="bg-slate-900 rounded-xl p-4 h-full">
                         <!-- Card Header -->
@@ -297,7 +297,7 @@
                               :class="[
                                 'w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all',
                                 formData.useExistingCard
-                                  ? 'border-indigo-400 bg-indigo-500'
+                                  ? 'border-emerald-400 bg-emerald-500'
                                   : 'border-white/30',
                               ]"
                             >
@@ -377,7 +377,7 @@
                       :class="[
                         'md:col-span-1 cursor-pointer transition-all',
                         !formData.useExistingCard
-                          ? 'border-indigo-500 bg-indigo-500/10'
+                          ? 'border-emerald-500 bg-emerald-500/10'
                           : 'border-white/10 bg-white/5 hover:border-white/20',
                       ]"
                       class="p-4 rounded-xl border-2"
@@ -387,13 +387,13 @@
                           :class="[
                             'w-5 h-5 rounded-full border-2 flex items-center justify-center',
                             !formData.useExistingCard
-                              ? 'border-indigo-500'
+                              ? 'border-emerald-500'
                               : 'border-white/30',
                           ]"
                         >
                           <div
                             v-if="!formData.useExistingCard"
-                            class="w-3 h-3 rounded-full bg-indigo-500"
+                            class="w-3 h-3 rounded-full bg-emerald-500"
                           ></div>
                         </div>
                         <span class="text-white font-medium text-sm"
@@ -406,7 +406,7 @@
                           class="bi bi-credit-card-2-front text-purple-400 text-xl"
                         ></i>
                         <i
-                          class="bi bi-credit-card text-indigo-400 text-xl"
+                          class="bi bi-credit-card text-emerald-400 text-xl"
                         ></i>
                         <i class="bi bi-wallet2 text-pink-400 text-xl"></i>
                       </div>
@@ -424,7 +424,7 @@
                           v-model="formData.savePayment"
                           type="checkbox"
                           id="savePayment"
-                          class="w-4 h-4 rounded border-white/20 bg-white/5 text-indigo-600 focus:ring-indigo-500 focus:ring-offset-0"
+                          class="w-4 h-4 rounded border-white/20 bg-white/5 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-0"
                         />
                         <label
                           for="savePayment"
@@ -445,7 +445,7 @@
                         v-model="formData.savePayment"
                         type="checkbox"
                         id="savePayment"
-                        class="w-4 h-4 rounded border-white/20 bg-white/5 text-indigo-600 focus:ring-indigo-500 focus:ring-offset-0"
+                        class="w-4 h-4 rounded border-white/20 bg-white/5 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-0"
                       />
                       <label
                         for="savePayment"
@@ -539,11 +539,11 @@
                             :class="[
                               'cursor-pointer transition-all',
                               formData.selectedCardId === card._id
-                                ? 'ring-1 ring-indigo-500'
+                                ? 'ring-1 ring-emerald-500'
                                 : 'hover:ring-1 hover:ring-white/20',
                             ]"
                             style="padding: 2px"
-                            class="relative overflow-hidden rounded-xl bg-linear-to-br from-indigo-600 via-purple-600 to-pink-600"
+                            class="relative overflow-hidden rounded-xl bg-linear-to-br from-emerald-600 via-purple-600 to-pink-600"
                           >
                             <div class="bg-slate-900 rounded-xl p-4">
                               <div
@@ -560,7 +560,7 @@
                                   class="ml-auto"
                                 >
                                   <i
-                                    class="bi bi-check-circle-fill text-indigo-400 text-xl"
+                                    class="bi bi-check-circle-fill text-emerald-400 text-xl"
                                   ></i>
                                 </div>
                               </div>
@@ -631,7 +631,7 @@
                 v-if="userInfo"
                 class="bg-white/5 rounded-xl p-4 space-y-3 mb-4"
               >
-                <div class="text-sm font-semibold text-indigo-400 mb-2">
+                <div class="text-sm font-semibold text-emerald-400 mb-2">
                   Thông tin thanh toán
                 </div>
                 <div class="flex items-center justify-between">
@@ -664,7 +664,7 @@
               </div>
               <!-- Plan details -->
               <div class="bg-white/5 rounded-xl p-4 space-y-3 mb-2">
-                <div class="text-sm font-semibold text-indigo-400 mb-2">
+                <div class="text-sm font-semibold text-emerald-400 mb-2">
                   Chi tiết gói
                 </div>
                 <div class="flex items-center justify-between">
@@ -689,7 +689,7 @@
               <button
                 @click="onConfirm"
                 :disabled="loading"
-                class="flex-1 py-3 px-6 rounded-xl bg-linear-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-indigo-500/25 hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                class="flex-1 py-3 px-6 rounded-xl bg-linear-to-r from-emerald-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span v-if="!loading">Xác nhận</span>
                 <span v-else class="flex items-center justify-center gap-2">

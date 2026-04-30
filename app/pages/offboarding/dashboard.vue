@@ -7,7 +7,7 @@
       <div class="px-4 sm:px-6 py-4">
         <div class="flex items-center justify-between flex-wrap gap-3">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-violet-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-violet-500 via-purple-500 to-lime-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20">
               <i class="bi bi-graph-up-arrow text-white text-lg sm:text-xl"></i>
             </div>
             <div>
@@ -100,7 +100,7 @@
                   <div class="w-28 text-xs text-gray-500 truncate shrink-0">{{ dept.name }}</div>
                   <div class="flex-1 bg-gray-100 rounded-full h-2 overflow-hidden">
                     <div
-                      class="h-2 rounded-full bg-linear-to-r from-violet-500 to-indigo-500 transition-all duration-500"
+                      class="h-2 rounded-full bg-linear-to-r from-violet-500 to-lime-500 transition-all duration-500"
                       :style="{ width: `${dept.percent}%` }"
                     ></div>
                   </div>
@@ -216,7 +216,7 @@
                 @click="navigateTo(`/offboarding/${p.id}`)"
               >
                 <div class="col-span-3 flex items-center gap-2 min-w-0">
-                  <div class="w-7 h-7 rounded-lg bg-linear-to-br from-violet-400 to-indigo-400 flex items-center justify-center text-white text-[10px] font-bold shrink-0">
+                  <div class="w-7 h-7 rounded-lg bg-linear-to-br from-violet-400 to-lime-400 flex items-center justify-center text-white text-[10px] font-bold shrink-0">
                     {{ initials(p.employee_name) }}
                   </div>
                   <div class="min-w-0">

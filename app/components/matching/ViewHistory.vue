@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
     <!-- Header -->
-    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4">
+    <div class="bg-gradient-to-r from-blue-600 to-lime-600 text-white px-6 py-4">
       <h3 class="font-bold text-lg flex items-center gap-2">
         <i class="bi bi-clock-history"></i>
         Lịch Sử Xem {{ userType === 'hr' ? 'CV' : 'Hồ Sơ' }}

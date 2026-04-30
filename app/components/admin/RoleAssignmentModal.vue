@@ -199,7 +199,7 @@
         </div>
 
         <!-- Selected Roles Summary -->
-          <div v-if="selectedRoles.length > 0" class="mt-6 p-4 bg-linear-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+          <div v-if="selectedRoles.length > 0" class="mt-6 p-4 bg-linear-to-r from-blue-50 to-lime-50 rounded-xl border border-blue-100">
             <div class="flex items-center justify-between mb-3">
               <h4 class="font-semibold text-blue-900">
                 <i class="bi bi-check2-circle mr-2"></i>

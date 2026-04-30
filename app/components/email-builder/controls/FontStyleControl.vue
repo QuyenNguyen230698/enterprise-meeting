@@ -7,7 +7,7 @@
         :class="[
           'flex-1 p-2 rounded-lg text-xs transition-all',
           (modelValue || defaultStyle) === 'normal'
-            ? 'bg-indigo-600 text-white shadow-sm'
+            ? 'bg-emerald-600 text-white shadow-sm'
             : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
         ]"
       >
@@ -18,7 +18,7 @@
         :class="[
           'flex-1 p-2 rounded-lg text-xs transition-all italic',
           modelValue === 'italic'
-            ? 'bg-indigo-600 text-white shadow-sm'
+            ? 'bg-emerald-600 text-white shadow-sm'
             : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
         ]"
       >

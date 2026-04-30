@@ -179,7 +179,7 @@ const getStatusConfig = (status) => {
                 <!-- No Profile State -->
                 <div v-if="!profile" class="flex-1 flex items-center justify-center">
                     <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center max-w-md">
-                        <div class="inline-flex p-5 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl mb-4">
+                        <div class="inline-flex p-5 bg-gradient-to-br from-blue-50 to-lime-50 rounded-2xl mb-4">
                             <i class="bi bi-building text-6xl text-blue-600"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Chưa có hồ sơ nhà tuyển dụng</h3>

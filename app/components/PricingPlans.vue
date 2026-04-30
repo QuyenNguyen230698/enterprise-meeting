@@ -5,7 +5,7 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-4">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-4">
           Bảng giá
         </span>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -29,7 +29,7 @@
           >
             <!-- Popular Badge -->
             <div v-if="pkg.isPopular" class="absolute -top-4 left-1/2 -translate-x-1/2">
-              <span class="inline-block px-4 py-1.5 rounded-full bg-linear-to-r from-indigo-600 to-purple-600 text-white text-sm font-semibold">
+              <span class="inline-block px-4 py-1.5 rounded-full bg-linear-to-r from-emerald-600 to-purple-600 text-white text-sm font-semibold">
                 Phổ biến nhất
               </span>
             </div>
@@ -39,7 +39,7 @@
               <div class="flex items-baseline gap-2 mb-4">
                 <span
                   class="text-5xl font-bold"
-                  :class="pkg.isPopular ? 'bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-purple-400' : 'text-white'"
+                  :class="pkg.isPopular ? 'bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-purple-400' : 'text-white'"
                 >
                   {{ getPrice(pkg) === 0 ? 'Free' : formatCurrency(getPrice(pkg)) + '₫' }}
                 </span>
@@ -74,7 +74,7 @@
               @click="selectPlan(pkg.slug)"
               class="z-40 block w-full py-3 px-6 text-center rounded-full font-semibold transition-all duration-300"
               :class="pkg.isPopular
-                ? 'bg-linear-to-r from-indigo-600 to-purple-600 text-white hover:shadow-2xl hover:shadow-indigo-500/25 hover:scale-105'
+                ? 'bg-linear-to-r from-emerald-600 to-purple-600 text-white hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105'
                 : 'bg-white/10 text-white border border-white/20 hover:bg-white/15'"
             >
               Nâng cấp {{ pkg.name }}
@@ -121,13 +121,13 @@ const getPrice = (pkg) => {
 
 const getEmailCardClass = (pkg) => {
   if (pkg.isPopular) {
-    return 'bg-linear-to-br from-indigo-600/20 to-purple-600/20 border-2 border-indigo-500/50 hover:border-indigo-400 transform scale-105'
+    return 'bg-linear-to-br from-emerald-600/20 to-purple-600/20 border-2 border-emerald-500/50 hover:border-emerald-400 transform scale-105'
   }
   return 'bg-white/3 border border-white/10 hover:bg-white/5 hover:border-white/20'
 }
 
 const getEmailIconClass = (pkg) => {
-  if (pkg.isPopular) return 'text-indigo-400'
+  if (pkg.isPopular) return 'text-emerald-400'
   return 'text-green-400'
 }
 

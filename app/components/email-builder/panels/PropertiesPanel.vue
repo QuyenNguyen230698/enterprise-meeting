@@ -715,7 +715,7 @@
                 class="prop-section-header"
               >
                 <div class="flex items-center gap-2">
-                  <div class="prop-icon bg-indigo-600">
+                  <div class="prop-icon bg-emerald-600">
                     <i class="bi bi-layout-text-window"></i>
                   </div>
                   <span>Header</span>
@@ -775,7 +775,7 @@
                         'flex-1 p-2 rounded-lg text-xs transition-all flex items-center justify-center gap-1',
                         (localElement.props.headerLayout || 'inline') ===
                         'inline'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -789,7 +789,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all flex items-center justify-center gap-1',
                         localElement.props.headerLayout === 'stacked'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -1071,7 +1071,7 @@
             >
               <div class="flex items-center gap-2">
                 <div
-                  class="prop-icon bg-linear-to-br from-indigo-500 to-purple-600"
+                  class="prop-icon bg-linear-to-br from-emerald-500 to-purple-600"
                 >
                   <i class="bi bi-grid-3x3-gap"></i>
                 </div>
@@ -1172,7 +1172,7 @@
               <!-- Card Style Section -->
               <div class="prop-divider"></div>
               <div class="prop-field">
-                <label class="prop-label font-semibold text-indigo-600"
+                <label class="prop-label font-semibold text-emerald-600"
                   >Cài đặt Card sản phẩm</label
                 >
               </div>
@@ -1224,7 +1224,7 @@
                     :class="[
                       'flex-1 px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.cardBorderWidth || '1px') === w
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -1247,7 +1247,7 @@
                     :class="[
                       'flex-1 px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.cardBorderRadius || '12px') === r
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -1270,7 +1270,7 @@
                     :class="[
                       'flex-1 px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.cardPadding || '0px') === p
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -1282,7 +1282,7 @@
               <!-- Image Settings -->
               <div class="prop-divider"></div>
               <div class="prop-field">
-                <label class="prop-label font-semibold text-indigo-600"
+                <label class="prop-label font-semibold text-emerald-600"
                   >Cài đặt hình ảnh</label
                 >
               </div>
@@ -1304,7 +1304,7 @@
                     :class="[
                       'flex-1 px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.imageShape || 'rectangle') === s.v
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -1327,7 +1327,7 @@
                     :class="[
                       'flex-1 px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.imageHeight || '140px') === h
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -1350,7 +1350,7 @@
                     :class="[
                       'flex-1 px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.imageBorderRadius || '0px') === r
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -1694,7 +1694,7 @@
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       localElement.props.align === align ||
                       (!localElement.props.align && align === 'center')
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -1725,7 +1725,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '28px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -1753,7 +1753,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || 'bold') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -1773,7 +1773,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'normal') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -1787,7 +1787,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         localElement.props.fontStyle === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -2087,7 +2087,7 @@
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       localElement.props.align === align ||
                       (!localElement.props.align && align === 'left')
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -2118,7 +2118,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '18px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -2144,7 +2144,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || 'bold') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -2164,7 +2164,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'normal') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -2178,7 +2178,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         localElement.props.fontStyle === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -2726,7 +2726,7 @@
                     :class="[
                       'flex-1 p-2 rounded-lg text-xs transition-all',
                       (localElement.props.align || 'left') === align
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -2756,7 +2756,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '22px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -2782,7 +2782,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || '700') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -2802,7 +2802,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'normal') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -2816,7 +2816,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         localElement.props.fontStyle === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -3025,7 +3025,7 @@
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       localElement.props.align === align ||
                       (!localElement.props.align && align === 'left')
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -3056,7 +3056,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '18px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -3082,7 +3082,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || 'bold') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -3102,7 +3102,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'normal') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -3116,7 +3116,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         localElement.props.fontStyle === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -3377,7 +3377,7 @@
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       localElement.props.align === align ||
                       (!localElement.props.align && align === 'left')
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -3408,7 +3408,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '18px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -3434,7 +3434,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || 'bold') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -3454,7 +3454,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'normal') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -3468,7 +3468,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         localElement.props.fontStyle === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -3753,7 +3753,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '18px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -3779,7 +3779,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || 'bold') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -3799,7 +3799,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'normal') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -3813,7 +3813,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         localElement.props.fontStyle === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -4119,7 +4119,7 @@
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       localElement.props.align === align ||
                       (!localElement.props.align && align === 'left')
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -4150,7 +4150,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '18px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -4176,7 +4176,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || 'bold') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -4196,7 +4196,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'normal') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -4210,7 +4210,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         localElement.props.fontStyle === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -4730,7 +4730,7 @@
             >
               <div class="flex items-center gap-2">
                 <div
-                  class="prop-icon bg-linear-to-br from-indigo-600 to-purple-700"
+                  class="prop-icon bg-linear-to-br from-emerald-600 to-purple-700"
                 >
                   <i class="bi bi-credit-card-2-front"></i>
                 </div>
@@ -4834,7 +4834,7 @@
               <!-- Title Typography -->
               <div class="typography-section">
                 <div class="prop-field">
-                  <label class="prop-label font-semibold text-indigo-600"
+                  <label class="prop-label font-semibold text-emerald-600"
                     >Typography Tiêu đề</label
                   >
                 </div>
@@ -4872,7 +4872,7 @@
               <!-- Card Type Typography -->
               <div class="typography-section">
                 <div class="prop-field">
-                  <label class="prop-label font-semibold text-indigo-600"
+                  <label class="prop-label font-semibold text-emerald-600"
                     >Typography Loại thẻ</label
                   >
                 </div>
@@ -4910,7 +4910,7 @@
               <!-- Card Number Typography -->
               <div class="typography-section">
                 <div class="prop-field">
-                  <label class="prop-label font-semibold text-indigo-600"
+                  <label class="prop-label font-semibold text-emerald-600"
                     >Typography Số thẻ</label
                   >
                 </div>
@@ -4948,7 +4948,7 @@
               <!-- Label Typography -->
               <div class="typography-section">
                 <div class="prop-field">
-                  <label class="prop-label font-semibold text-indigo-600"
+                  <label class="prop-label font-semibold text-emerald-600"
                     >Typography Label (CHỦ THẺ/HẾT HẠN)</label
                   >
                 </div>
@@ -4986,7 +4986,7 @@
               <!-- Card Holder Typography -->
               <div class="typography-section">
                 <div class="prop-field">
-                  <label class="prop-label font-semibold text-indigo-600"
+                  <label class="prop-label font-semibold text-emerald-600"
                     >Typography Chủ thẻ</label
                   >
                 </div>
@@ -5024,7 +5024,7 @@
               <!-- Expiry Typography -->
               <div class="typography-section">
                 <div class="prop-field">
-                  <label class="prop-label font-semibold text-indigo-600"
+                  <label class="prop-label font-semibold text-emerald-600"
                     >Typography Hết hạn</label
                   >
                 </div>
@@ -5062,7 +5062,7 @@
               <!-- Usage Typography -->
               <div class="typography-section">
                 <div class="prop-field">
-                  <label class="prop-label font-semibold text-indigo-600"
+                  <label class="prop-label font-semibold text-emerald-600"
                     >Typography Usage</label
                   >
                 </div>
@@ -5109,7 +5109,7 @@
               <!-- Background Color -->
               <div class="prop-divider"></div>
               <div class="prop-field">
-                <label class="prop-label font-semibold text-indigo-600"
+                <label class="prop-label font-semibold text-emerald-600"
                   >Background Color</label
                 >
               </div>
@@ -5127,7 +5127,7 @@
               <!-- Color Controls -->
               <div class="prop-divider"></div>
               <div class="prop-field">
-                <label class="prop-label font-semibold text-indigo-600"
+                <label class="prop-label font-semibold text-emerald-600"
                   >Màu sắc</label
                 >
               </div>
@@ -6761,7 +6761,7 @@
                     :class="[
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       (localElement.props.align || 'center') === a
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -6793,7 +6793,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '12px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -6946,7 +6946,7 @@
                     :class="[
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       (localElement.props.align || 'left') === a
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -6978,7 +6978,7 @@
                     :class="[
                       'px-2 py-1 rounded-lg text-xs transition-all',
                       (localElement.props.fontSize || '18px') === size
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -7004,7 +7004,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontWeight || 'normal') === w.v
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                       :style="{ fontWeight: w.v }"
@@ -7024,7 +7024,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.fontStyle || 'italic') === 'normal'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -7038,7 +7038,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all italic',
                         (localElement.props.fontStyle || 'italic') === 'italic'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -7215,7 +7215,7 @@
                     :class="[
                       'flex-1 p-2 rounded-lg text-xs font-medium transition-all',
                       (localElement.props.width || '100%') === w
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -7244,7 +7244,7 @@
                     :class="[
                       'px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.aspectRatio || '') === ar.v
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -7290,7 +7290,7 @@
                     :class="[
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       (localElement.props.align || 'center') === a
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -7409,7 +7409,7 @@
                     :class="[
                       'flex-1 p-2 rounded-lg text-xs font-medium transition-all',
                       (localElement.props.width || '100%') === w
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -7438,7 +7438,7 @@
                     :class="[
                       'px-2 py-1.5 rounded-lg text-xs transition-all',
                       (localElement.props.aspectRatio || '') === ar.v
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -7461,7 +7461,7 @@
                     :class="[
                       'flex-1 p-2 rounded-xl text-xs transition-all',
                       (localElement.props.align || 'center') === a
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
                     ]"
                   >
@@ -7522,7 +7522,7 @@
                     type="checkbox"
                     v-model="localElement.props.enableTextOverlay"
                     @change="updateElement"
-                    class="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    class="w-4 h-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                   />
                   <span class="prop-label mb-0">Chữ đè lên hình</span>
                 </label>
@@ -7560,7 +7560,7 @@
                         :class="[
                           'flex-1 p-2 rounded-lg text-xs transition-all',
                           (localElement.props.overlayAlign || 'center') === a
-                            ? 'bg-indigo-600 text-white shadow-sm'
+                            ? 'bg-emerald-600 text-white shadow-sm'
                             : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                         ]"
                       >
@@ -7678,7 +7678,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.overlayFontWeight || 'bold') === w
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -7695,7 +7695,7 @@
                     type="checkbox"
                     v-model="localElement.props.enableQROverlay"
                     @change="updateElement"
-                    class="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    class="w-4 h-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                   />
                   <span class="prop-label mb-0">QR Code đè lên hình</span>
                 </label>
@@ -7730,7 +7730,7 @@
                         :class="[
                           'flex-1 p-2 rounded-lg text-xs transition-all',
                           (localElement.props.qrAlign || 'center') === a
-                            ? 'bg-indigo-600 text-white shadow-sm'
+                            ? 'bg-emerald-600 text-white shadow-sm'
                             : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                         ]"
                       >
@@ -7818,7 +7818,7 @@
                   (localElement.props.enableTextOverlay &&
                     !localElement.props.overlayText)
                 "
-                class="w-full mt-4 py-2.5 px-4 bg-linear-to-r from-purple-500 via-pink-500 to-indigo-500 text-white rounded-xl font-medium text-sm hover:from-purple-600 hover:via-pink-600 hover:to-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md"
+                class="w-full mt-4 py-2.5 px-4 bg-linear-to-r from-purple-500 via-pink-500 to-lime-500 text-white rounded-xl font-medium text-sm hover:from-purple-600 hover:via-pink-600 hover:to-lime-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md"
               >
                 <i
                   v-if="processingOverlay"
@@ -7844,7 +7844,7 @@
               class="prop-section-header"
             >
               <div class="flex items-center gap-2">
-                <div class="prop-icon bg-indigo-500">
+                <div class="prop-icon bg-emerald-500">
                   <i class="bi bi-fonts"></i>
                 </div>
                 <span>Kiểu chữ</span>
@@ -7987,7 +7987,7 @@
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.justifyContent || 'flex-start') ===
                         align
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -8024,7 +8024,7 @@
                       :class="[
                         'flex-1 p-2 rounded-lg text-xs transition-all',
                         (localElement.props.alignItems || 'stretch') === align
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'bg-emerald-600 text-white shadow-sm'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                       ]"
                     >
@@ -8237,7 +8237,7 @@
                     :class="[
                       'flex-1 p-2 rounded-lg text-xs transition-all',
                       (localElement.style.borderWidth || '0px') === w
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8271,7 +8271,7 @@
                     :class="[
                       'flex-1 p-2 rounded-lg text-xs transition-all flex flex-col items-center gap-0.5',
                       (localElement.style.borderStyle || 'solid') === s.v
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8345,7 +8345,7 @@
                     :class="[
                       'flex-1 p-2 rounded-lg text-xs transition-all',
                       (localElement.style.borderRadius || '0px') === r
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8369,7 +8369,7 @@
                     "
                     min="0"
                     max="50"
-                    class="flex-1 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                    class="flex-1 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                   />
                   <input
                     :value="localElement.style.borderRadius || '0px'"
@@ -8399,7 +8399,7 @@
                       'p-2 rounded-lg text-xs transition-all flex flex-col items-center gap-1',
                       !localElement.style.boxShadow ||
                       localElement.style.boxShadow === 'none'
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8416,7 +8416,7 @@
                       'p-2 rounded-lg text-xs transition-all flex flex-col items-center gap-1',
                       localElement.style.boxShadow ===
                       '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)'
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8433,7 +8433,7 @@
                       'p-2 rounded-lg text-xs transition-all flex flex-col items-center gap-1',
                       localElement.style.boxShadow ===
                       '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)'
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8450,7 +8450,7 @@
                       'p-2 rounded-lg text-xs transition-all flex flex-col items-center gap-1',
                       localElement.style.boxShadow ===
                       '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)'
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8467,7 +8467,7 @@
                       'p-2 rounded-lg text-xs transition-all flex flex-col items-center gap-1',
                       localElement.style.boxShadow ===
                       '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)'
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >
@@ -8484,7 +8484,7 @@
                       'p-2 rounded-lg text-xs transition-all flex flex-col items-center gap-1',
                       localElement.style.boxShadow ===
                       '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100',
                     ]"
                   >

@@ -2,9 +2,9 @@
   <div style="z-index:999999 !important" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
     <div class="bg-white rounded-2xl shadow-2xl max-w-6xl w-full h-[85vh] flex flex-col overflow-hidden">
       <!-- Header -->
-      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 shrink-0 bg-gradient-to-r from-indigo-50 to-white">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 shrink-0 bg-gradient-to-r from-emerald-50 to-white">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/30">
             <i class="bi bi-shield-check text-white text-lg"></i>
           </div>
           <div>
@@ -39,7 +39,7 @@
                 type="text"
                 required
                 placeholder="VD: SuperAdmin"
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm"
               />
             </div>
 
@@ -50,7 +50,7 @@
               </label>
               <select
                 v-model="formData.isActive"
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm"
               >
                 <option :value="true">Hoạt động</option>
                 <option :value="false">Không hoạt động</option>
@@ -66,7 +66,7 @@
                 v-model="formData.description"
                 rows="4"
                 placeholder="Mô tả vai trò..."
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm resize-none"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm resize-none"
               ></textarea>
             </div>
 
@@ -78,7 +78,7 @@
               <div class="space-y-2">
                 <div class="flex items-center justify-between text-sm">
                   <span class="text-gray-600">Ứng dụng:</span>
-                  <span class="font-bold text-indigo-600">{{ selectedAppsCount }}</span>
+                  <span class="font-bold text-emerald-600">{{ selectedAppsCount }}</span>
                 </div>
                 <div class="flex items-center justify-between text-sm">
                   <span class="text-gray-600">Quyền hạn:</span>
@@ -118,7 +118,7 @@
                 <h3 class="text-sm font-bold text-gray-900">Phân Quyền Ứng Dụng</h3>
                 <p class="text-xs text-gray-500 mt-0.5">Chọn ứng dụng và quyền truy cập</p>
               </div>
-              <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full">
+              <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full">
                 {{ selectedAppsCount }}/{{ apps.length }} apps
               </span>
             </div>
@@ -140,7 +140,7 @@
                 :class="[
                   'border-2 rounded-xl p-4 transition-all',
                   isAppSelected(app._id) 
-                    ? 'border-indigo-500 bg-indigo-50' 
+                    ? 'border-emerald-500 bg-emerald-50' 
                     : 'border-gray-200 bg-white hover:border-gray-300'
                 ]"
               >
@@ -150,7 +150,7 @@
                     <div 
                       :class="[
                         'w-10 h-10 rounded-lg flex items-center justify-center shrink-0',
-                        isAppSelected(app._id) ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-500'
+                        isAppSelected(app._id) ? 'bg-emerald-600 text-white' : 'bg-gray-100 text-gray-500'
                       ]"
                     >
                       <i :class="app.icon || 'bi bi-app'"></i>
@@ -172,16 +172,16 @@
                       @change="toggleApp(app._id, app)"
                       class="sr-only peer"
                     />
-                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-emerald-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
                   </label>
                 </div>
 
                 <!-- Actions (when selected) -->
-                <div v-if="isAppSelected(app._id)" class="pt-3 border-t border-indigo-200">
+                <div v-if="isAppSelected(app._id)" class="pt-3 border-t border-emerald-200">
                   <div class="flex items-center justify-between mb-2">
                     <span class="text-xs font-semibold text-gray-700">Quyền được cấp:</span>
                     <div class="flex items-center gap-2">
-                      <span class="text-xs text-indigo-600 font-bold">{{ getSelectedActionsCount(app._id) }}/{{ app.availableActions?.length || 0 }}</span>
+                      <span class="text-xs text-emerald-600 font-bold">{{ getSelectedActionsCount(app._id) }}/{{ app.availableActions?.length || 0 }}</span>
                       <button
                         type="button"
                         @click="selectAllActionsForApp(app)"
@@ -198,8 +198,8 @@
                       :class="[
                         'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg cursor-pointer transition text-xs font-medium border-2',
                         isActionSelected(app._id, action) 
-                          ? 'bg-indigo-600 border-indigo-600 text-white' 
-                          : 'bg-white border-gray-200 text-gray-600 hover:border-indigo-300'
+                          ? 'bg-emerald-600 border-emerald-600 text-white' 
+                          : 'bg-white border-gray-200 text-gray-600 hover:border-emerald-300'
                       ]"
                     >
                       <input
@@ -236,7 +236,7 @@
           <button
             @click="handleSubmit"
             :disabled="saving || !formData.name"
-            class="px-5 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-medium shadow-lg shadow-indigo-500/30 text-sm"
+            class="px-5 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-medium shadow-lg shadow-emerald-500/30 text-sm"
           >
             <i v-if="saving" class="bi bi-arrow-repeat animate-spin"></i>
             <i v-else class="bi bi-check2"></i>

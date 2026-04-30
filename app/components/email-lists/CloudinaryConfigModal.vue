@@ -39,7 +39,7 @@
 
         <!-- Step 1: Info Banner -->
         <div v-if="currentStep === 1" class="space-y-4">
-          <div class="bg-linear-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6">
+          <div class="bg-linear-to-r from-blue-50 to-lime-50 border border-blue-200 rounded-xl p-6">
             <div class="flex gap-4">
               <div class="flex-1">
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Tại sao cần Cloudinary?</h3>

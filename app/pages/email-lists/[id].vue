@@ -48,7 +48,7 @@
             <div class="relative sm:hidden shrink-0" ref="infoDropdown">
               <button
                 @click.stop="showInfoDropdown = !showInfoDropdown"
-                class="p-1 text-slate-400 hover:text-indigo-600 rounded-full transition-colors"
+                class="p-1 text-slate-400 hover:text-emerald-600 rounded-full transition-colors"
               >
                 <i class="bi bi-info-circle text-lg"></i>
               </button>
@@ -66,7 +66,7 @@
                   >
                   <NuxtLink
                     :to="`/email-lists/report?id=${listId}`"
-                    class="text-xs font-bold text-indigo-600 flex items-center gap-1 hover:underline"
+                    class="text-xs font-bold text-emerald-600 flex items-center gap-1 hover:underline"
                   >
                     Xem báo cáo <i class="bi bi-arrow-right"></i>
                   </NuxtLink>
@@ -117,7 +117,7 @@
           <div class="hidden sm:flex items-center gap-2 self-end md:self-auto">
             <NuxtLink
               :to="`/email-lists/report?id=${listId}`"
-              class="flex items-center justify-center w-9 h-9 bg-indigo-50 text-indigo-600 hover:bg-indigo-100 rounded-lg transition-colors"
+              class="flex items-center justify-center w-9 h-9 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 rounded-lg transition-colors"
               title="Báo cáo"
             >
               <i class="bi bi-bar-chart-fill text-lg"></i>
@@ -230,7 +230,7 @@
             </button>
             <button
               @click="showCustomFields = true"
-              class="col-span-1 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-2 py-2 sm:px-4 sm:py-1.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg text-xs sm:text-sm font-medium transition-colors shadow-sm h-full"
+              class="col-span-1 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-2 py-2 sm:px-4 sm:py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-xs sm:text-sm font-medium transition-colors shadow-sm h-full"
               title="Trường tùy chỉnh"
             >
               <i class="bi bi-input-cursor-text text-lg sm:text-base"></i>
@@ -373,11 +373,11 @@
                   v-else
                   v-for="sub in subscribers"
                   :key="sub._id"
-                  class="hover:bg-indigo-50/30 transition-colors group"
+                  class="hover:bg-emerald-50/30 transition-colors group"
                 >
                   <!-- Frozen Checkbox -->
                   <td
-                    class="sticky left-0 z-10 bg-white group-hover:bg-indigo-50/30 px-4 py-3.5 border-r border-slate-100"
+                    class="sticky left-0 z-10 bg-white group-hover:bg-emerald-50/30 px-4 py-3.5 border-r border-slate-100"
                   >
                     <input
                       type="checkbox"
@@ -388,14 +388,14 @@
                   </td>
                   <!-- Scrollable Data -->
                   <td
-                    class="px-4 py-3.5 whitespace-nowrap bg-white group-hover:bg-indigo-50/30"
+                    class="px-4 py-3.5 whitespace-nowrap bg-white group-hover:bg-emerald-50/30"
                   >
                     <span class="font-medium text-gray-900">{{
                       sub.email
                     }}</span>
                   </td>
                   <td
-                    class="px-4 py-3.5 text-gray-600 whitespace-nowrap bg-white group-hover:bg-indigo-50/30"
+                    class="px-4 py-3.5 text-gray-600 whitespace-nowrap bg-white group-hover:bg-emerald-50/30"
                   >
                     {{
                       [sub.firstName, sub.lastName].filter(Boolean).join(" ") ||
@@ -403,7 +403,7 @@
                     }}
                   </td>
                   <td
-                    class="px-4 py-3.5 whitespace-nowrap bg-white group-hover:bg-indigo-50/30"
+                    class="px-4 py-3.5 whitespace-nowrap bg-white group-hover:bg-emerald-50/30"
                   >
                     <span
                       :class="getStatusClass(sub.status)"
@@ -413,7 +413,7 @@
                     </span>
                   </td>
                   <td
-                    class="px-4 py-3.5 text-gray-600 text-sm whitespace-nowrap bg-white group-hover:bg-indigo-50/30"
+                    class="px-4 py-3.5 text-gray-600 text-sm whitespace-nowrap bg-white group-hover:bg-emerald-50/30"
                   >
                     {{ formatDate(sub.subscribedAt) }}
                   </td>
@@ -421,7 +421,7 @@
                   <td
                     v-for="field in list?.customFieldDefinitions || []"
                     :key="field._id"
-                    class="px-4 py-3.5 text-gray-600 text-sm whitespace-nowrap bg-white group-hover:bg-indigo-50/30"
+                    class="px-4 py-3.5 text-gray-600 text-sm whitespace-nowrap bg-white group-hover:bg-emerald-50/30"
                   >
                     <img
                       v-if="
@@ -438,7 +438,7 @@
                   </td>
                   <!-- Frozen Actions -->
                   <td
-                    class="sticky right-0 z-10 bg-white group-hover:bg-indigo-50/30 px-4 py-3.5 border-l border-slate-100 whitespace-nowrap text-center"
+                    class="sticky right-0 z-10 bg-white group-hover:bg-emerald-50/30 px-4 py-3.5 border-l border-slate-100 whitespace-nowrap text-center"
                   >
                     <div class="flex items-center justify-center gap-1">
                       <button
@@ -1339,7 +1339,7 @@
                                   v-model="subForm.customFields[field.fieldKey]"
                                   type="url"
                                   placeholder="https://example.com/image.jpg"
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white text-sm"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-white text-sm"
                                 />
                               </div>
                             </div>
@@ -1522,7 +1522,7 @@
     >
       <div class="flex items-center gap-2 text-sm font-medium text-gray-700">
         <span
-          class="w-5 h-5 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xs font-bold"
+          class="w-5 h-5 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold"
           >{{ selectedIds.length }}</span
         >
         <span class="hidden sm:inline">đã chọn</span>

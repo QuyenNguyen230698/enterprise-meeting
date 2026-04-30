@@ -2,7 +2,7 @@
   <div class="fixed inset-0 z-999999 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" @click.self="$emit('close')">
     <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden animate-slide-up">
       <!-- Header -->
-      <div :class="type === 'hr' ? 'from-indigo-600 to-blue-600' : 'from-purple-600 to-pink-600'"
+      <div :class="type === 'hr' ? 'from-emerald-600 to-blue-600' : 'from-purple-600 to-pink-600'"
            class="bg-gradient-to-r px-6 py-4 text-white">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
@@ -11,7 +11,7 @@
             </div>
             <div>
               <h2 class="text-xl font-bold">Chi Tiết Hồ Sơ</h2>
-              <p :class="type === 'hr' ? 'text-indigo-100' : 'text-purple-100'" class="text-sm">
+              <p :class="type === 'hr' ? 'text-emerald-100' : 'text-purple-100'" class="text-sm">
                 {{ type === 'hr' ? 'Nhà tuyển dụng' : 'Ứng viên' }}
               </p>
             </div>
@@ -40,7 +40,7 @@
               </div>
               <div class="p-4 bg-gray-50 rounded-xl">
                 <p class="text-xs text-gray-500 mb-1">Website</p>
-                <a v-if="record.website" :href="record.website" target="_blank" class="font-semibold text-indigo-600 hover:underline">
+                <a v-if="record.website" :href="record.website" target="_blank" class="font-semibold text-emerald-600 hover:underline">
                   {{ record.website }}
                 </a>
                 <p v-else class="text-gray-400">N/A</p>
@@ -63,7 +63,7 @@
               >
                 <div class="flex justify-between items-start mb-2">
                   <h4 class="font-bold text-gray-900">{{ pos.title }}</h4>
-                  <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded">
+                  <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded">
                     {{ pos.category }}
                   </span>
                 </div>
@@ -83,7 +83,7 @@
                   <p class="text-xs text-gray-500">Tải lên: {{ new Date(record.companyDoc.uploadedAt).toLocaleDateString('vi-VN') }}</p>
                 </div>
               </div>
-              <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
+              <button class="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm font-medium">
                 <i class="bi bi-download mr-2"></i>
                 Tải xuống
               </button>

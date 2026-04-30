@@ -58,7 +58,7 @@
 
       <!-- Step 5: GM -->
       <div v-if="activePanel === 'step5'" class="space-y-4">
-        <div class="p-3 bg-indigo-50 border border-indigo-200 rounded-xl text-xs text-indigo-700">
+        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-700">
           <i class="bi bi-award mr-1"></i>Phê duyệt cuối cùng. Sau khi approve, Email Mẫu 01 sẽ gửi cho nhân viên.
         </div>
         <OffboardingStepNote v-model="note" placeholder="Ghi chú GM..." />

@@ -221,7 +221,7 @@ const props = defineProps({
   },
 });
 
-const colors = ["blue", "purple", "orange", "teal", "red", "indigo"];
+const colors = ["blue", "purple", "orange", "teal", "red", "emerald"];
 
 const getModuleColor = (index) => colors[index % colors.length];
 

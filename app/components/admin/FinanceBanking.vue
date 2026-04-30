@@ -39,14 +39,14 @@
           class="relative rounded-2xl p-6 md:p-8 overflow-hidden group border transition-all hover:shadow-md"
           :class="
             acc.isDefault
-              ? 'bg-white border-indigo-200 ring-1 ring-indigo-50/50'
+              ? 'bg-white border-emerald-200 ring-1 ring-emerald-50/50'
               : 'bg-white border-gray-200'
           "
         >
           <!-- Accent bar -->
           <div
             v-if="acc.isDefault"
-            class="absolute top-0 left-0 bottom-0 w-1.5 bg-indigo-500"
+            class="absolute top-0 left-0 bottom-0 w-1.5 bg-emerald-500"
           ></div>
 
           <div
@@ -74,7 +74,7 @@
                     </h4>
                     <span
                       v-if="acc.isDefault"
-                      class="px-2 py-0.5 bg-indigo-50 text-indigo-600 border border-indigo-100 text-xs font-bold uppercase rounded tracking-wider"
+                      class="px-2 py-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 text-xs font-bold uppercase rounded tracking-wider"
                       >Mặc định</span
                     >
                   </div>
@@ -105,7 +105,7 @@
                     >Số Tài Khoản</label
                   >
                   <div
-                    class="bg-gray-50/80 px-4 py-3 rounded-xl border border-gray-100 font-mono text-xl text-gray-900 font-bold tracking-widest group-hover:bg-indigo-50/30 group-hover:border-indigo-100 transition-colors"
+                    class="bg-gray-50/80 px-4 py-3 rounded-xl border border-gray-100 font-mono text-xl text-gray-900 font-bold tracking-widest group-hover:bg-emerald-50/30 group-hover:border-emerald-100 transition-colors"
                   >
                     {{ acc.bankAccountNo }}
                   </div>
