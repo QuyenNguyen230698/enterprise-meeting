@@ -1174,7 +1174,7 @@ definePageMeta({
 })
 
 const config = useRuntimeConfig()
-const apiBaseUrl = config.public.apiBase || 'http://localhost:8000/api'
+const apiBaseUrl = config.public.apiBase 
 const { success, error: showError } = useToast()
 const authStore = useAuthStore()
 const { isVisible, confirmData, confirm, cancel, confirmDelete: showConfirmDelete, confirmResend: showConfirmResend, confirmAction } = useConfirm()

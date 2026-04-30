@@ -328,7 +328,7 @@
 definePageMeta({ middleware: "auth" });
 
 const config = useRuntimeConfig();
-const apiBaseUrl = config.public.apiBase || "http://localhost:8000/api";
+const apiBaseUrl = config.public.apiBase ;
 const apiV1 = `${apiBaseUrl}/v1`;
 const { success, error: showError } = useToast();
 const authStore = useAuthStore();

@@ -10320,7 +10320,7 @@ const generateCombinedOverlay = async () => {
 
   try {
     const apiBaseUrl =
-      runtimeConfig.public.apiBase || "http://localhost:8000/api";
+      runtimeConfig.public.apiBase ;
 
     // Store original image URL on first overlay creation
     if (!localElement.value.props.originalImageUrl) {

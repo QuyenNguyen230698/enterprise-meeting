@@ -487,7 +487,7 @@ import ConfirmModal from "~/components/ConfirmModal.vue";
 definePageMeta({ middleware: ["auth", "permission"] });
 
 const config = useRuntimeConfig();
-const apiBaseUrl = config.public.apiBase || "http://localhost:8000/api";
+const apiBaseUrl = config.public.apiBase ;
 const { success, error: showError, warning } = useToast();
 const authStore = useAuthStore();
 const {

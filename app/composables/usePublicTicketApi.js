@@ -5,7 +5,7 @@
  */
 export function usePublicTicketApi() {
   const config     = useRuntimeConfig()
-  const apiBaseUrl = config.public.apiBase || 'http://localhost:8000/api'
+  const apiBaseUrl = config.public.apiBase 
 
   return {
     async createPublicContactTicket(payload) {

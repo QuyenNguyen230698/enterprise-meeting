@@ -79,8 +79,9 @@ export const useAuthStore = defineStore('auth', {
     async loginWithGoogle(code) {
       this.isLoading = true;
       try {
-        // Cần đảm bảo API_URL trỏ đến cổng 8000 của node-gateway
-        const response = await $fetch('http://localhost:8000/api/v1/auth/google', {
+        const config = useRuntimeConfig();
+        const apiBase = config.public.apiBase ;
+        const response = await $fetch(`${apiBase}/v1/auth/google`, {
           method: 'POST',
           body: { code },
         });

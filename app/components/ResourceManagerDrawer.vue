@@ -545,7 +545,7 @@ const props = defineProps({
 });
 
 const config = useRuntimeConfig();
-const apiBaseUrl = config.public.apiBase || "http://localhost:8000/api";
+const apiBaseUrl = config.public.apiBase ;
 const authStore = useAuthStore();
 const tenantId = computed(() => authStore.User?.tenant_id ?? "");
 

@@ -98,7 +98,7 @@
 import { ref } from 'vue'
 
 const config = useRuntimeConfig()
-const apiBaseUrl = config.public.apiBase || 'http://localhost:8000/api'
+const apiBaseUrl = config.public.apiBase 
 
 const emailPackages = ref([])
 const loading = ref(true)

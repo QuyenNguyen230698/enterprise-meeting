@@ -203,7 +203,7 @@ const props = defineProps({
 const emit = defineEmits(['insert-field', 'copy-field'])
 
 const config = useRuntimeConfig()
-const apiBaseUrl = config.public.apiBase || 'http://localhost:8000/api'
+const apiBaseUrl = config.public.apiBase 
 const authStore = useAuthStore()
 const { success } = useToast()
 

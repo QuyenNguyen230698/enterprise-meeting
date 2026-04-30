@@ -530,7 +530,7 @@ L10n.load({
 const scheduleObj = ref(null);
 const selectedDate = ref(new Date());
 const config = useRuntimeConfig();
-const apiBaseUrl = config.public.apiBase || "http://localhost:8000/api";
+const apiBaseUrl = config.public.apiBase ;
 const { success, error: showError, warning, info } = useToast();
 
 // Auth — lấy user từ token, không cần gọi API users
@@ -750,7 +750,9 @@ watch(
 );
 
 onMounted(() => {
-  socket.value = io("http://localhost:8000", { transports: ["websocket"] });
+  const config = useRuntimeConfig();
+  const backendUrl = (config.public.apiBase || '').replace('/api', '');
+  socket.value = io(backendUrl, { transports: ["websocket"] });
 
   socket.value.on("active_drafts_updated", (drafts) => {
     activeDrafts.value = drafts;

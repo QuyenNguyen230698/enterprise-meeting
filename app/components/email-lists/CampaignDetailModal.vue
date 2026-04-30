@@ -229,7 +229,7 @@ const emit = defineEmits(['close', 'refresh'])
 
 const { success: showSuccess, error: showError } = useToast()
 const config = useRuntimeConfig()
-const apiBaseUrl = config.public.apiBase || 'http://localhost:8000/api'
+const apiBaseUrl = config.public.apiBase 
 
 // State
 const realtimeStatus = ref(null)

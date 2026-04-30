@@ -181,7 +181,7 @@ const generateHtml = async () => {
 const generateWithGemini = async () => {
   // Get runtime config for API base URL
   const runtimeConfig = useRuntimeConfig()
-  const apiBaseUrl = runtimeConfig.public.apiBase || 'http://localhost:8000/api'
+  const apiBaseUrl = runtimeConfig.public.apiBase 
   
   // Get auth token
   const authStore = useAuthStore()

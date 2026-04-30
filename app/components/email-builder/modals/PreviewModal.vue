@@ -433,7 +433,7 @@ defineEmits(['close'])
 
 // Runtime config for API
 const runtimeConfig = useRuntimeConfig()
-const apiBaseUrl = runtimeConfig.public.apiBase || 'http://localhost:8000/api'
+const apiBaseUrl = runtimeConfig.public.apiBase 
 
 // UI State
 const activeTab = ref('preview')

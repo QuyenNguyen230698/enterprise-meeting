@@ -4,7 +4,7 @@
  */
 export function useTicketApi() {
   const config     = useRuntimeConfig()
-  const apiBaseUrl = config.public.apiBase || 'http://localhost:8000/api'
+  const apiBaseUrl = config.public.apiBase 
   const authStore  = useAuthStore()
 
   const headers = () => ({
