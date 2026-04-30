@@ -123,25 +123,25 @@
             <template v-if="isLoggedIn">
               <NuxtLink
                 to="/dashboard"
-                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 overflow-hidden group"
+                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-emerald-600 to-lime-600 rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 overflow-hidden group"
               >
                 <span class="relative z-10 flex items-center gap-2">
                   <i class="bi bi-grid-3x3-gap"></i>
                   Dashboard
                 </span>
                 <div
-                  class="absolute inset-0 bg-linear-to-r from-purple-600 to-lime-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 bg-linear-to-r from-emerald-600 to-lime-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
               </NuxtLink>
             </template>
             <template v-else>
               <NuxtLink
                 to="/login"
-                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 overflow-hidden group"
+                class="magnetic-btn relative px-6 py-2 text-sm font-medium text-white bg-linear-to-r from-emerald-600 to-lime-600 rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 overflow-hidden group"
               >
                 <span class="relative z-10">Đăng nhập</span>
                 <div
-                  class="absolute inset-0 bg-linear-to-r from-purple-600 to-lime-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 bg-linear-to-r from-emerald-600 to-lime-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
               </NuxtLink>
             </template>
@@ -334,7 +334,7 @@
               <NuxtLink
                 to="/dashboard"
                 @click="mobileMenuOpen = false"
-                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-xl font-medium"
+                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-emerald-600 to-lime-600 rounded-xl font-medium"
               >
                 <i class="bi bi-grid-3x3-gap"></i>
                 Dashboard
@@ -344,7 +344,7 @@
               <NuxtLink
                 to="/login"
                 @click="mobileMenuOpen = false"
-                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-emerald-600 to-purple-600 rounded-xl font-medium"
+                class="flex items-center justify-center gap-2 w-full px-4 py-4 text-white bg-linear-to-r from-emerald-600 to-lime-600 rounded-xl font-medium"
               >
                 <i class="bi bi-box-arrow-in-right"></i>
                 Đăng nhập
@@ -498,7 +498,7 @@ onUnmounted(() => {});
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #6366f1, #a855f7);
+  background: linear-gradient(to right, #00BD80, #77CE00);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
 }
