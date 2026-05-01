@@ -2325,7 +2325,7 @@ onMounted(() => {
   fetchCampaigns()
   fetchTemplates()
   fetchEmailConfigs()
-  
+
   // Persistent navigation: Check for open_list_id query param
   if (route.query.open_list_id) {
     const unwatch = watch(lists, (newLists) => {
@@ -2338,6 +2338,10 @@ onMounted(() => {
       }
     }, { immediate: true })
   }
+})
+
+onUnmounted(() => {
+  if (searchTimeout) clearTimeout(searchTimeout)
 })
 </script>
 

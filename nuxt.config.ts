@@ -207,6 +207,18 @@ export default defineNuxtConfig({
 
   // SCSS Configuration
   vite: {
+    server: {
+      watch: {
+        // Exclude node_modules and generated files from file watching
+        ignored: [
+          "**/node_modules/**",
+          "**/.nuxt/**",
+          "**/dist/**",
+          "**/.output/**",
+        ],
+        usePolling: false,
+      },
+    },
     optimizeDeps: {
       include: [
         "axios",
@@ -242,9 +254,9 @@ export default defineNuxtConfig({
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            vendor: ["pinia", "vue"],
-            utils: ["axios", "lodash", "moment"],
+          manualChunks: (id: string) => {
+            if (id.includes("node_modules/pinia") || id.includes("node_modules/vue")) return "vendor";
+            if (id.includes("node_modules/axios") || id.includes("node_modules/lodash") || id.includes("node_modules/moment")) return "utils";
           },
         },
       },

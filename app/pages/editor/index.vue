@@ -1252,6 +1252,7 @@ onUnmounted(() => {
   if (typeof window !== 'undefined') {
     window.removeEventListener('resize', handleResize)
   }
+  if (autoSaveTimeout) clearTimeout(autoSaveTimeout)
 })
 
 // Add element

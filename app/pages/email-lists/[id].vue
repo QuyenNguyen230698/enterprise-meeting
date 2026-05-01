@@ -2118,14 +2118,19 @@ const navigateBack = () => {
   });
 };
 
+const handleInfoDropdownOutside = (e) => {
+  if (infoDropdown.value && !infoDropdown.value.contains(e.target)) {
+    showInfoDropdown.value = false;
+  }
+};
+
 onMounted(() => {
   fetchSubscribers();
+  document.addEventListener("click", handleInfoDropdownOutside);
+});
 
-  // Click outside listener for info dropdown
-  document.addEventListener("click", (e) => {
-    if (infoDropdown.value && !infoDropdown.value.contains(e.target)) {
-      showInfoDropdown.value = false;
-    }
-  });
+onUnmounted(() => {
+  document.removeEventListener("click", handleInfoDropdownOutside);
+  if (searchTimeout) clearTimeout(searchTimeout);
 });
 </script>

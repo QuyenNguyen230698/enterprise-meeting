@@ -481,7 +481,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
 import ConfirmModal from "~/components/ConfirmModal.vue";
 
 definePageMeta({ middleware: ["auth", "permission"] });
@@ -641,6 +641,11 @@ const formatDate = (date) =>
 
 onMounted(() => {
   fetchTemplates();
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkMobile);
+  if (searchTimeout) clearTimeout(searchTimeout);
 });
 </script>
 
