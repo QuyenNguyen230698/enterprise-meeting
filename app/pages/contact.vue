@@ -318,8 +318,21 @@ onMounted(() => {
 onUnmounted(() => cleanup())
 
 useSeoMeta({
-  title: 'Liên Hệ & Hỗ Trợ - EMTools',
-  description: 'Gửi ticket hỗ trợ kỹ thuật hoặc đề xuất tính năng cho đội ngũ EMTools.',
+  title: 'Liên Hệ & Hỗ Trợ - Enterprise Meeting Tools',
+  description: 'Gửi ticket hỗ trợ kỹ thuật hoặc đề xuất tính năng cho đội ngũ Enterprise Meeting Tools. Chúng tôi sẽ phản hồi sớm nhất có thể.',
+  keywords: 'liên hệ, hỗ trợ kỹ thuật, Enterprise Meeting Tools, gửi ticket, đề xuất tính năng, support',
+  author: 'Enterprise Meeting Tools',
+  ogTitle: 'Liên Hệ & Hỗ Trợ - Enterprise Meeting Tools',
+  ogDescription: 'Gửi ticket hỗ trợ kỹ thuật hoặc đề xuất tính năng cho đội ngũ Enterprise Meeting Tools.',
+  ogImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  ogUrl: 'https://emtools.site/contact',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Liên Hệ & Hỗ Trợ - Enterprise Meeting Tools',
+  twitterDescription: 'Gửi ticket hỗ trợ kỹ thuật hoặc đề xuất tính năng cho đội ngũ Enterprise Meeting Tools.',
+  twitterImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  robots: 'index, follow',
+  canonical: 'https://emtools.site/contact',
 })
 </script>
 

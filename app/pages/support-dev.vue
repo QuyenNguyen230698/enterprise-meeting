@@ -95,7 +95,20 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Ủng Hộ Dự Án - Enterprise Meeting',
-  description: 'Ủng hộ dự án Enterprise Meeting để chúng tôi tiếp tục phát triển cộng đồng.',
+  title: 'Ủng Hộ Dự Án - Enterprise Meeting Tools',
+  description: 'Ủng hộ dự án Enterprise Meeting Tools để chúng tôi tiếp tục duy trì hạ tầng và phát triển các tính năng mới miễn phí cho cộng đồng.',
+  keywords: 'ủng hộ, donate, Enterprise Meeting Tools, hỗ trợ dự án, VPBank, phi lợi nhuận',
+  author: 'Enterprise Meeting Tools',
+  ogTitle: 'Ủng Hộ Dự Án - Enterprise Meeting Tools',
+  ogDescription: 'Ủng hộ dự án Enterprise Meeting Tools để chúng tôi tiếp tục duy trì hạ tầng và phát triển các tính năng mới miễn phí cho cộng đồng.',
+  ogImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  ogUrl: 'https://emtools.site/support-dev',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Ủng Hộ Dự Án - Enterprise Meeting Tools',
+  twitterDescription: 'Ủng hộ dự án Enterprise Meeting Tools để chúng tôi tiếp tục duy trì hạ tầng và phát triển các tính năng mới miễn phí cho cộng đồng.',
+  twitterImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  robots: 'index, follow',
+  canonical: 'https://emtools.site/support-dev',
 })
 </script>

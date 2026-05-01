@@ -71,6 +71,16 @@
 <script setup>
 definePageMeta({ layout: false });
 
+useSeoMeta({
+  title: 'Đăng Nhập - Enterprise Meeting Tools',
+  description: 'Đăng nhập vào Enterprise Meeting Tools để quản lý phòng họp và tài nguyên doanh nghiệp của bạn.',
+  ogTitle: 'Đăng Nhập - Enterprise Meeting Tools',
+  ogDescription: 'Đăng nhập vào Enterprise Meeting Tools để quản lý phòng họp và tài nguyên doanh nghiệp của bạn.',
+  ogUrl: 'https://emtools.site/login',
+  ogType: 'website',
+  robots: 'noindex, nofollow',
+});
+
 const loginWithGoogle = () => {
   const config = useRuntimeConfig();
   const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth';

@@ -108,7 +108,20 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Lộ Trình Phát Triển - Enterprise Meeting',
-  description: 'Lộ trình phát triển và các tính năng sắp tới của Enterprise Meeting.',
+  title: 'Lộ Trình Phát Triển - Enterprise Meeting Tools',
+  description: 'Lộ trình phát triển 2026 của Enterprise Meeting Tools. Khám phá các tính năng sắp tới: tích hợp Google Calendar, ứng dụng mobile, AI Meeting Assistant và hơn thế nữa.',
+  keywords: 'lộ trình phát triển, roadmap, Enterprise Meeting Tools, tính năng mới, 2026, Google Calendar, mobile app, AI meeting',
+  author: 'Enterprise Meeting Tools',
+  ogTitle: 'Lộ Trình Phát Triển - Enterprise Meeting Tools',
+  ogDescription: 'Lộ trình phát triển 2026 của Enterprise Meeting Tools. Khám phá các tính năng sắp tới.',
+  ogImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  ogUrl: 'https://emtools.site/roadmap',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Lộ Trình Phát Triển - Enterprise Meeting Tools',
+  twitterDescription: 'Lộ trình phát triển 2026 của Enterprise Meeting Tools. Khám phá các tính năng sắp tới.',
+  twitterImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  robots: 'index, follow',
+  canonical: 'https://emtools.site/roadmap',
 })
 </script>

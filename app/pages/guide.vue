@@ -3910,25 +3910,19 @@ onMounted(() => {
 
 // SEO Configuration
 useSeoMeta({
-  title: "Hướng Dẫn Sử Dụng - Enterprise Meeting",
-  description:
-    "Hướng dẫn sử dụng chi tiết Enterprise Meeting. Học cách thiết kế email, gửi email hàng loạt và các tính năng khác một cách dễ dàng.",
-  keywords:
-    "hướng dẫn sử dụng, Enterprise Meeting, tutorial, hướng dẫn đặt lịch họp, quản lý phòng họp, tài liệu hướng dẫn",
-  author: "Enterprise Meeting",
-  ogTitle: "Hướng Dẫn Sử Dụng - Enterprise Meeting",
-  ogDescription:
-    "Hướng dẫn sử dụng chi tiết Enterprise Meeting. Học cách sử dụng tất cả tính năng một cách dễ dàng.",
-  ogImage:
-    "https://imagedelivery.net/-tulz6ZB1FiuYVxo4sc-HQ/4e70f1f7-7a6e-4d23-3296-32a0f966e500/public",
+  title: "Hướng Dẫn Sử Dụng - Enterprise Meeting Tools",
+  description: "Hướng dẫn sử dụng chi tiết Enterprise Meeting Tools. Học cách đặt lịch phòng họp, quản lý tài nguyên doanh nghiệp và các tính năng khác một cách dễ dàng.",
+  keywords: "hướng dẫn sử dụng, Enterprise Meeting Tools, tutorial, hướng dẫn đặt lịch họp, quản lý phòng họp, tài liệu hướng dẫn",
+  author: "Enterprise Meeting Tools",
+  ogTitle: "Hướng Dẫn Sử Dụng - Enterprise Meeting Tools",
+  ogDescription: "Hướng dẫn sử dụng chi tiết Enterprise Meeting Tools. Học cách đặt lịch phòng họp và quản lý tài nguyên doanh nghiệp dễ dàng.",
+  ogImage: "https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg",
   ogUrl: "https://emtools.site/guide",
   ogType: "website",
   twitterCard: "summary_large_image",
-  twitterTitle: "Hướng Dẫn Sử Dụng - Enterprise Meeting",
-  twitterDescription:
-    "Hướng dẫn sử dụng chi tiết Enterprise Meeting. Học cách sử dụng tất cả tính năng một cách dễ dàng.",
-  twitterImage:
-    "https://imagedelivery.net/-tulz6ZB1FiuYVxo4sc-HQ/4e70f1f7-7a6e-4d23-3296-32a0f966e500/public",
+  twitterTitle: "Hướng Dẫn Sử Dụng - Enterprise Meeting Tools",
+  twitterDescription: "Hướng dẫn sử dụng chi tiết Enterprise Meeting Tools. Học cách đặt lịch phòng họp và quản lý tài nguyên doanh nghiệp dễ dàng.",
+  twitterImage: "https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg",
   robots: "index, follow",
   canonical: "https://emtools.site/guide",
 });

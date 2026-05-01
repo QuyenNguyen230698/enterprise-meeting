@@ -375,22 +375,21 @@ onUnmounted(() => {
 
 // SEO Configuration
 useSeoMeta({
-  title: 'Về Chúng Tôi - EMTools',
-  description: 'Tìm hiểu về EM - Nền tảng Email Marketing miễn phí. Sứ mệnh, tầm nhìn và giá trị cốt lõi của chúng tôi.',
-  keywords: 'về chúng tôi, EMTools, giới thiệu, sứ mệnh, tầm nhìn, Email Marketing, đội ngũ',
-  author: 'EMTools',
-  ogTitle: 'Về Chúng Tôi - EMTools',
-  ogDescription: 'Tìm hiểu về EM - Nền tảng Email Marketing miễn phí.',
-  ogImage: 'https://imagedelivery.net/-tulz6ZB1FiuYVxo4sc-HQ/4e70f1f7-7a6e-4d23-3296-32a0f966e500/public',
-  ogUrl: 'https://EMTools.info/about',
+  title: 'Về Chúng Tôi - Enterprise Meeting Tools',
+  description: 'Tìm hiểu về Enterprise Meeting Tools - Nền tảng quản lý phòng họp và tài nguyên doanh nghiệp miễn phí. Sứ mệnh, tầm nhìn và giá trị cốt lõi của chúng tôi.',
+  keywords: 'về chúng tôi, Enterprise Meeting Tools, giới thiệu, sứ mệnh, tầm nhìn, quản lý phòng họp, hệ sinh thái EMTools',
+  author: 'Enterprise Meeting Tools',
+  ogTitle: 'Về Chúng Tôi - Enterprise Meeting Tools',
+  ogDescription: 'Tìm hiểu về Enterprise Meeting Tools - Nền tảng quản lý phòng họp và tài nguyên doanh nghiệp miễn phí.',
+  ogImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  ogUrl: 'https://emtools.site/about',
   ogType: 'website',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Về Chúng Tôi - EMTools',
-
-  twitterDescription: 'Tìm hiểu về EM - Nền tảng Email Marketing miễn phí.',
-  twitterImage: 'https://imagedelivery.net/-tulz6ZB1FiuYVxo4sc-HQ/4e70f1f7-7a6e-4d23-3296-32a0f966e500/public',
+  twitterTitle: 'Về Chúng Tôi - Enterprise Meeting Tools',
+  twitterDescription: 'Tìm hiểu về Enterprise Meeting Tools - Nền tảng quản lý phòng họp và tài nguyên doanh nghiệp miễn phí.',
+  twitterImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
   robots: 'index, follow',
-  canonical: 'https://EMTools.info/about'
+  canonical: 'https://emtools.site/about',
 })
 
 // Structured Data for SEO

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: "h-full",
       },
-      title: "Enterprise Meeting Dashboard",
+      title: "Enterprise Meeting Tools",
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/favicon.ico" },
@@ -44,40 +44,39 @@ export default defineNuxtConfig({
           content:
             "EM, thiết kế Email, gửi Email hàng loạt, Email marketing, drag drop editor, template Email, analytics Email, công cụ email marketing",
         },
-        { name: "author", content: "EM" },
+        { name: "author", content: "Enterprise Meeting Tools" },
         { name: "robots", content: "index, follow" },
         { name: "theme-color", content: "#FFFFFF" },
         { name: "mobile-web-app-capable", content: "yes" },
         { name: "apple-mobile-web-app-status-bar-style", content: "default" },
-        { name: "apple-mobile-web-app-title", content: "Email & File Tools" },
+        { name: "apple-mobile-web-app-title", content: "Enterprise Meeting Tools" },
         {
           property: "og:title",
-          content: "Thiết Kế Email & Meeting",
+          content: "Enterprise Meeting Tools - Giải Pháp Hội Họp Chuyên Nghiệp",
         },
         {
           property: "og:description",
           content:
-            "Nền tảng toàn diện: Thiết kế Email chuyên nghiệp với drag & drop, gửi Email hàng loạt. Hoàn toàn miễn phí.",
+            "Nền tảng toàn diện quản lý phòng họp và tài nguyên doanh nghiệp. Đặt lịch thông minh, theo dõi thời gian thực. Hoàn toàn miễn phí.",
         },
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://emtools.site" },
         { name: "monetag", content: "f0078ac69c56d44c1cb3f9ecc2a1fee5" },
-
         {
           property: "og:image",
           content:
             "https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg",
         },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@enterprise-meeting" },
+        { name: "twitter:site", content: "@emtools_site" },
         {
           name: "twitter:title",
-          content: "Thiết Kế Email & Meeting",
+          content: "Enterprise Meeting Tools - Giải Pháp Hội Họp Chuyên Nghiệp",
         },
         {
           name: "twitter:description",
           content:
-            "Nền tảng toàn diện: Thiết kế Email chuyên nghiệp với drag & drop, gửi Email hàng loạt. Hoàn toàn miễn phí.",
+            "Nền tảng toàn diện quản lý phòng họp và tài nguyên doanh nghiệp. Đặt lịch thông minh, theo dõi thời gian thực. Hoàn toàn miễn phí.",
         },
         {
           name: "twitter:image",

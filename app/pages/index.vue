@@ -127,8 +127,21 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Enterprise Meeting - Giải Pháp Hội Họp Chuyên Nghiệp',
-  description: 'Nền tảng quản lý phòng họp và tài nguyên doanh nghiệp hiệu quả nhất.',
+  title: 'Enterprise Meeting Tools - Giải Pháp Hội Họp Chuyên Nghiệp',
+  description: 'Nền tảng toàn diện quản lý phòng họp và tài nguyên doanh nghiệp. Đặt lịch thông minh, theo dõi thời gian thực, phân quyền tập trung. Hoàn toàn miễn phí.',
+  keywords: 'enterprise meeting, quản lý phòng họp, đặt lịch họp, booking phòng họp, quản lý tài nguyên doanh nghiệp, hội họp chuyên nghiệp',
+  author: 'Enterprise Meeting Tools',
+  ogTitle: 'Enterprise Meeting Tools - Giải Pháp Hội Họp Chuyên Nghiệp',
+  ogDescription: 'Nền tảng toàn diện quản lý phòng họp và tài nguyên doanh nghiệp. Đặt lịch thông minh, theo dõi thời gian thực. Hoàn toàn miễn phí.',
+  ogImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  ogUrl: 'https://emtools.site',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Enterprise Meeting Tools - Giải Pháp Hội Họp Chuyên Nghiệp',
+  twitterDescription: 'Nền tảng toàn diện quản lý phòng họp và tài nguyên doanh nghiệp. Đặt lịch thông minh, theo dõi thời gian thực. Hoàn toàn miễn phí.',
+  twitterImage: 'https://res.cloudinary.com/dpcigceaq/image/upload/v1775893407/AdminAssets/ox1owzzrncplpxb9rmra.jpg',
+  robots: 'index, follow',
+  canonical: 'https://emtools.site',
 })
 </script>
 
