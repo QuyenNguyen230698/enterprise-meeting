@@ -235,6 +235,11 @@ export default defineNuxtConfig({
         "@syncfusion/ej2-vue-inputs",
         "@syncfusion/ej2-vue-notifications",
         "vue-email",
+        "xlsx",
+        "gsap",
+        "lenis",
+        "gsap/ScrollTrigger",
+        "three",
       ],
     },
 

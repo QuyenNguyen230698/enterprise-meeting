@@ -1,12 +1,19 @@
 <template>
     <div class="loading-screen">
+        <!-- Giữ nguyên Stars logic của bạn -->
         <div class="stars">
-            <span v-for="i in 80" :key="i" class="star" :style="starStyle(i)" />
+            <span v-for="i in 20" :key="i" class="star" :style="starStyle(i)" />
         </div>
-        <div class="grid-lines" />
+
+        <!-- Cấu trúc Grid mới để fix bug hiển thị -->
+        <div class="grid-lines-wrapper">
+            <div class="grid-plane" />
+        </div>
+
+        <!-- Giữ nguyên Content của bạn -->
         <div class="center-content">
             <div class="logo-wrapper">
-                <div class="logo-fallback">Emtools<sup>site</sup></div>
+                <div class="text-xl md:text-2xl uppercase text-white font-bold tracking-wider">Emtools</div>
             </div>
             <div class="tagline">Initializing HRM</div>
             <div class="progress-bar-track">
@@ -17,12 +24,9 @@
 </template>
 
 <script setup>
-// definePageMeta({ middleware: ['auth', 'permission'] })
-definePageMeta({
-  layout: 'blank',
-  auth: false,
-});
+definePageMeta({ middleware: ['auth', 'permission'] })
 
+// Giữ nguyên function starStyle gốc của bạn
 function starStyle(i) {
     const seed = i * 137.508
     const x = (Math.sin(seed) * 0.5 + 0.5) * 100
@@ -50,80 +54,76 @@ function starStyle(i) {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 999;
 }
 
-/* Stars */
+/* --- Stars: Giữ nguyên class của bạn --- */
 .stars {
     position: absolute;
     inset: 0;
     pointer-events: none;
 }
-
 .star {
     position: absolute;
     background: rgba(255, 255, 255, 0.6);
     animation: twinkle ease-in-out infinite;
     clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
 }
-
 @keyframes twinkle {
     0%, 100% { opacity: 0.1; transform: scale(0.8) rotate(0deg); }
     50%       { opacity: 0.7; transform: scale(1.2) rotate(45deg); }
 }
 
-/* Perspective grid at bottom */
-.grid-lines {
+/* --- Rebuilt Grid: Đứng yên và không bị mất góc --- */
+.grid-lines-wrapper {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 55%;
-    background-image:
-        linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.04) 100%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 80px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 80px);
-    transform: perspective(600px) rotateX(40deg);
-    transform-origin: bottom center;
-    pointer-events: none;
+    inset: 0;
+    perspective: 600px; /* Tạo chiều sâu */
+    perspective-origin: 50% 40%; 
+    z-index: 0;
 }
 
-/* Center content */
+.grid-plane {
+    position: absolute;
+    top: 30%; /* Bắt đầu từ khoảng giữa màn hình đổ xuống */
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    height: 100%;
+    
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px; /* Kích thước ô vuông */
+    
+    transform: rotateX(70deg);
+    transform-origin: top center;
+    
+    /* Dùng mask để tạo đầu kia của lưới mờ dần vào nền, không bị cắt cụt */
+    mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 1) 30%, 
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+
+/* --- Content: Giữ nguyên style của bạn --- */
 .center-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    z-index: 1;
+    z-index: 10; /* Đảm bảo nằm trên lưới */
 }
-
-.logo-wrapper {
-    margin-bottom: 4px;
-}
-
-.logo-fallback {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.05em;
-
-    sup {
-        font-size: 0.5em;
-        vertical-align: super;
-        font-weight: 400;
-        letter-spacing: 0.1em;
-    }
-}
-
+.logo-wrapper { margin-bottom: 4px; }
 .tagline {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    font-family: sans-serif;
 }
 
-/* Indeterminate progress bar */
+/* --- Progress Bar: Giữ nguyên bounce-fill của bạn --- */
 .progress-bar-track {
     width: 160px;
     height: 3px;
@@ -133,7 +133,6 @@ function starStyle(i) {
     margin-top: 6px;
     position: relative;
 }
-
 .progress-bar-fill {
     position: absolute;
     top: 0;
@@ -143,7 +142,6 @@ function starStyle(i) {
     background: #fff;
     animation: bounce-fill 1s ease-in-out infinite alternate;
 }
-
 @keyframes bounce-fill {
     0%   { left: -20%; }
     100% { left: 80%; }

@@ -3,11 +3,11 @@
     <!-- Trigger Button -->
     <button
       @click="openDrawer"
-      class="px-4 py-1.5 text-xss font-black uppercase tracking-widest rounded-md transition-all duration-300 flex items-center gap-2 bg-zinc-100/80 hover:bg-zinc-100"
+      class="px-4 py-1.5 text-xss font-black uppercase tracking-widest rounded-md transition-all duration-500 flex items-center gap-2 bg-linear-to-r from-emerald-500 via-teal-500 to-lime-500 hover:from-emerald-600 hover:via-teal-600 hover:to-lime-600"
       :class="
         isOpen
           ? 'bg-white text-emerald-600 shadow-lg ring-1 ring-zinc-100'
-          : 'text-zinc-600 hover:text-emerald-600'
+          : 'text-white'
       "
     >
       <i class="bi bi-door-open-fill"></i>
