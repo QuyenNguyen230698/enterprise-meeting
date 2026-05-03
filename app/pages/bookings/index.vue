@@ -1740,7 +1740,7 @@ watch(
 
 onMounted(() => {
   const config = useRuntimeConfig();
-  const backendUrl = (config.public.apiBase || '').replace('/api', '');
+  const backendUrl = config.public.realtimeServer || (config.public.apiBase || '').replace('/api', '');
   socket.value = io(backendUrl, { transports: ["websocket"] });
 
   socket.value.on("active_drafts_updated", (drafts) => {
