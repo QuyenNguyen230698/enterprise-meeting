@@ -75,7 +75,7 @@
         <!-- Left: Export + Find time -->
         <div class="flex items-center gap-1.5">
 
-          <div class="relative" ref="exportRef">
+          <div v-if="authStore.isAdmin" class="relative" ref="exportRef">
             <button
               @click="exportOpen = !exportOpen"
               class="h-7 px-3 flex items-center gap-1.5 text-xss font-bold border border-zinc-200 rounded-md bg-white hover:bg-zinc-50 text-zinc-600 transition-all"
@@ -249,7 +249,7 @@
                 >{{ r.label }}</button>
               </div>
               <!-- Export dropdown -->
-              <div class="relative" ref="analyticsExportRef">
+              <div v-if="authStore.isAdmin" class="relative" ref="analyticsExportRef">
                 <button
                   @click="exportMenuOpen = !exportMenuOpen"
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xss font-black uppercase tracking-widest bg-white border border-zinc-200 rounded-xl hover:border-emerald-400 text-zinc-600 transition-all shadow-sm"
@@ -2727,7 +2727,7 @@ const exportExcel = (period = "week") => {
 };
 
 // ─── 3.2 APPROVAL WORKFLOW ───────────────────────────────────────────────────
-const isAdmin = computed(() => currentUser.value?.role === "admin" || currentUser.value?.is_admin);
+const isAdmin = computed(() => authStore.isAdmin);
 
 const approveBooking = async (id) => {
   try {
