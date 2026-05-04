@@ -3092,17 +3092,20 @@ const rvScrollContainer = ref(null);
 const rvTodayCol = ref(null);
 
 const scrollRvToToday = () => {
-  nextTick(() => {
+  const doScroll = () => {
     const container = rvScrollContainer.value;
     if (!container) return;
-    // Dùng ref trực tiếp trên cột today để lấy offsetLeft thực tế
     const todayEl = Array.isArray(rvTodayCol.value)
       ? rvTodayCol.value[0]?.$el ?? rvTodayCol.value[0]
       : rvTodayCol.value?.$el ?? rvTodayCol.value;
     if (!todayEl) return;
-    // Scroll sao cho cột today hiện ở đầu vùng nhìn (sau sticky room label w-44 = 176px)
     const targetX = todayEl.offsetLeft - 176;
     container.scrollTo({ left: Math.max(0, targetX), behavior: "smooth" });
+  };
+  nextTick(() => {
+    // nextTick đảm bảo Vue đã cập nhật DOM, setTimeout(0) đợi browser hoàn tất layout/paint
+    // cần thiết trên production build vì hydration và lazy rendering chậm hơn dev mode
+    setTimeout(doScroll, 0);
   });
 };
 
