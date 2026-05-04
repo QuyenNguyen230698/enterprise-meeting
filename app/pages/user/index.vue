@@ -1863,18 +1863,9 @@ const fetchRolesWithPermissions = async () => {
   }
 };
 
-const getNextRoleId = () => {
-  const base = 2000000000;
-  const ids = (allRoles.value || [])
-    .map((r) => Number(r.role_id))
-    .filter((n) => Number.isInteger(n) && n >= base);
-  const next = (ids.length ? Math.max(...ids) : base) + 1;
-  return String(next);
-};
-
 const openAddRoleModal = () => {
   Object.assign(newRoleForm, {
-    role_id: getNextRoleId(),
+    role_id: '',
     name: '',
     description: '',
   });
@@ -1890,7 +1881,7 @@ const saveNewRole = async () => {
   roleSaving.value = true;
   try {
     const body = {
-      role_id: newRoleForm.role_id,
+      ...(newRoleForm.role_id ? { role_id: newRoleForm.role_id } : {}),
       name: newRoleForm.name.trim(),
       description: newRoleForm.description?.trim() || undefined,
       permissions: [],
