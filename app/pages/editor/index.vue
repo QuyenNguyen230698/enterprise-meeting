@@ -861,6 +861,8 @@ const autoSaveAfterLogin = ref(route.query.autoSave === 'true')
 const isPublicMode = computed(() => editorMode.value === 'public')
 const authStore = useAuthStore()
 const appConfig = useAppConfig()
+const config = useRuntimeConfig()
+const apiBaseUrl = config.public.apiBase
 
 // Responsive state management
 const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1920)
