@@ -1,5 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue'
+import ConfirmModal from '~/components/ConfirmModal.vue'
+
+const { isVisible: confirmVisible, confirmData, confirm: doConfirm, cancel: doCancel, confirmDelete } = useConfirm()
+const { error: showError } = useToast()
 
 const props = defineProps({
     isOpen: Boolean,
@@ -81,19 +85,16 @@ const switchToList = () => {
 }
 
 const handleDelete = async (id) => {
-    if (!confirm('Bạn có chắc chắn muốn xóa vị trí này?')) return
+    const ok = await confirmDelete('vị trí này')
+    if (!ok) return
 
     try {
         isLoading.value = true
-        await useFetchAuth(`/hr/positions/${id}`, {
-            method: 'DELETE'
-        })
+        await useFetchAuth(`/hr/positions/${id}`, { method: 'DELETE' })
         emit('refresh')
     } catch (e) {
         console.error(e)
-        // Ensure error is visible if it blocks flow, though for delete usually just checking console is enough dev side, 
-        // user might need a toast. Simple alert for now.
-        alert('Có lỗi xảy ra khi xóa vị trí')
+        showError('Có lỗi xảy ra khi xóa vị trí')
     } finally {
         isLoading.value = false
     }
@@ -134,6 +135,7 @@ const handleSubmit = async () => {
 </script>
 
 <template>
+  <div>
     <div v-if="isOpen" class="fixed inset-0 z-999999 overflow-y-auto" role="dialog" aria-modal="true">
         <!-- Backdrop -->
         <div class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm transition-opacity" @click="$emit('close')"></div>
@@ -273,4 +275,18 @@ const handleSubmit = async () => {
             </div>
         </div>
     </div>
+    <ConfirmModal
+      :is-visible="confirmVisible"
+      :title="confirmData.title"
+      :subtitle="confirmData.subtitle"
+      :message="confirmData.message"
+      :confirm-text="confirmData.confirmText"
+      :cancel-text="confirmData.cancelText"
+      :type="confirmData.type"
+      :loading="confirmData.loading"
+      :loading-text="confirmData.loadingText"
+      @confirm="doConfirm"
+      @cancel="doCancel"
+    />
+  </div>
 </template>

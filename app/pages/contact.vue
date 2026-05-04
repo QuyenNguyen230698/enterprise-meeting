@@ -218,6 +218,8 @@
 import { gsap } from 'gsap'
 import { useScrollAnimation } from '~/composables/useScrollAnimation'
 
+const { error: showError } = useToast()
+
 definePageMeta({ layout: 'public', auth: false })
 
 const { initScrollAnimations, fadeUp, cleanup } = useScrollAnimation()
@@ -281,10 +283,10 @@ const handleSubmit = async () => {
       createdTicketNumber.value = res.data.ticketNumber
       submitted.value = true
     } else {
-      alert(res.message || 'Không thể gửi yêu cầu. Vui lòng thử lại.')
+      showError(res.message || 'Không thể gửi yêu cầu. Vui lòng thử lại.')
     }
   } catch {
-    alert('Đã có lỗi xảy ra. Vui lòng thử lại sau.')
+    showError('Đã có lỗi xảy ra. Vui lòng thử lại sau.')
   } finally {
     isSubmitting.value = false
   }

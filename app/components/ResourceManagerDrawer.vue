@@ -532,12 +532,28 @@
         </div>
       </Transition>
     </Teleport>
+    <ConfirmModal
+      :is-visible="confirmVisible"
+      :title="confirmData.title"
+      :subtitle="confirmData.subtitle"
+      :message="confirmData.message"
+      :confirm-text="confirmData.confirmText"
+      :cancel-text="confirmData.cancelText"
+      :type="confirmData.type"
+      :loading="confirmData.loading"
+      :loading-text="confirmData.loadingText"
+      @confirm="doConfirm"
+      @cancel="doCancel"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, reactive, computed, watch, onMounted, onUnmounted } from "vue";
 import { useAuthStore } from "~/stores/auth";
+import ConfirmModal from "~/components/ConfirmModal.vue";
+
+const { isVisible: confirmVisible, confirmData, confirm: doConfirm, cancel: doCancel, confirmDelete } = useConfirm();
 
 const props = defineProps({
   areas: { type: Array, required: true },
@@ -692,19 +708,15 @@ const handleSave = async () => {
 };
 
 const handleDelete = async (id) => {
-  if (confirm("Bạn có chắc chắn muốn xóa?")) {
-    try {
-      const endpoint = subTab.value === "areas" ? "areas" : "rooms";
-      await useFetchAuth(`${apiBaseUrl}/v1/${endpoint}/${id}`, {
-        method: "DELETE",
-      });
-
-      console.log(`[API] ${endpoint} deleted successfully`);
-      emit("refresh");
-    } catch (error) {
-      console.error("[API ERROR]:", error);
-      emit("toast", { type: "error", message: error?.data?.detail || error.message });
-    }
+  const ok = await confirmDelete('mục này');
+  if (!ok) return;
+  try {
+    const endpoint = subTab.value === "areas" ? "areas" : "rooms";
+    await useFetchAuth(`${apiBaseUrl}/v1/${endpoint}/${id}`, { method: "DELETE" });
+    emit("refresh");
+  } catch (error) {
+    console.error("[API ERROR]:", error);
+    emit("toast", { type: "error", message: error?.data?.detail || error.message });
   }
 };
 

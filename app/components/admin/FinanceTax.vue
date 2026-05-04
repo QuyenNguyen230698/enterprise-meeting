@@ -337,6 +337,8 @@
 <script setup>
 import { ref } from "vue";
 
+const { error: showError } = useToast();
+
 const props = defineProps({
   complianceTasks: Array,
 });
@@ -364,7 +366,7 @@ const toggleExpand = (id) => {
 };
 
 const submitAdd = () => {
-  if (!newTask.value.title) return alert("Vui lòng nhập tiêu đề");
+  if (!newTask.value.title) { showError("Vui lòng nhập tiêu đề"); return; }
   emit("add-task", { ...newTask.value });
   showAddModal.value = false;
   newTask.value = {

@@ -321,16 +321,32 @@
         </div>
       </div>
     </Teleport>
+    <ConfirmModal
+      :is-visible="confirmVisible"
+      :title="confirmData.title"
+      :subtitle="confirmData.subtitle"
+      :message="confirmData.message"
+      :confirm-text="confirmData.confirmText"
+      :cancel-text="confirmData.cancelText"
+      :type="confirmData.type"
+      :loading="confirmData.loading"
+      :loading-text="confirmData.loadingText"
+      @confirm="doConfirm"
+      @cancel="doCancel"
+    />
   </div>
 </template>
 
 <script setup>
+import ConfirmModal from '~/components/ConfirmModal.vue'
+
 definePageMeta({ middleware: "auth" });
 
 const config = useRuntimeConfig();
 const apiBaseUrl = config.public.apiBase ;
 const apiV1 = `${apiBaseUrl}/v1`;
 const { success, error: showError } = useToast();
+const { isVisible: confirmVisible, confirmData, confirm: doConfirm, cancel: doCancel, confirmDelete } = useConfirm();
 const authStore = useAuthStore();
 const { $_ } = useNuxtApp();
 
@@ -432,11 +448,11 @@ const handleSetDefaultCard = (cardId) => {
   success("Đã đặt làm thẻ mặc định");
 };
 
-const handleDeleteCard = (cardId) => {
-  if (confirm("Bạn có chắc chắn muốn xóa thẻ này?")) {
-    dummyCards.value = dummyCards.value.filter(c => c._id !== cardId);
-    success("Đã xóa thẻ");
-  }
+const handleDeleteCard = async (cardId) => {
+  const ok = await confirmDelete('thẻ này');
+  if (!ok) return;
+  dummyCards.value = dummyCards.value.filter(c => c._id !== cardId);
+  success("Đã xóa thẻ");
 };
 
 const handleExportInvoice = (transaction) => {

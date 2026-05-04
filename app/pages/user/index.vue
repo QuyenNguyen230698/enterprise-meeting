@@ -109,7 +109,7 @@
               v-for="role in allRoles"
               :key="role.role_id"
               @click="selectRoleForMatrix(role)"
-              class="bg-white border rounded-xl p-4 cursor-pointer transition-all"
+              class="group bg-white border rounded-xl p-4 cursor-pointer transition-all"
               :class="matrixRole?.role_id === role.role_id
                 ? 'border-emerald-400 shadow-md ring-1 ring-emerald-300'
                 : 'border-gray-200 hover:border-emerald-300 hover:shadow-sm'"
@@ -123,6 +123,14 @@
                   <p class="text-xs text-gray-400 truncate">{{ (role.permissions || []).length }} permissions</p>
                 </div>
                 <i class="bi bi-chevron-right text-xs text-emerald-400 ml-auto shrink-0" v-if="matrixRole?.role_id === role.role_id"></i>
+                <button
+                  v-if="matrixRole?.role_id !== role.role_id"
+                  @click.stop="confirmDeleteRole(role)"
+                  class="ml-auto shrink-0 w-6 h-6 rounded-md flex items-center justify-center text-gray-300 hover:bg-red-50 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100"
+                  title="Xóa role"
+                >
+                  <i class="bi bi-trash3 text-xs"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -1190,14 +1198,32 @@
         </div>
       </Transition>
     </Teleport>
+
+    <!-- Global Confirm Modal -->
+    <ConfirmModal
+      :is-visible="isVisible"
+      :title="confirmData.title"
+      :subtitle="confirmData.subtitle"
+      :message="confirmData.message"
+      :confirm-text="confirmData.confirmText"
+      :cancel-text="confirmData.cancelText"
+      :type="confirmData.type"
+      :loading="confirmData.loading"
+      :loading-text="confirmData.loadingText"
+      @confirm="doConfirm"
+      @cancel="doCancel"
+    />
   </div>
 </template>
 
 <script setup>
+import ConfirmModal from "~/components/ConfirmModal.vue";
+
 definePageMeta({ middleware: ["auth", "permission"] });
 
 const authStore = useAuthStore();
 const { success, error: showError } = useToast();
+const { isVisible, confirmData, confirm: doConfirm, cancel: doCancel, confirmDelete, confirmLeave } = useConfirm();
 const isSuperAdmin = computed(() => authStore.isSuperAdmin);
 const isAdminOnly  = computed(() => authStore.isAdminOnly);
 
@@ -1756,7 +1782,8 @@ const matrixDirty = computed(() => {
 
 const selectRoleForMatrix = async (role) => {
   if (matrixDirty.value && matrixRole.value?.role_id !== role.role_id) {
-    if (!confirm('Discard unsaved changes?')) return;
+    const ok = await confirmLeave();
+    if (!ok) return;
   }
   matrixRole.value = role;
   matrixDraft.value = new Set(role.permissions || []);
@@ -1883,6 +1910,28 @@ const saveNewRole = async () => {
     showError(e?.data?.message || e?.message || "Không thể tạo role");
   } finally {
     roleSaving.value = false;
+  }
+};
+
+const confirmDeleteRole = async (role) => {
+  const ok = await confirmDelete(`role "${role.name}"`);
+  if (!ok) return;
+  deleteRole(role);
+};
+
+const deleteRole = async (role) => {
+  try {
+    await useFetchAuth(`/v1/roles/${role.role_id}`, { method: 'DELETE' });
+    allRoles.value = allRoles.value.filter((r) => r.role_id !== role.role_id);
+    roles.value = roles.value.filter((r) => r.role_id !== role.role_id);
+    if (matrixRole.value?.role_id === role.role_id) {
+      matrixRole.value = null;
+      matrixDraft.value = new Set();
+    }
+    success(`Đã xóa role "${role.name}"`);
+  } catch (e) {
+    console.error('[deleteRole]', e);
+    showError(e?.data?.message || e?.message || 'Không thể xóa role');
   }
 };
 

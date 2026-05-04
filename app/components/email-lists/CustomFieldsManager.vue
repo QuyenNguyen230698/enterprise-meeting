@@ -239,10 +239,27 @@
         </div>
       </div>
     </div>
+    <ConfirmModal
+      :is-visible="confirmVisible"
+      :title="confirmData.title"
+      :subtitle="confirmData.subtitle"
+      :message="confirmData.message"
+      :confirm-text="confirmData.confirmText"
+      :cancel-text="confirmData.cancelText"
+      :type="confirmData.type"
+      :loading="confirmData.loading"
+      :loading-text="confirmData.loadingText"
+      @confirm="doConfirm"
+      @cancel="doCancel"
+    />
   </div>
 </template>
 
 <script setup>
+import ConfirmModal from '~/components/ConfirmModal.vue'
+
+const { isVisible: confirmVisible, confirmData, confirm: doConfirm, cancel: doCancel, confirmDelete: showConfirmDelete } = useConfirm()
+
 const props = defineProps({
   listId: {
     type: String,
@@ -390,9 +407,8 @@ const saveField = async () => {
 }
 
 const confirmDelete = async (field) => {
-  if (!confirm(`Bạn có chắc muốn xóa trường "${field.fieldName}"?\n\nDữ liệu của trường này sẽ bị xóa khỏi tất cả subscribers.`)) {
-    return
-  }
+  const ok = await showConfirmDelete(`trường "${field.fieldName}"`)
+  if (!ok) return
   
   try {
     const response = await fetch(

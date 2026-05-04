@@ -1,4 +1,5 @@
 <template>
+  <div>
   <Teleport to="body">
     <Transition name="drawer">
       <div v-if="isOpen" class="fixed inset-0 z-[999999] flex justify-end">
@@ -141,12 +142,32 @@
       </div>
     </Transition>
   </Teleport>
+  <Teleport to="body">
+    <ConfirmModal
+      :is-visible="confirmVisible"
+      :title="confirmData.title"
+      :subtitle="confirmData.subtitle"
+      :message="confirmData.message"
+      :confirm-text="confirmData.confirmText"
+      :cancel-text="confirmData.cancelText"
+      :type="confirmData.type"
+      :loading="confirmData.loading"
+      :loading-text="confirmData.loadingText"
+      @confirm="doConfirm"
+      @cancel="doCancel"
+    />
+  </Teleport>
+  </div>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue';
 import { useRuntimeConfig } from '#app';
 import { useAuthStore } from '~/stores/auth';
+import ConfirmModal from '~/components/ConfirmModal.vue';
+
+const { isVisible: confirmVisible, confirmData, confirm: doConfirm, cancel: doCancel, confirmDelete } = useConfirm();
+const { error: showError } = useToast();
 
 const props = defineProps({
   isOpen: {
@@ -212,8 +233,9 @@ const fetchStats = async () => {
 };
 
 const deleteHistory = async (id) => {
-  if (!confirm('Bạn có chắc muốn xóa file này khỏi lịch sử?')) return;
-  
+  const ok = await confirmDelete('file này khỏi lịch sử');
+  if (!ok) return;
+
   try {
     await $fetch(`${config.public.apiBase}/conversions/history/${id}`, {
       method: 'DELETE',
@@ -221,13 +243,11 @@ const deleteHistory = async (id) => {
         Authorization: `Bearer ${authStore.accessToken}`,
       },
     });
-    
-    // Refresh history
     await fetchHistory();
     await fetchStats();
   } catch (error) {
     console.error('Delete failed:', error);
-    alert('Không thể xóa file. Vui lòng thử lại.');
+    showError('Không thể xóa file. Vui lòng thử lại.');
   }
 };
 
