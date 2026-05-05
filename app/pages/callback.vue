@@ -15,7 +15,7 @@
 
       <div v-else-if="error" class="space-y-4 bg-white/20 flex flex-col items-center justify-center w-[500px] h-[300px] rounded-2xl">
         <div class="w-20 h-20 mx-auto bg-red-500/20 rounded-full flex items-center justify-center">
-          <Icon name="ph:warning-circle-bold" class="w-10 h-10 text-red-500" />
+          <i class="bi bi-exclamation-circle-fill text-red-500" style="font-size:2.5rem;"></i>
         </div>
         <h2 class="text-2xl font-bold tracking-tight text-red-500">Authentication Failed</h2>
         <p class="text-slate-400">{{ errorMessage }}</p>

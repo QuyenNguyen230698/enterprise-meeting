@@ -1164,6 +1164,7 @@
                   <option value="system">system — Hệ Thống</option>
                   <option value="settings">settings — Cài đặt</option>
                   <option value="hrm">hrm — HRM System</option>
+                  <option value="recruitment">HR — Recruitment</option>
                 </select>
                 <p class="text-xs text-zinc-400">Nhóm hiển thị trong sidebar.</p>
               </div>

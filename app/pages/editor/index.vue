@@ -29,22 +29,20 @@
       <div class="pt-20 lg:pt-2 border-b border-gray-200 bg-white flex items-center justify-between" :class="leftPanelCollapsed && !isMobile ? 'p-2' : 'p-2'">
         <div v-if="!leftPanelCollapsed || isMobile" class="flex items-center gap-2">
           <button
-            v-if="route.query.mode !== 'public'"
+            v-if="route.query.mode !== 'public' && !isEmbedded"
             @click="router.push('/templates')"
             class="w-8 h-8 p-2 hover:bg-gray-100 rounded-lg transition-colors flex items-center gap-2"
             title="Quay lại danh sách templates"
           >
             <i class="bi bi-arrow-left text-lg"></i>
-            <!-- <span class="hidden sm:inline text-sm">Templates</span> -->
           </button>
           <button
-            v-else
+            v-else-if="route.query.mode === 'public'"
             @click="router.push('/')"
             class="w-8 h-8 p-2 hover:bg-gray-100 rounded-lg transition-colors flex items-center gap-2"
             title="Quay lại trang chủ"
           >
             <i class="bi bi-arrow-left text-lg"></i>
-            <!-- <span class="hidden sm:inline text-sm">Templates</span> -->
           </button>
           <div>
             <h2 class="text-sm font-bold text-gray-900">Trình Tạo Email</h2>
@@ -217,28 +215,41 @@
         <div class="flex items-center gap-2">
           <!-- Action Groups - Desktop -->
           <div class="hidden lg:flex items-center gap-2">
-            <!-- Save Button -->
-            <button
-              @click="showSaveModal = true"
-              class="px-3 py-1 text-sm rounded-lg transition-colors flex items-center gap-2 bg-green-500 text-white hover:bg-green-700"
-              title="Save Template"
-            >
-              <i class="bi bi-cloud-upload text-base"></i>
-              <span class="hidden xl:inline">Lưu Thiết Kế</span>
-            </button>
+            <!-- Embedded mode: Use this template button -->
+            <template v-if="isEmbedded">
+              <button
+                @click="useEmbeddedTemplate"
+                class="px-3 py-1 text-sm rounded-lg transition-colors flex items-center gap-2 bg-rose-500 text-white hover:bg-rose-600"
+                title="Dùng template này cho rule"
+              >
+                <i class="bi bi-check-circle text-base"></i>
+                <span>Dùng template này</span>
+              </button>
+            </template>
+            <!-- Normal mode: Save button -->
+            <template v-else>
+              <button
+                @click="showSaveModal = true"
+                class="px-3 py-1 text-sm rounded-lg transition-colors flex items-center gap-2 bg-green-500 text-white hover:bg-green-700"
+                title="Save Template"
+              >
+                <i class="bi bi-cloud-upload text-base"></i>
+                <span class="hidden xl:inline">Lưu Thiết Kế</span>
+              </button>
 
-            <!-- Divider -->
-            <div class="w-px h-6 bg-gray-300"></div>
+              <!-- Divider -->
+              <div class="w-px h-6 bg-gray-300"></div>
 
-            <!-- Import/Export -->
-            <button
-              @click="importJson"
-              class="px-3 py-1 text-sm bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center gap-2"
-              title="Import JSON"
-            >
-              <i class="bi bi-upload text-base"></i>
-              <span class="hidden xl:inline">Nhập Thiết Kế</span>
-            </button>
+              <!-- Import/Export -->
+              <button
+                @click="importJson"
+                class="px-3 py-1 text-sm bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center gap-2"
+                title="Import JSON"
+              >
+                <i class="bi bi-upload text-base"></i>
+                <span class="hidden xl:inline">Nhập Thiết Kế</span>
+              </button>
+            </template>
           </div>
           <!-- Preview Button -->
           <button
@@ -248,8 +259,18 @@
             <i class="bi bi-eye text-base"></i>
             <span class="sm:inline text-small md:text-xs">Xem trước</span>
           </button>
+          <!-- Mobile: Embedded use button -->
+          <button
+            v-if="isEmbedded"
+            @click="useEmbeddedTemplate"
+            class="md:hidden px-3 py-1 text-sm bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition-colors flex items-center gap-2"
+            title="Dùng template này"
+          >
+            <i class="bi bi-check-circle text-base"></i>
+          </button>
           <!-- Mobile Save Button - Visible on mobile -->
           <button
+            v-if="!isEmbedded"
             @click="showSaveModal = true"
             class="md:hidden px-3 py-1 text-sm bg-green-200 text-white rounded-lg hover:bg-green-300 transition-colors flex items-center gap-2"
             title="Lưu Thiết Kế"
@@ -824,7 +845,7 @@ const route = useRoute()
 const router = useRouter()
 
 // Dynamic layout based on mode
-const layout = computed(() => route.query.mode === 'public' ? 'blank' : 'default')
+const layout = computed(() => (route.query.mode === 'public' || route.query.mode === 'embedded') ? 'blank' : 'default')
 
 definePageMeta({
   layout: false,
@@ -859,6 +880,12 @@ const autoSaveAfterLogin = ref(route.query.autoSave === 'true')
 
 // Public mode state
 const isPublicMode = computed(() => editorMode.value === 'public')
+const isEmbedded = computed(() => editorMode.value === 'embedded')
+
+const useEmbeddedTemplate = () => {
+  const html = generateEmailHTML()
+  window.parent.postMessage({ type: 'RECRUITMENT_RULE_HTML', html }, '*')
+}
 const authStore = useAuthStore()
 const appConfig = useAppConfig()
 const config = useRuntimeConfig()

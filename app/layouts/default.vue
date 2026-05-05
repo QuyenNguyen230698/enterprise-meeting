@@ -380,6 +380,11 @@ const themeColor = computed(() => {
   return darkPages.includes(route.path) ? "#1a1a1a" : "#FFFFFF";
 });
 
+const isDarkTheme = computed(() => {
+  const darkPages = ["/", "/about", "/contact"];
+  return darkPages.includes(route.path);
+});
+
 // Update theme-color meta tag when route changes
 watch(
   () => route.path,
