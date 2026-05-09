@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <!-- Gradient Orbs -->
-      <div class="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-t-400/20 rounded-full blur-[120px] animate-float"></div>
+      <div class="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-emerald-400/20 rounded-full blur-[100px] animate-float"></div>
       <div class="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-lime-400/20 rounded-full blur-[100px] animate-float-delayed"></div>
       <!-- <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-teal-400/10 rounded-full blur-[80px]"></div> -->
 

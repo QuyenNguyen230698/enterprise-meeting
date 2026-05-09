@@ -1757,23 +1757,23 @@ export function useThreeBackground() {
           break
 
         case 'waves':
-          // Smooth mouse movement interpolation
-          mouse.x += (targetMouse.x - mouse.x) * 0.03
-          mouse.y += (targetMouse.y - mouse.y) * 0.03
-          
-          // 3D Parallax: Move camera
-          if (camera) {
-            const targetPosX = mouse.x * 12
-            const targetPosY = mouse.y * 10
-            camera.position.x += (targetPosX - camera.position.x) * 0.015
-            camera.position.y += (targetPosY - camera.position.y) * 0.015
-            camera.lookAt(0, 0, 0)
-          }
+          // // Smooth mouse movement interpolation
+          // mouse.x += (targetMouse.x - mouse.x) * 0.03
+          // mouse.y += (targetMouse.y - mouse.y) * 0.03
 
-          // Tilt particles
-          particles.rotation.y += 0.0002
-          particles.rotation.x = -Math.PI / 4 + mouse.y * 0.15
-          particles.rotation.z = -mouse.x * 0.1
+          // // 3D Parallax: Move camera
+          // if (camera) {
+          //   const targetPosX = mouse.x * 12
+          //   const targetPosY = mouse.y * 10
+          //   camera.position.x += (targetPosX - camera.position.x) * 0.015
+          //   camera.position.y += (targetPosY - camera.position.y) * 0.015
+          //   camera.lookAt(0, 0, 0)
+          // }
+
+          // // Tilt particles
+          // particles.rotation.y += 0.0002
+          // particles.rotation.x = -Math.PI / 4 + mouse.y * 0.15
+          // particles.rotation.z = -mouse.x * 0.1
 
           for (let i = 0; i < positions.length - 2; i += 3) {
             const x = positions[i]!

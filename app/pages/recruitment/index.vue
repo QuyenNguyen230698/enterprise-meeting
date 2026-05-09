@@ -304,15 +304,27 @@
                       <p class="text-sm text-gray-800 truncate font-medium">{{ att.filename }}</p>
                       <p class="text-xs text-gray-400">{{ formatFileSize(att.size) }}</p>
                     </div>
-                    <button
-                      v-if="att.attachmentIndex != null"
-                      @click="downloadAttachmentFile(inbox.selected.id, att.attachmentIndex, att.filename)"
-                      class="text-xs text-rose-500 hover:text-rose-700 flex items-center gap-1 flex-none disabled:opacity-50"
-                      :disabled="downloadingAttachment === `${inbox.selected.id}-${att.attachmentIndex}`"
-                    >
-                      <i class="bi" :class="downloadingAttachment === `${inbox.selected.id}-${att.attachmentIndex}` ? 'bi-hourglass-split animate-spin' : 'bi-download'"></i>
-                      {{ downloadingAttachment === `${inbox.selected.id}-${att.attachmentIndex}` ? 'Đang tải...' : 'Tải về' }}
-                    </button>
+                    <div class="flex items-center gap-2 flex-none">
+                      <!-- Nút Phân tích AI — chỉ hiện với PDF -->
+                      <button
+                        v-if="att.mimeType === 'application/pdf' || att.filename?.toLowerCase().endsWith('.pdf')"
+                        @click="openCvAnalyzer(inbox.selected.id, att)"
+                        class="text-xs text-violet-600 hover:text-violet-800 flex items-center gap-1 disabled:opacity-50 font-medium"
+                        :disabled="cvAnalyzer.loading && cvAnalyzer.attachmentKey === `${inbox.selected.id}-${att.attachmentIndex}`"
+                      >
+                        <i class="bi bi-stars"></i> Phân tích AI
+                      </button>
+                      <!-- Nút Tải về -->
+                      <button
+                        v-if="att.attachmentIndex != null"
+                        @click="downloadAttachmentFile(inbox.selected.id, att.attachmentIndex, att.filename)"
+                        class="text-xs text-rose-500 hover:text-rose-700 flex items-center gap-1 disabled:opacity-50"
+                        :disabled="downloadingAttachment === `${inbox.selected.id}-${att.attachmentIndex}`"
+                      >
+                        <i class="bi" :class="downloadingAttachment === `${inbox.selected.id}-${att.attachmentIndex}` ? 'bi-hourglass-split animate-spin' : 'bi-download'"></i>
+                        {{ downloadingAttachment === `${inbox.selected.id}-${att.attachmentIndex}` ? 'Đang tải...' : 'Tải về' }}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -722,7 +734,11 @@
           <div>
             <label class="block text-xs font-medium text-gray-700 mb-1">Thư mục hộp thư</label>
             <select v-model="pull.folder" class="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-rose-300">
-              <option value="INBOX">Hộp thư chính (INBOX)</option>
+              <option value="INBOX">📥 Primary (hộp thư chính)</option>
+              <option value="INBOX_PROMOTIONS">🏷️ Promotions (khuyến mãi)</option>
+              <option value="INBOX_SOCIAL">👥 Social (mạng xã hội)</option>
+              <option value="INBOX_UPDATES">🔔 Updates (cập nhật)</option>
+              <option value="INBOX_ALL">📬 Tất cả INBOX (Primary + các tab)</option>
             </select>
             <p class="text-xs text-gray-400 mt-0.5">
               <i class="bi bi-google mr-0.5"></i>Gmail: chỉ lấy tab <strong>Primary</strong> — bỏ qua Promotions, Social, Spam
@@ -1324,6 +1340,155 @@
         </div>
       </div>
     </div>
+    <!-- ── CV Analyzer Modal ──────────────────────────────────────────── -->
+    <div v-if="cvAnalyzer.open" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+          <div class="flex items-center gap-3">
+            <div class="h-9 w-9 rounded-xl bg-violet-100 flex items-center justify-center">
+              <i class="bi bi-stars text-violet-600"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 text-sm">Phân tích CV với AI</h3>
+              <p class="text-xs text-gray-400 truncate max-w-[280px]">{{ cvAnalyzer.filename }}</p>
+            </div>
+          </div>
+          <button @click="cvAnalyzer.open = false" class="h-8 w-8 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-400">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- Config (chỉ hiện khi chưa có kết quả) -->
+        <div v-if="!cvAnalyzer.result && !cvAnalyzer.loading" class="p-6 space-y-4">
+          <div>
+            <label class="text-xs font-medium text-gray-700 mb-1.5 block">AI Provider</label>
+            <div class="flex gap-2 flex-wrap">
+              <button
+                v-for="p in cvAnalyzer.providers"
+                :key="p.key"
+                @click="cvAnalyzer.selectedProvider = p.key"
+                :class="['px-3 py-1.5 rounded-lg border text-xs font-medium transition', cvAnalyzer.selectedProvider === p.key ? 'bg-violet-600 text-white border-violet-600' : 'bg-white text-gray-600 border-gray-200 hover:border-violet-400']"
+              >
+                {{ p.label }}
+              </button>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-medium text-gray-700 mb-1.5 block">Vị trí ứng tuyển <span class="text-gray-400 font-normal">(tuỳ chọn)</span></label>
+            <input v-model="cvAnalyzer.position" type="text" placeholder="VD: Frontend Developer, Marketing Manager..." class="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-violet-300 focus:border-violet-400 outline-none" />
+          </div>
+          <div>
+            <label class="text-xs font-medium text-gray-700 mb-1.5 block">Yêu cầu bổ sung <span class="text-gray-400 font-normal">(tuỳ chọn)</span></label>
+            <textarea v-model="cvAnalyzer.notes" rows="2" placeholder="VD: Yêu cầu 2+ năm kinh nghiệm React, biết tiếng Anh..." class="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-violet-300 focus:border-violet-400 outline-none resize-none"></textarea>
+          </div>
+          <button @click="runCvAnalysis" class="w-full py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold hover:bg-violet-700 transition flex items-center justify-center gap-2">
+            <i class="bi bi-stars"></i> Bắt đầu phân tích
+          </button>
+        </div>
+
+        <!-- Loading -->
+        <div v-if="cvAnalyzer.loading" class="flex-1 flex flex-col items-center justify-center py-16 gap-4">
+          <div class="relative">
+            <div class="h-16 w-16 rounded-full border-4 border-violet-100 border-t-violet-600 animate-spin"></div>
+            <i class="bi bi-stars text-violet-600 text-lg absolute inset-0 flex items-center justify-center" style="display:flex;align-items:center;justify-content:center;"></i>
+          </div>
+          <p class="text-sm text-gray-500">AI đang đọc và phân tích CV...</p>
+          <p class="text-xs text-gray-400">Thường mất 10-30 giây</p>
+        </div>
+
+        <!-- Result -->
+        <div v-if="cvAnalyzer.result && !cvAnalyzer.loading" class="flex-1 overflow-y-auto p-6 space-y-5">
+          <!-- Top: candidate info + score -->
+          <div class="flex gap-4 items-start">
+            <div class="h-14 w-14 rounded-2xl bg-violet-100 flex items-center justify-center text-2xl font-bold text-violet-600 shrink-0">
+              {{ (cvAnalyzer.result.candidate_name || '?').charAt(0).toUpperCase() }}
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-bold text-gray-900 text-base">{{ cvAnalyzer.result.candidate_name || 'Không rõ tên' }}</h4>
+              <div class="flex items-center gap-3 mt-0.5 flex-wrap">
+                <span v-if="cvAnalyzer.result.candidate_email" class="text-xs text-gray-500 flex items-center gap-1"><i class="bi bi-envelope"></i>{{ cvAnalyzer.result.candidate_email }}</span>
+                <span v-if="cvAnalyzer.result.candidate_phone" class="text-xs text-gray-500 flex items-center gap-1"><i class="bi bi-telephone"></i>{{ cvAnalyzer.result.candidate_phone }}</span>
+                <span v-if="cvAnalyzer.result.experience_years" class="text-xs text-gray-500 flex items-center gap-1"><i class="bi bi-briefcase"></i>{{ cvAnalyzer.result.experience_years }} năm KN</span>
+              </div>
+            </div>
+            <!-- Score badge -->
+            <div :class="['shrink-0 h-16 w-16 rounded-2xl flex flex-col items-center justify-center border-2 font-bold', cvAnalyzer.result.score >= 7 ? 'bg-emerald-50 border-emerald-400 text-emerald-700' : cvAnalyzer.result.score >= 5 ? 'bg-amber-50 border-amber-400 text-amber-700' : 'bg-red-50 border-red-400 text-red-700']">
+              <span class="text-2xl leading-none">{{ cvAnalyzer.result.score }}</span>
+              <span class="text-[10px] font-normal">/10</span>
+            </div>
+          </div>
+
+          <!-- Recommendation badge -->
+          <div :class="['inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold', cvAnalyzer.result.recommendation === 'RECOMMEND' ? 'bg-emerald-100 text-emerald-800' : cvAnalyzer.result.recommendation === 'CONSIDER' ? 'bg-amber-100 text-amber-800' : 'bg-red-100 text-red-800']">
+            <i :class="cvAnalyzer.result.recommendation === 'RECOMMEND' ? 'bi bi-check-circle-fill' : cvAnalyzer.result.recommendation === 'CONSIDER' ? 'bi bi-question-circle-fill' : 'bi bi-x-circle-fill'"></i>
+            {{ cvAnalyzer.result.recommendation === 'RECOMMEND' ? 'Khuyến nghị phỏng vấn' : cvAnalyzer.result.recommendation === 'CONSIDER' ? 'Cân nhắc thêm' : 'Không phù hợp' }}
+          </div>
+
+          <!-- Summary -->
+          <div class="bg-gray-50 rounded-xl p-4">
+            <p class="text-sm text-gray-700 leading-relaxed">{{ cvAnalyzer.result.summary }}</p>
+          </div>
+
+          <!-- Score breakdown -->
+          <div v-if="cvAnalyzer.result.scores" class="space-y-2.5">
+            <p class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Đánh giá chi tiết</p>
+            <div v-for="(val, key) in cvAnalyzer.result.scores" :key="key" class="flex items-center gap-3">
+              <span class="text-xs text-gray-500 w-32 shrink-0">{{ { technical: 'Kỹ thuật', experience: 'Kinh nghiệm', soft_skills: 'Kỹ năng mềm', education: 'Học vấn' }[key] || key }}</span>
+              <div class="flex-1 h-2 rounded-full bg-gray-100 overflow-hidden">
+                <div :style="`width: ${val * 10}%`" :class="['h-full rounded-full transition-all', val >= 7 ? 'bg-emerald-500' : val >= 5 ? 'bg-amber-400' : 'bg-red-400']"></div>
+              </div>
+              <span class="text-xs font-bold text-gray-700 w-6 text-right">{{ val }}</span>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div v-if="cvAnalyzer.result.skills?.length" class="space-y-2">
+            <p class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Kỹ năng</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span v-for="sk in cvAnalyzer.result.skills" :key="sk" class="px-2.5 py-1 rounded-lg bg-violet-50 text-violet-700 text-xs font-medium">{{ sk }}</span>
+            </div>
+          </div>
+
+          <!-- Strengths & Weaknesses -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-emerald-50 rounded-xl p-3.5 space-y-1.5">
+              <p class="text-xs font-semibold text-emerald-800 flex items-center gap-1"><i class="bi bi-check-circle"></i> Điểm mạnh</p>
+              <ul class="space-y-1">
+                <li v-for="s in cvAnalyzer.result.strengths" :key="s" class="text-xs text-emerald-900 flex gap-1.5"><i class="bi bi-dot mt-0.5 shrink-0"></i>{{ s }}</li>
+              </ul>
+            </div>
+            <div class="bg-red-50 rounded-xl p-3.5 space-y-1.5">
+              <p class="text-xs font-semibold text-red-800 flex items-center gap-1"><i class="bi bi-exclamation-circle"></i> Hạn chế</p>
+              <ul class="space-y-1">
+                <li v-for="w in cvAnalyzer.result.weaknesses" :key="w" class="text-xs text-red-900 flex gap-1.5"><i class="bi bi-dot mt-0.5 shrink-0"></i>{{ w }}</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Justification -->
+          <div class="border border-gray-200 rounded-xl p-4">
+            <p class="text-xs font-semibold text-gray-700 mb-1.5">Nhận xét của AI</p>
+            <p class="text-xs text-gray-600 leading-relaxed">{{ cvAnalyzer.result.justification }}</p>
+          </div>
+
+          <!-- Provider info -->
+          <p class="text-[10px] text-gray-400 text-right">Phân tích bởi {{ cvAnalyzer.result.provider_used }} · {{ cvAnalyzer.filename }}</p>
+        </div>
+
+        <!-- Footer actions when result shown -->
+        <div v-if="cvAnalyzer.result && !cvAnalyzer.loading" class="px-6 py-3 border-t border-gray-100 flex justify-between items-center">
+          <button @click="cvAnalyzer.result = null; cvAnalyzer.loading = false" class="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1">
+            <i class="bi bi-arrow-left"></i> Phân tích lại
+          </button>
+          <button @click="cvAnalyzer.open = false" class="px-4 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-xs font-medium text-gray-700 transition">
+            Đóng
+          </button>
+        </div>
+
+      </div>
+    </div>
   </div>
 </template>
 
@@ -1435,6 +1600,88 @@ const openEmailDetail = async (email) => {
 
 const emailIframe = ref(null)
 const downloadingAttachment = ref(null)
+
+// ── CV Analyzer ────────────────────────────────────────────────────────────
+const cvAnalyzer = reactive({
+  open: false,
+  loading: false,
+  attachmentKey: '',
+  filename: '',
+  emailId: null,
+  attachmentIndex: null,
+  selectedProvider: '',
+  providers: [],
+  position: '',
+  notes: '',
+  result: null,
+})
+
+const openCvAnalyzer = async (emailId, att) => {
+  cvAnalyzer.open = true
+  cvAnalyzer.result = null
+  cvAnalyzer.loading = false
+  cvAnalyzer.filename = att.filename
+  cvAnalyzer.emailId = emailId
+  cvAnalyzer.attachmentIndex = att.attachmentIndex
+  cvAnalyzer.attachmentKey = `${emailId}-${att.attachmentIndex}`
+  cvAnalyzer.position = ''
+  cvAnalyzer.notes = ''
+
+  // Fetch danh sách providers nếu chưa có
+  if (!cvAnalyzer.providers.length) {
+    try {
+      const config = useRuntimeConfig()
+      const token = useCookie('accessToken').value
+      const res = await fetch(`${config.public.apiBase}/v1/knowledge/cv/providers`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      cvAnalyzer.providers = res.ok ? await res.json() : []
+      if (cvAnalyzer.providers.length) cvAnalyzer.selectedProvider = cvAnalyzer.providers[0].key
+    } catch { cvAnalyzer.providers = [] }
+  }
+}
+
+const runCvAnalysis = async () => {
+  if (!cvAnalyzer.emailId || cvAnalyzer.attachmentIndex == null) return
+  cvAnalyzer.loading = true
+  cvAnalyzer.result = null
+
+  try {
+    const config = useRuntimeConfig()
+    const token = useCookie('accessToken').value
+
+    // Tải attachment về dưới dạng blob
+    const dlRes = await fetch(
+      `${config.public.apiBase}/v1/recruitment/inbox/${cvAnalyzer.emailId}/attachments/${cvAnalyzer.attachmentIndex}?token=${token}`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+    if (!dlRes.ok) throw new Error('Không tải được file đính kèm')
+    const blob = await dlRes.blob()
+
+    // Gửi lên CV analyzer
+    const form = new FormData()
+    form.append('file', new File([blob], cvAnalyzer.filename, { type: 'application/pdf' }))
+    form.append('provider', cvAnalyzer.selectedProvider)
+    if (cvAnalyzer.position) form.append('position', cvAnalyzer.position)
+    if (cvAnalyzer.notes) form.append('notes', cvAnalyzer.notes)
+
+    const res = await fetch(`${config.public.apiBase}/v1/knowledge/cv/analyze`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: form,
+    })
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}))
+      throw new Error(err.detail || 'Lỗi phân tích CV')
+    }
+    cvAnalyzer.result = await res.json()
+  } catch (e) {
+    showToast(e.message || 'Lỗi phân tích CV', 'error')
+    cvAnalyzer.open = false
+  } finally {
+    cvAnalyzer.loading = false
+  }
+}
 
 const downloadAttachmentFile = async (emailId, attachmentIndex, filename) => {
   const key = `${emailId}-${attachmentIndex}`

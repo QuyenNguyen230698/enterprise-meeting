@@ -354,6 +354,9 @@
         </div>
       </div>
     </Transition>
+    <ClientOnly>
+      <KnowledgeChatWidget />
+    </ClientOnly>
   </div>
 </template>
 
@@ -367,7 +370,7 @@ const toolsDropdownOpen = ref(false);
 const mobileToolsDropdownOpen = ref(false);
 
 // Dynamic canonical URL
-const canonicalUrl = computed(() => `https://datools.info${route.path}`);
+const canonicalUrl = computed(() => `https://emtools.site${route.path}`);
 useHead({
   link: [{ rel: "canonical", href: canonicalUrl }],
 });

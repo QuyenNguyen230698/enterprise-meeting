@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full relative bg-[#020617] text-white overflow-hidden flex flex-col">
+  <div class="h-[100dvh] w-full relative bg-[#020617] text-white overflow-hidden flex flex-col">
     
     <div class="absolute inset-0 z-0 pointer-events-none">
       <div v-for="n in 12" :key="n" :class="['orb', `orb-${n}`]"></div>

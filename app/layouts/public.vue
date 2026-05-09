@@ -365,9 +365,11 @@
         </div>
       </div>
     </footer>
-  </div>
-  <!-- Mobile Drawer Menu -->
-  <Transition name="drawer">
+    <ClientOnly>
+      <KnowledgeChatWidget />
+    </ClientOnly>
+    <!-- Mobile Drawer Menu -->
+    <Transition name="drawer">
     <div v-if="mobileMenuOpen" class="lg:hidden fixed inset-0 z-9999">
       <!-- Overlay -->
       <div
@@ -517,6 +519,7 @@
       </div>
     </div>
   </Transition>
+</div>
 </template>
 
 <script setup>
@@ -527,7 +530,7 @@ const route = useRoute();
 const authStore = useAuthStore();
 
 // Dynamic canonical URL
-const canonicalUrl = computed(() => `https://datools.info${route.path}`);
+const canonicalUrl = computed(() => `https://emtools.site${route.path}`);
 useHead({
   link: [{ rel: "canonical", href: canonicalUrl }],
 });
