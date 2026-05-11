@@ -15,7 +15,8 @@ const APP_THEME_MAP = {
   "dashboard":     { gradientClass: "bg-linear-to-br from-pink-500 via-pink-400 to-pink-700", textColor: "text-white" },
   "email-config":  { gradientClass: "bg-linear-to-br from-blue-500 via-blue-400 to-blue-700", textColor: "text-white" },
   "profile":       { gradientClass: "bg-linear-to-br from-violet-500 via-violet-400 to-violet-700", textColor: "text-white" },
-  "recruitment":   { gradientClass: "bg-linear-to-br from-rose-500 via-rose-400 to-pink-600", textColor: "text-white" },
+  "recruitment":      { gradientClass: "bg-linear-to-br from-rose-500 via-rose-400 to-pink-600", textColor: "text-white" },
+  "document-builder": { gradientClass: "bg-linear-to-br from-indigo-500 via-blue-400 to-cyan-500", textColor: "text-white" },
 };
 
 // Label hiển thị cho từng group (app_group từ DB → tên + icon sidebar)
@@ -172,7 +173,8 @@ function _toDisplayName(appCode) {
     "offboarding":   "Offboarding",
     "sign-hub":      "Sign Hub",
     "asset-handover": "Asset Handover",
-    "recruitment":    "Email Recruitment",
+    "recruitment":        "Email Recruitment",
+    "document-builder":   "Document Builder",
   };
   return map[appCode] ?? appCode;
 }
