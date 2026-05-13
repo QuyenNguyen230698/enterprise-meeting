@@ -277,6 +277,8 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: "cloudflare_pages",
+    // Less memory during Nitro bundle on small CI runners (e.g. Cloudflare Pages)
+    sourceMap: false,
   },
   pinia: {
     storesDirs: ["./stores/**"],
