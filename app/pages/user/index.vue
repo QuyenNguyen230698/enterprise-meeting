@@ -1737,35 +1737,59 @@ onBeforeUnmount(() => document.removeEventListener('click', handleIconClickOutsi
 
 const bootstrapIconOptions = [
   // --- Hệ thống & Điều hướng ---
-  'bi bi-grid', 'bi bi-speedometer2', 'bi bi-gear', 'bi bi-gear-wide-connected',
-  'bi bi-sliders', 'bi bi-list', 'bi bi-house', 'bi bi-search', 
-  'bi bi-box-arrow-right', 'bi bi-box-arrow-in-right', 'bi bi-shield-check',
+  'bi bi-grid', 'bi bi-grid-3x3-gap', 'bi bi-speedometer', 'bi bi-speedometer2', 
+  'bi bi-gear', 'bi bi-gear-fill', 'bi bi-gear-wide-connected', 'bi bi-sliders', 
+  'bi bi-list', 'bi bi-list-nested', 'bi bi-house', 'bi bi-house-door', 'bi bi-search', 
+  'bi bi-box-arrow-right', 'bi bi-box-arrow-in-right', 'bi bi-shield-check', 'bi bi-shield-lock',
+  'bi bi-menu-button-wide', 'bi bi-three-dots', 'bi bi-three-dots-vertical',
 
   // --- Quản lý & Người dùng ---
-  'bi bi-people', 'bi bi-person-badge', 'bi bi-person-circle', 'bi bi-person-plus',
-  'bi bi-building', 'bi bi-briefcase', 'bi bi-mortarboard',
+  'bi bi-people', 'bi bi-people-fill', 'bi bi-person', 'bi bi-person-fill', 
+  'bi bi-person-badge', 'bi bi-person-circle', 'bi bi-person-plus', 'bi bi-person-check',
+  'bi bi-person-gear', 'bi bi-person-vcard', 'bi bi-building', 'bi bi-briefcase', 
+  'bi bi-mortarboard', 'bi bi-person-workspace',
 
   // --- Truyền thông & Thông báo ---
-  'bi bi-envelope', 'bi bi-megaphone', 'bi bi-bell', 'bi bi-chat-dots',
-  'bi bi-telephone', 'bi bi-share', 'bi bi-info-circle', 'bi bi-exclamation-triangle',
+  'bi bi-envelope', 'bi bi-envelope-at', 'bi bi-megaphone', 'bi bi-bell', 'bi bi-bell-slash',
+  'bi bi-chat-dots', 'bi bi-chat-left-text', 'bi bi-telephone', 'bi bi-share', 
+  'bi bi-info-circle', 'bi bi-exclamation-triangle', 'bi bi-question-circle',
+  'bi bi-send', 'bi bi-reply', 'bi bi-broadcast',
 
   // --- Công việc & Tài liệu ---
-  'bi bi-pencil-square', 'bi bi-kanban', 'bi bi-clipboard-data', 
-  'bi bi-file-earmark-text', 'bi bi-folder2-open', 'bi bi-archive',
-  'bi bi-calendar-check', 'bi bi-clock-history', 'bi bi-cloud-arrow-up',
+  'bi bi-pencil-square', 'bi bi-kanban', 'bi bi-clipboard-data', 'bi bi-file-earmark-text', 
+  'bi bi-file-earmark-pdf', 'bi bi-file-earmark-excel', 'bi bi-file-earmark-word',
+  'bi bi-folder2-open', 'bi bi-archive', 'bi bi-calendar-check', 'bi bi-calendar-date',
+  'bi bi-clock-history', 'bi bi-cloud-arrow-up', 'bi bi-cloud-check', 'bi bi-download',
+  'bi bi-paperclip', 'bi bi-attachment',
 
-  // --- Tài chính & Thương mại (Bổ sung mới) ---
-  'bi bi-cart3', 'bi bi-bag-check', 'bi bi-credit-card', 'bi bi-wallet2',
-  'bi bi-cash-stack', 'bi bi-graph-up-arrow', 'bi bi-tag', 'bi bi-gem',
+  // --- Tài chính & Thương mại ---
+  'bi bi-cart3', 'bi bi-bag-check', 'bi bi-credit-card', 'bi bi-wallet2', 'bi bi-bank',
+  'bi bi-cash-stack', 'bi bi-graph-up-arrow', 'bi bi-graph-down-arrow', 'bi bi-tag', 
+  'bi bi-gem', 'bi bi-coin', 'bi bi-piggy-bank', 'bi bi-shop', 'bi bi-receipt',
 
-  // --- Công cụ & Đồ họa (Bổ sung mới) ---
-  'bi bi-camera', 'bi bi-image', 'bi bi-play-circle', 'bi bi-mic',
-  'bi bi-palette', 'bi bi-tools', 'bi bi-life-preserver', 'bi bi-cpu',
-  'bi bi-database', 'bi bi-code-slash', 'bi bi-terminal',
+  // --- Công cụ & Kỹ thuật ---
+  'bi bi-camera', 'bi bi-image', 'bi bi-play-circle', 'bi bi-pause-circle', 'bi bi-stop-circle',
+  'bi bi-mic', 'bi bi-palette', 'bi bi-tools', 'bi bi-wrench', 'bi bi-life-preserver', 
+  'bi bi-cpu', 'bi bi-database', 'bi bi-code-slash', 'bi bi-terminal', 'bi bi-command',
+  'bi bi-usb-drive', 'bi bi-hdd-network',
 
-  // --- Tương tác (Bổ sung mới) ---
-  'bi bi-hand-thumbs-up', 'bi bi-heart', 'bi bi-star', 'bi bi-bookmark',
-  'bi bi-check2-circle', 'bi bi-plus-lg', 'bi bi-trash', 'bi bi-eye'
+  // --- Tương tác & Trạng thái ---
+  'bi bi-hand-thumbs-up', 'bi bi-hand-thumbs-down', 'bi bi-heart', 'bi bi-heart-fill',
+  'bi bi-star', 'bi bi-star-fill', 'bi bi-bookmark', 'bi bi-check2-circle', 'bi bi-check-lg',
+  'bi bi-plus-lg', 'bi bi-trash', 'bi bi-eye', 'bi bi-eye-slash', 'bi bi-x-circle',
+  'bi bi-arrow-repeat', 'bi bi-funnel',
+
+  // --- Mũi tên & Di chuyển (Mới) ---
+  'bi bi-chevron-left', 'bi bi-chevron-right', 'bi bi-chevron-up', 'bi bi-chevron-down',
+  'bi bi-arrow-right-short', 'bi bi-arrow-left-short', 'bi bi-arrow-up-right',
+  'bi bi-caret-down-fill', 'bi bi-caret-up-fill',
+
+  // --- Công nghệ & Mạng xã hội (Mới) ---
+  'bi bi-github', 'bi bi-google', 'bi bi-facebook', 'bi bi-twitter-x', 'bi bi-linkedin',
+  'bi bi-youtube', 'bi bi-instagram', 'bi bi-discord', 'bi bi-slack', 'bi bi-android2', 'bi bi-apple',
+
+  // --- Thiết bị (Mới) ---
+  'bi bi-laptop', 'bi bi-phone', 'bi bi-tablet', 'bi bi-display', 'bi bi-smartwatch'
 ]
 
 // Matrix state — single role selected, draft Set of permission_ids
