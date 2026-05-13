@@ -1127,7 +1127,7 @@
                 <div
                   v-for="(day, dIdx) in roomViewWeekDays"
                   :key="dIdx"
-                  :ref="day.isToday ? 'rvTodayCol' : undefined"
+                  :ref="(el) => { if (day.isToday && el) rvTodayCol = el }"
                   class="flex-1 min-w-64 border-r border-zinc-100 last:border-r-0"
                 >
                   <!-- Day label -->
@@ -3103,9 +3103,9 @@ const scrollRvToToday = () => {
     container.scrollTo({ left: Math.max(0, targetX), behavior: "smooth" });
   };
   nextTick(() => {
-    // nextTick đảm bảo Vue đã cập nhật DOM, setTimeout(0) đợi browser hoàn tất layout/paint
+    // nextTick đảm bảo Vue đã cập nhật DOM, đợi 150ms để browser hoàn tất transition-opacity
     // cần thiết trên production build vì hydration và lazy rendering chậm hơn dev mode
-    setTimeout(doScroll, 0);
+    setTimeout(doScroll, 150);
   });
 };
 
