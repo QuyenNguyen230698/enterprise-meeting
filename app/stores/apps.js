@@ -30,7 +30,7 @@ const GROUP_META = {
 };
 
 // Fallback khi permission chưa có theme
-const DEFAULT_THEME = { gradientClass: "bg-linear-to-br from-blue-500 to-blue-700", textColor: "text-white" };
+const DEFAULT_THEME = { gradientClass: "bg-linear-to-br from-emerald-500 via-teal-500 to-lime-500", textColor: "text-white" };
 
 export const useAppsStore = defineStore("apps", {
   state: () => ({
