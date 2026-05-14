@@ -197,24 +197,46 @@
             </div>
 
             <div v-if="signatureTab === 'draw'" class="space-y-2">
-              <canvas
-                ref="signatureCanvas"
-                width="700"
-                height="220"
-                class="w-full h-44 border border-gray-200 rounded-xl bg-white touch-none"
-                @pointerdown="startDraw"
-                @pointermove="drawMove"
-                @pointerup="endDraw"
-                @pointerleave="endDraw"
-              />
-              <div class="flex justify-end">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-1 p-0.5 bg-gray-100 rounded-lg">
+                  <button
+                    @click="setStrokeWeight('thin')"
+                    type="button"
+                    class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-semibold transition-all"
+                    :class="strokeWeight === 'thin' ? 'bg-white text-emerald-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'"
+                  >
+                    <svg width="20" height="10" viewBox="0 0 20 10"><line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    Nét thanh
+                  </button>
+                  <button
+                    @click="setStrokeWeight('thick')"
+                    type="button"
+                    class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-semibold transition-all"
+                    :class="strokeWeight === 'thick' ? 'bg-white text-emerald-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'"
+                  >
+                    <svg width="20" height="10" viewBox="0 0 20 10"><line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+                    Nét đậm
+                  </button>
+                </div>
                 <button
                   @click="clearSignatureCanvas"
+                  type="button"
                   class="px-3 py-1.5 text-xs font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg"
                 >
                   Xóa nét ký
                 </button>
               </div>
+              <canvas
+                ref="signatureCanvas"
+                width="900"
+                height="300"
+                class="w-full border border-gray-200 rounded-xl bg-white touch-none cursor-crosshair"
+                style="aspect-ratio: 3/1"
+                @pointerdown="startDraw"
+                @pointermove="drawMove"
+                @pointerup="endDraw"
+                @pointerleave="endDraw"
+              />
             </div>
 
             <div v-else class="space-y-2">
@@ -240,6 +262,7 @@
               </div>
               <div class="flex justify-end">
                 <button
+                  type="button"
                   :disabled="!signatureFile || scanningSignature"
                   class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 disabled:opacity-60"
                   @click="scanSignaturePreview"
@@ -250,11 +273,15 @@
               </div>
               <div v-if="signatureFilePreview" class="border border-gray-200 rounded-xl p-2 bg-gray-50">
                 <p class="text-[11px] font-semibold text-gray-500 mb-1">Ảnh gốc</p>
-                <img :src="signatureFilePreview" alt="signature-preview" class="max-h-28 object-contain mx-auto" />
+                <div class="w-full flex items-center justify-center" style="aspect-ratio: 3/1">
+                  <img :src="signatureFilePreview" alt="signature-preview" class="max-w-full max-h-full object-contain mx-auto" />
+                </div>
               </div>
               <div v-if="scannedSignaturePreview" class="border border-emerald-200 rounded-xl p-2 bg-emerald-50/40">
-                <p class="text-[11px] font-semibold text-emerald-700 mb-1">Ảnh chữ ký đã quét (màu xanh lá)</p>
-                <img :src="scannedSignaturePreview" alt="signature-scanned-preview" class="max-h-28 object-contain mx-auto" />
+                <p class="text-[11px] font-semibold text-emerald-700 mb-1">Ảnh chữ ký đã quét (màu xanh)</p>
+                <div class="w-full flex items-center justify-center" style="aspect-ratio: 3/1">
+                  <img :src="scannedSignaturePreview" alt="signature-scanned-preview" class="max-w-full max-h-full object-contain mx-auto" />
+                </div>
               </div>
             </div>
           </div>
@@ -440,6 +467,26 @@ const signatureFilePreview = ref("");
 const scannedSignaturePreview = ref("");
 const signatureStatus = ref({ has_signature: false, signature_type: null, signature_image_url: null, signature_data: null });
 const signatureFileName = computed(() => signatureFile.value?.name || "Chưa chọn tệp");
+const signaturePreviewUrl = computed(() =>
+  rewriteSignatureUrl(signatureStatus.value?.signature_image_url || signatureStatus.value?.signature_data || '')
+)
+
+// Signature logic from SignHub
+const strokeWeight = ref('thin')
+const drawPoints = ref([])
+const STROKE_WIDTHS = { thin: 1.5, thick: 3.5 }
+
+// OTP Logic from SignHub
+const showOtpModal = ref(false)
+const otpDigits = ref(['', '', '', '', '', ''])
+const otpInputRefs = ref([])
+const otpCountdown = ref(0)
+const otpError = ref('')
+const otpMaskedEmail = ref('')
+const verifyingOtp = ref(false)
+const otpResending = ref(false)
+let _otpCountdownTimer = null
+let _otpResolve = null
 
 const handleSetDefaultCard = (cardId) => {
   dummyCards.value.forEach(card => {
@@ -613,65 +660,143 @@ const handleAvatarUpload = async (event) => {
   }
 };
 
+const rewriteSignatureUrl = (raw) => {
+  if (!raw || raw.startsWith('data:') || raw.startsWith('blob:')) return raw
+  try {
+    const apiOrigin = new URL(apiBaseUrl).origin
+    const rawUrl = new URL(raw)
+    if (rawUrl.origin !== apiOrigin) {
+      rawUrl.host = new URL(apiBaseUrl).host
+      rawUrl.protocol = new URL(apiBaseUrl).protocol
+      return rawUrl.toString()
+    }
+  } catch {}
+  return raw
+}
+
 const loadSignatureStatus = async () => {
   try {
     const response = await fetch(`${apiV1}/profile/signature`, {
       headers: { Authorization: `Bearer ${authStore.accessToken}` },
     });
     const data = await response.json();
-    signatureStatus.value = data?.data || { has_signature: false };
+    const rawData = data?.data || { has_signature: false };
+    signatureStatus.value = {
+      ...rawData,
+      signature_image_url: rewriteSignatureUrl(rawData.signature_image_url)
+    }
   } catch (_) {
     signatureStatus.value = { has_signature: false, signature_type: null, signature_image_url: null, signature_data: null };
   }
 };
 
+const setStrokeWeight = (weight) => {
+  strokeWeight.value = weight
+  const c = signatureCanvas.value
+  if (!c) return
+  applyCtxStyle(c.getContext('2d'))
+}
+
+const applyCtxStyle = (ctx) => {
+  ctx.lineWidth = STROKE_WIDTHS[strokeWeight.value]
+  ctx.lineCap = 'round'
+  ctx.lineJoin = 'round'
+  ctx.strokeStyle = '#193CB9'
+}
+
 const initSignatureCanvas = () => {
   nextTick(() => {
     const c = signatureCanvas.value;
     if (!c) return;
-    const ctx = c.getContext("2d");
-    ctx.lineWidth = 2;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = "#193CB9";
+    applyCtxStyle(c.getContext('2d'))
   });
 };
 
-const pointerPos = (evt) => {
-  const c = signatureCanvas.value;
-  const rect = c.getBoundingClientRect();
-  const scaleX = c.width / rect.width;
-  const scaleY = c.height / rect.height;
-  return {
-    x: (evt.clientX - rect.left) * scaleX,
-    y: (evt.clientY - rect.top) * scaleY,
-  };
-};
-
 const startDraw = (evt) => {
-  if (signatureTab.value !== "draw") return;
-  const c = signatureCanvas.value;
-  if (!c) return;
-  const ctx = c.getContext("2d");
-  const p = pointerPos(evt);
-  ctx.beginPath();
-  ctx.moveTo(p.x, p.y);
-  isDrawing.value = true;
-  hasSignatureStroke.value = true;
-};
+  if (signatureTab.value !== 'draw') return
+  const c = signatureCanvas.value
+  if (!c) return
+  evt.currentTarget.setPointerCapture(evt.pointerId)
+  const p = pointerPos(evt)
+  drawPoints.value = [p]
+  isDrawing.value = true
+  hasSignatureStroke.value = true
+  const ctx = c.getContext('2d')
+  applyCtxStyle(ctx)
+  ctx.beginPath()
+  ctx.moveTo(p.x, p.y)
+}
 
 const drawMove = (evt) => {
-  if (!isDrawing.value || signatureTab.value !== "draw") return;
-  const c = signatureCanvas.value;
-  if (!c) return;
-  const ctx = c.getContext("2d");
-  const p = pointerPos(evt);
-  ctx.lineTo(p.x, p.y);
-  ctx.stroke();
-};
+  if (!isDrawing.value || signatureTab.value !== 'draw') return
+  const c = signatureCanvas.value
+  if (!c) return
+  const ctx = c.getContext('2d')
+  const p = pointerPos(evt)
+  const pts = drawPoints.value
+  pts.push(p)
+
+  const len = pts.length
+  if (len === 2) return
+
+  const p1 = pts[len - 3]
+  const p2 = pts[len - 2]
+  const p3 = pts[len - 1]
+  const mid1x = (p1.x + p2.x) / 2
+  const mid1y = (p1.y + p2.y) / 2
+  const mid2x = (p2.x + p3.x) / 2
+  const mid2y = (p2.y + p3.y) / 2
+
+  const startX = len === 3 ? p1.x : mid1x
+  const startY = len === 3 ? p1.y : mid1y
+
+  const r = STROKE_WIDTHS[strokeWeight.value] / 2
+  ctx.beginPath()
+  ctx.arc(startX, startY, r, 0, Math.PI * 2)
+  ctx.fillStyle = '#193CB9'
+  ctx.fill()
+
+  ctx.beginPath()
+  ctx.moveTo(startX, startY)
+  ctx.quadraticCurveTo(p2.x, p2.y, mid2x, mid2y)
+  ctx.stroke()
+}
 
 const endDraw = () => {
-  isDrawing.value = false;
-};
+  if (!isDrawing.value) return
+  const c = signatureCanvas.value
+  const pts = drawPoints.value
+  if (c) {
+    const ctx = c.getContext('2d')
+    if (pts.length === 1) {
+      ctx.beginPath()
+      ctx.arc(pts[0].x, pts[0].y, STROKE_WIDTHS[strokeWeight.value] / 2, 0, Math.PI * 2)
+      ctx.fillStyle = '#193CB9'
+      ctx.fill()
+    } else if (pts.length === 2) {
+      ctx.beginPath()
+      ctx.moveTo(pts[0].x, pts[0].y)
+      ctx.lineTo(pts[1].x, pts[1].y)
+      ctx.stroke()
+    } else {
+      const last = pts[pts.length - 1]
+      const prev = pts[pts.length - 2]
+      const tailMidX = (prev.x + last.x) / 2
+      const tailMidY = (prev.y + last.y) / 2
+      const r = STROKE_WIDTHS[strokeWeight.value] / 2
+      ctx.beginPath()
+      ctx.arc(tailMidX, tailMidY, r, 0, Math.PI * 2)
+      ctx.fillStyle = '#193CB9'
+      ctx.fill()
+      ctx.beginPath()
+      ctx.moveTo(tailMidX, tailMidY)
+      ctx.lineTo(last.x, last.y)
+      ctx.stroke()
+    }
+  }
+  isDrawing.value = false
+  drawPoints.value = []
+}
 
 const clearSignatureCanvas = () => {
   const c = signatureCanvas.value;
@@ -764,25 +889,157 @@ const openSignatureModal = () => {
   initSignatureCanvas()
 }
 
+const _startOtpCountdown = (seconds) => {
+  clearInterval(_otpCountdownTimer)
+  otpCountdown.value = seconds
+  _otpCountdownTimer = setInterval(() => {
+    otpCountdown.value -= 1
+    if (otpCountdown.value <= 0) clearInterval(_otpCountdownTimer)
+  }, 1000)
+}
+
+const _openOtpModal = () => {
+  otpDigits.value = ['', '', '', '', '', '']
+  otpError.value = ''
+  showOtpModal.value = true
+  nextTick(() => otpInputRefs.value[0]?.focus())
+}
+
+const requestOtpVerification = () => {
+  return new Promise(async (resolve, reject) => {
+    _otpResolve = { resolve, reject }
+    try {
+      const response = await fetch(`${apiV1}/profile/signature/send-otp`, {
+        method: "POST",
+        headers: getAuthHeaders(),
+      });
+      const res = await response.json()
+      if (!response.ok) throw new Error(res.detail || res.error || "Không thể gửi OTP.")
+      otpMaskedEmail.value = res?.data?.masked_email || '****@****'
+      _startOtpCountdown(res?.data?.rate_limit_seconds || 60)
+    } catch (e) {
+      showError(e.message)
+      _otpResolve = null
+      return reject(e)
+    }
+    _openOtpModal()
+  })
+}
+
+const onOtpDigitInput = (index, evt) => {
+  const val = evt.target.value.replace(/\D/g, '').slice(-1)
+  otpDigits.value[index] = val
+  otpError.value = ''
+  if (val && index < 5) {
+    nextTick(() => otpInputRefs.value[index + 1]?.focus())
+  }
+  if (index === 5 && val) confirmOtp()
+}
+
+const onOtpKeydown = (index, evt) => {
+  if (evt.key === 'Backspace' && !otpDigits.value[index] && index > 0) {
+    nextTick(() => otpInputRefs.value[index - 1]?.focus())
+  }
+}
+
+const onOtpPaste = (evt) => {
+  const text = (evt.clipboardData?.getData('text') ?? '').replace(/\D/g, '').slice(0, 6)
+  if (!text) return
+  text.split('').forEach((d, i) => { otpDigits.value[i] = d })
+  nextTick(() => {
+    otpInputRefs.value[Math.min(text.length, 5)]?.focus()
+    if (text.length === 6) confirmOtp()
+  })
+}
+
+const confirmOtp = async () => {
+  const code = otpDigits.value.join('')
+  if (code.length !== 6) return
+  verifyingOtp.value = true
+  otpError.value = ''
+  try {
+    const response = await fetch(`${apiV1}/profile/signature/verify-otp`, {
+      method: "POST",
+      headers: getAuthHeaders(),
+      body: JSON.stringify({ otp_code: code }),
+    });
+    const res = await response.json()
+    const token = res?.data?.verify_token
+    if (!token) {
+      otpError.value = res?.detail || res?.data?.detail || res?.message || 'Mã OTP không đúng.'
+      otpDigits.value = ['', '', '', '', '', '']
+      nextTick(() => otpInputRefs.value[0]?.focus())
+      return
+    }
+    showOtpModal.value = false
+    clearInterval(_otpCountdownTimer)
+    const resolver = _otpResolve
+    _otpResolve = null
+    resolver?.resolve(token)
+  } catch (e) {
+    otpError.value = 'Mã OTP không đúng.'
+    otpDigits.value = ['', '', '', '', '', '']
+    nextTick(() => otpInputRefs.value[0]?.focus())
+  } finally {
+    verifyingOtp.value = false
+  }
+}
+
+const cancelOtp = () => {
+  showOtpModal.value = false
+  clearInterval(_otpCountdownTimer)
+  const resolver = _otpResolve
+  _otpResolve = null
+  resolver?.reject(new Error('cancelled'))
+}
+
+const resendOtp = async () => {
+  otpResending.value = true
+  otpDigits.value = ['', '', '', '', '', '']
+  otpError.value = ''
+  try {
+    const response = await fetch(`${apiV1}/profile/signature/send-otp`, {
+      method: "POST",
+      headers: getAuthHeaders(),
+    });
+    const res = await response.json()
+    otpMaskedEmail.value = res?.data?.masked_email || otpMaskedEmail.value
+    _startOtpCountdown(res?.data?.rate_limit_seconds || 60)
+    success('Đã gửi lại mã OTP.')
+    nextTick(() => otpInputRefs.value[0]?.focus())
+  } catch (e) {
+    showError('Không thể gửi lại OTP.')
+  } finally {
+    otpResending.value = false
+  }
+}
+
 const saveSignature = async () => {
+  if (signatureTab.value === 'draw' && !hasSignatureStroke.value) {
+    showError('Vui lòng ký trước khi lưu.')
+    return
+  }
+  if (signatureTab.value === 'upload' && !signatureFile.value) {
+    showError('Vui lòng chọn ảnh chữ ký.')
+    return
+  }
+
+  let verifyToken
+  try {
+    verifyToken = await requestOtpVerification()
+  } catch { return }
+
   savingSignature.value = true;
   try {
+    let saved
     if (signatureTab.value === "draw") {
-      if (!hasSignatureStroke.value) {
-        showError("Vui lòng ký trước khi lưu.");
-        return;
-      }
       const dataUrl = signatureCanvas.value.toDataURL("image/png");
-      await fetch(`${apiV1}/profile/signature`, {
+      saved = await fetch(`${apiV1}/profile/signature`, {
         method: "PUT",
         headers: getAuthHeaders(),
-        body: JSON.stringify({ signature_type: "drawn", signature_data: dataUrl }),
-      });
+        body: JSON.stringify({ signature_type: "drawn", signature_data: dataUrl, verify_token: verifyToken }),
+      }).then(r => r.json());
     } else {
-      if (!signatureFile.value) {
-        showError("Vui lòng chọn ảnh chữ ký.");
-        return;
-      }
       const imageData = await fileToDataUrl(signatureFile.value)
       const up = await fetch(`${apiV1}/profile/upload-signature`, {
         method: "POST",
@@ -790,13 +1047,21 @@ const saveSignature = async () => {
         body: JSON.stringify({ image_data: imageData }),
       }).then((r) => r.json());
       scannedSignaturePreview.value = up?.data?.preview_data_url || scannedSignaturePreview.value
-      await fetch(`${apiV1}/profile/signature`, {
+      saved = await fetch(`${apiV1}/profile/signature`, {
         method: "PUT",
         headers: getAuthHeaders(),
-        body: JSON.stringify({ signature_type: "uploaded", signature_data: up?.data?.url }),
-      });
+        body: JSON.stringify({ signature_type: "uploaded", signature_data: up?.data?.url, verify_token: verifyToken }),
+      }).then(r => r.json());
     }
-    await loadSignatureStatus();
+    
+    if (saved?.data) {
+       signatureStatus.value = {
+         ...saved.data,
+         signature_image_url: rewriteSignatureUrl(saved.data.signature_image_url),
+       }
+    } else {
+       await loadSignatureStatus();
+    }
     success("Đã lưu chữ ký SignHub.");
     showSignatureModal.value = false;
   } catch (e) {
