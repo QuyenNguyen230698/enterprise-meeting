@@ -3457,6 +3457,10 @@ onMounted(async () => {
   font-weight: 700 !important;
 }
 
+.e-toolbar .e-toolbar-items {
+  background: none !important;
+}
+
 /* ── QuickInfo popup overrides ─────────────────────────── */
 /* Ẩn toàn bộ header mặc định (title bar + close icon của Syncfusion) */
 .e-quick-popup-wrapper .e-popup-header {
