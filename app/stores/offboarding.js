@@ -117,6 +117,12 @@ export const useOffboardingStore = defineStore('offboarding', {
           `/v1/offboarding/processes/${processId}/steps/${stepNumber}/action`,
           { method: 'POST', body: payload }
         )
+        const data = res?.data ?? res
+        if (data && data.error) {
+          this.error = data.message || data.error
+          return { success: false, message: this.error, error_code: data.error }
+        }
+
         // Side effects should not flip a successful action into failure.
         try {
           await this.fetchProcess(processId)
@@ -130,7 +136,7 @@ export const useOffboardingStore = defineStore('offboarding', {
         } catch (sideEffectError) {
           console.warn('[offboarding] post-action side effects failed:', sideEffectError)
         }
-        return { success: true, data: res?.data ?? res }
+        return { success: true, data }
       } catch (e) {
         this.error = e?.data?.message ?? e?.data?.error ?? 'Thao tác thất bại'
         return { success: false, message: this.error }
@@ -147,12 +153,17 @@ export const useOffboardingStore = defineStore('offboarding', {
           `/v1/offboarding/processes/${processId}/handover/${hoKey}/confirm`,
           { method: 'POST', body: { notes } }
         )
+        const data = res?.data ?? res
+        if (data && data.error) {
+          this.error = data.message || data.error
+          return { success: false, message: this.error, error_code: data.error }
+        }
         await this.fetchProcess(processId)
         try {
           const { triggerNotification } = useOffboardingNotify()
           triggerNotification({ process_id: processId, step_number: 6, action: `confirm_${hoKey}`, note: notes ?? '' })
         } catch (_) {}
-        return { success: true, data: res?.data ?? res }
+        return { success: true, data }
       } catch (e) {
         this.error = e?.data?.message ?? e?.data?.error ?? 'Không thể xác nhận bàn giao'
         return { success: false, message: this.error }
@@ -169,12 +180,17 @@ export const useOffboardingStore = defineStore('offboarding', {
           `/v1/offboarding/processes/${processId}/handover/${hoKey}/reject`,
           { method: 'POST', body: { reason } }
         )
+        const data = res?.data ?? res
+        if (data && data.error) {
+          this.error = data.message || data.error
+          return { success: false, message: this.error, error_code: data.error }
+        }
         await this.fetchProcess(processId)
         try {
           const { triggerNotification } = useOffboardingNotify()
           triggerNotification({ process_id: processId, step_number: 6, action: `reject_${hoKey}`, note: reason ?? '' })
         } catch (_) {}
-        return { success: true, data: res?.data ?? res }
+        return { success: true, data }
       } catch (e) {
         this.error = e?.data?.message ?? e?.data?.error ?? 'Không thể reject bàn giao'
         return { success: false, message: this.error }
@@ -191,12 +207,17 @@ export const useOffboardingStore = defineStore('offboarding', {
           `/v1/offboarding/processes/${processId}/handover/${hoKey}/timeline-action`,
           { method: 'POST', body: { action, note } }
         )
+        const data = res?.data ?? res
+        if (data && data.error) {
+          this.error = data.message || data.error
+          return { success: false, message: this.error, error_code: data.error }
+        }
         await this.fetchProcess(processId)
         try {
           const { triggerNotification } = useOffboardingNotify()
           triggerNotification({ process_id: processId, step_number: 6, action: `${hoKey}_${action}`, note })
         } catch (_) {}
-        return { success: true, data: res?.data ?? res }
+        return { success: true, data }
       } catch (e) {
         this.error = e?.data?.message ?? e?.data?.error ?? 'Không thể thao tác timeline biên bản'
         return { success: false, message: this.error }

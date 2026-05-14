@@ -554,7 +554,7 @@ const handleAction = async (stepNumber, action, note, extra) => {
   if (result.success) {
     toast.success(actionSuccessMsg(action))
   } else {
-    if (handleSignatureRequired(result.message)) return
+    if (handleSignatureRequired(result.message, result.error_code)) return
     toast.error(result.message ?? 'Thao tác thất bại')
   }
 }
@@ -564,7 +564,7 @@ const handleOverride = async (reason) => {
   if (result.success) {
     toast.success('Đã yêu cầu làm lại bàn giao.')
   } else {
-    if (handleSignatureRequired(result.message)) return
+    if (handleSignatureRequired(result.message, result.error_code)) return
     toast.error(result.message ?? 'Thao tác thất bại')
   }
 }
@@ -574,7 +574,7 @@ const confirmHandover = async (hoKey) => {
   if (result.success) {
     toast.success(`Đã xác nhận ${hoKey.toUpperCase()}`)
   } else {
-    if (handleSignatureRequired(result.message)) return
+    if (handleSignatureRequired(result.message, result.error_code)) return
     toast.error(result.message ?? 'Không thể xác nhận bàn giao')
   }
 }
@@ -584,7 +584,7 @@ const rejectHandover = async (hoKey, reason) => {
   if (result.success) {
     toast.success(`Đã reject ${hoKey.toUpperCase()}`)
   } else {
-    if (handleSignatureRequired(result.message)) return
+    if (handleSignatureRequired(result.message, result.error_code)) return
     toast.error(result.message ?? 'Không thể reject bàn giao')
   }
 }
@@ -598,7 +598,7 @@ const handleStep7Complete = async (note) => {
   if (result.success) {
     toast.success('Quy trình đã hoàn tất!')
   } else {
-    if (handleSignatureRequired(result.message)) return
+    if (handleSignatureRequired(result.message, result.error_code)) return
     toast.error(result.message ?? 'Thao tác thất bại')
   }
 }
@@ -612,7 +612,7 @@ const handleStep7Block = async (reason) => {
   if (result.success) {
     toast.success('Đã chặn chế độ thanh toán.')
   } else {
-    if (handleSignatureRequired(result.message)) return
+    if (handleSignatureRequired(result.message, result.error_code)) return
     toast.error(result.message ?? 'Thao tác thất bại')
   }
 }
@@ -626,7 +626,7 @@ const handleStep7Unblock = async () => {
   if (result.success) {
     toast.success('Đã mở lại chế độ thanh toán.')
   } else {
-    if (handleSignatureRequired(result.message)) return
+    if (handleSignatureRequired(result.message, result.error_code)) return
     toast.error(result.message ?? 'Thao tác thất bại')
   }
 }
@@ -646,10 +646,11 @@ const openPrintView = () => {
   window.open(targetUrl, '_blank', 'noopener,noreferrer')
 }
 
-const handleSignatureRequired = (message) => {
+const handleSignatureRequired = (message, errorCode) => {
   const msg = String(message ?? '')
-  // Chấp nhận cả message chứa 'chữ ký' hoặc mã lỗi MISSING_SIGNATURE
-  if (!msg.toLowerCase().includes('chữ ký') && msg !== 'MISSING_SIGNATURE') return false
+  const code = String(errorCode ?? '')
+  
+  if (!msg.toLowerCase().includes('chữ ký') && code !== 'MISSING_SIGNATURE') return false
   
   signatureRequiredNotice.value = true
   toast.error('Bạn cần tạo chữ ký SignHub trước khi phê duyệt.')
