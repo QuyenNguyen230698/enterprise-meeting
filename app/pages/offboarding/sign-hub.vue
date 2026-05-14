@@ -1398,6 +1398,21 @@ const handleGMAction = async (action, note) => {
   }
 }
 
+onMounted(async () => {
+  await offboardingStore.fetchProcesses()
+  await fetchSignHubLogs()
+  await fetchApprovalHistory()
+  await loadSignatureStatus()
+
+  // Handle URL query parameters
+  if (route.query.tab === 'signature') {
+    activeMainTab.value = 'signature'
+  }
+  if (route.query.action === 'open-signature') {
+    openSignatureModal()
+  }
+})
+
 const loadSignatureStatus = async () => {
   try {
     const res = await useFetchAuth('/v1/profile/signature')

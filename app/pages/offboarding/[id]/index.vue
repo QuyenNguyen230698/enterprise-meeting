@@ -655,7 +655,7 @@ const handleSignatureRequired = (message, errorCode) => {
   signatureRequiredNotice.value = true
   toast.error('Bạn cần tạo chữ ký SignHub trước khi phê duyệt.')
   
-  setTimeout(() => navigateTo('/settings/profile?action=open-signature'), 1500)
+  setTimeout(() => navigateTo('/sign-hub?tab=signature&action=open-signature'), 1500)
   return true
 }
 
