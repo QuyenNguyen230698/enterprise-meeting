@@ -712,6 +712,18 @@ const initSignatureCanvas = () => {
   });
 };
 
+const pointerPos = (evt) => {
+  const c = signatureCanvas.value;
+  if (!c) return { x: 0, y: 0 };
+  const rect = c.getBoundingClientRect();
+  const scaleX = c.width / rect.width;
+  const scaleY = c.height / rect.height;
+  return {
+    x: (evt.clientX - rect.left) * scaleX,
+    y: (evt.clientY - rect.top) * scaleY,
+  };
+};
+
 const startDraw = (evt) => {
   if (signatureTab.value !== 'draw') return
   const c = signatureCanvas.value
