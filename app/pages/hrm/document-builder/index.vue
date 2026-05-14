@@ -214,7 +214,7 @@
 
 <script setup>
 import { useDocumentBuilderStore } from '~/stores/hrm/documentBuilder'
-
+definePageMeta({ middleware: ['auth', 'permission'] })
 const auth = useAuthStore()
 const store = useDocumentBuilderStore()
 

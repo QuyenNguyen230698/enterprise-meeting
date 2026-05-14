@@ -1027,10 +1027,7 @@ interface AuthUser {
   [key: string]: any
 }
 
-definePageMeta({
-  layout: 'default',
-  middleware: 'auth'
-})
+definePageMeta({ middleware: ['auth', 'permission'] })
 
 const auth = useAuthStore()
 const authUser = computed((): AuthUser => (auth.user as unknown as AuthUser) || {})

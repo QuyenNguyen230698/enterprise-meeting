@@ -174,7 +174,7 @@
 
 <script setup>
 import { useDocumentStore, DOC_STATUS_LABEL } from '~/stores/hrm/document'
-
+definePageMeta({ middleware: ['auth', 'permission'] })
 const store       = useDocumentStore()
 const auth        = useAuthStore()
 const search      = ref('')
