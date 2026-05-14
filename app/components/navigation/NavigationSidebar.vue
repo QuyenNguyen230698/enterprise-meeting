@@ -27,145 +27,124 @@
     </div>
 
     <!-- Divider after favorites -->
-    <div v-if="filteredFavoriteApps.length" class="my-2 border-t border-zinc-100 mx-3"></div>
-
-    <!-- Dynamic Departments (from appsStore — filtered by permission_ids) -->
+    <div v-if="filteredFavoriteApps.length" class="my-2 border-t border-zinc-100 mx-3"></div>    <!-- Dynamic Departments (from appsStore — filtered by permission_ids) -->
     <template v-for="(department, key) in visibleDepartments">
-      <div :key="key" v-if="department.apps.length > 0">
-        <div
-          class="px-3 mt-4 mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider transition-opacity duration-300 whitespace-nowrap overflow-hidden"
-          :class="{ 'opacity-0 h-0 my-0': !sidebarOpen || isTablet }"
+      <div :key="key" v-if="department.apps.length > 0" class="mb-1">
+        <!-- Section Header (Clickable for Collapse) -->
+        <button
+          @click="toggleSection(key)"
+          class="w-full flex items-center justify-between px-3 mt-4 mb-2 group/header focus:outline-none transition-all duration-300"
+          :class="{ 'opacity-0 h-0 my-0 overflow-hidden': !sidebarOpen || isTablet }"
         >
-          {{ department.name }}
-        </div>
+          <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest group-hover/header:text-zinc-600 transition-colors">
+            {{ department.name }}
+          </span>
+          <i 
+            class="bi bi-chevron-down text-[10px] text-zinc-400 transition-transform duration-300"
+            :class="{ 'rotate-[-90deg]': collapsedSections[key] }"
+          ></i>
+        </button>
 
-        <div class="space-y-1">
-          <NuxtLink
-            v-for="app in department.apps"
-            :key="app.appCode"
-            :to="app.path"
-            :class="[
-              'flex items-center px-3 py-2.5 rounded-xl transition-all group relative',
-              isActive(app.path)
-                ? 'bg-gradient-to-r from-emerald-500 via-teal-500 to-lime-500 !text-white shadow-sm hover:opacity-90'
-                : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
-            ]"
-            :title="(!sidebarOpen || isTablet) ? app.name : ''"
-          >
-            <i :class="[app.icon, 'text-xl shrink-0']"></i>
-            <span class="ml-3 flex-1 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">{{ app.name }}</span>
-          </NuxtLink>
-        </div>
+        <Transition name="expand">
+          <div v-show="!collapsedSections[key] || !sidebarOpen || isTablet" class="space-y-1 overflow-hidden">
+            <NuxtLink
+              v-for="app in department.apps"
+              :key="app.appCode"
+              :to="app.path"
+              :class="[
+                'flex items-center px-3 py-2.5 rounded-xl transition-all group relative',
+                isActive(app.path)
+                  ? 'bg-gradient-to-r from-emerald-500 via-teal-500 to-lime-500 !text-white shadow-sm hover:opacity-90'
+                  : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
+              ]"
+              :title="(!sidebarOpen || isTablet) ? app.name : ''"
+            >
+              <i :class="[app.icon, 'text-xl shrink-0']"></i>
+              <span class="ml-3 flex-1 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">{{ app.name }}</span>
+            </NuxtLink>
+          </div>
+        </Transition>
 
         <div v-if="hasNextVisibleDepartment(key)" class="my-2 border-t border-zinc-100 mx-3"></div>
       </div>
     </template>
 
-    <!-- Settings Section — luôn hiển thị, từng item check permission riêng -->
-    <!-- <div class="my-2 border-t border-zinc-100 mx-3"></div>
-    <div
-      class="px-3 mt-4 mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider transition-opacity duration-300 whitespace-nowrap overflow-hidden"
-      :class="{ 'opacity-0 h-0 mb-0': !sidebarOpen || isTablet }"
-    >
-      Cài Đặt
-    </div> -->
-
-    <!-- Email Config — chỉ hiện nếu có permission email-config (1000000009) -->
-    <!-- <NuxtLink
-      v-if="hasPermission('email-config')"
-      to="/settings/email-config"
-      :class="[
-        'flex items-center px-3 py-2.5 rounded-xl transition-all group relative',
-        isActive('/settings/email-config')
-          ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
-          : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
-      ]"
-      :title="(!sidebarOpen || isTablet) ? 'Cấu Hình Email' : ''"
-    >
-      <i class="bi bi-gear-wide-connected text-xl shrink-0"></i>
-      <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Cấu Hình Email</span>
-    </NuxtLink> -->
-
-    <!-- Profile — luôn cho phép sau login -->
-    <!-- <NuxtLink
-      to="/settings/profile"
-      :class="[
-        'flex items-center px-3 py-2.5 rounded-xl transition-all group relative mt-1',
-        isActive('/settings/profile')
-          ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
-          : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
-      ]"
-      :title="(!sidebarOpen || isTablet) ? 'Tài Khoản' : ''"
-    >
-      <i class="bi bi-person-gear text-xl shrink-0"></i>
-      <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Tài Khoản</span>
-    </NuxtLink> -->
-
     <!-- Help & Support -->
     <div class="my-2 border-t border-zinc-100 mx-3"></div>
-    <div
-      class="px-3 mt-4 mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider transition-opacity duration-300 whitespace-nowrap overflow-hidden"
-      :class="{ 'opacity-0 h-0 mb-0': !sidebarOpen || isTablet }"
+    <button
+      @click="toggleSection('help')"
+      class="w-full flex items-center justify-between px-3 mt-4 mb-2 group/header focus:outline-none transition-all duration-300"
+      :class="{ 'opacity-0 h-0 mb-0 overflow-hidden': !sidebarOpen || isTablet }"
     >
-      Trợ Giúp
-    </div>
+      <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest group-hover/header:text-zinc-600 transition-colors">
+        Trợ Giúp
+      </span>
+      <i 
+        class="bi bi-chevron-down text-[10px] text-zinc-400 transition-transform duration-300"
+        :class="{ 'rotate-[-90deg]': collapsedSections['help'] }"
+      ></i>
+    </button>
 
-    <!-- Support — mọi role đã đăng nhập -->
-    <NuxtLink
-      to="/support"
-      :class="[
-        'flex items-center px-3 py-2.5 rounded-xl transition-all group relative',
-        isActive('/support') && !isActive('/support-dev')
-          ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
-          : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
-      ]"
-      :title="(!sidebarOpen || isTablet) ? 'Hỗ Trợ' : ''"
-    >
-      <i class="bi bi-headset text-xl shrink-0"></i>
-      <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Hỗ Trợ</span>
-    </NuxtLink>
+    <Transition name="expand">
+      <div v-show="!collapsedSections['help'] || !sidebarOpen || isTablet" class="space-y-1 overflow-hidden">
+        <!-- Support — mọi role đã đăng nhập -->
+        <NuxtLink
+          to="/support"
+          :class="[
+            'flex items-center px-3 py-2.5 rounded-xl transition-all group relative',
+            isActive('/support') && !isActive('/support-dev')
+              ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
+              : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
+          ]"
+          :title="(!sidebarOpen || isTablet) ? 'Hỗ Trợ' : ''"
+        >
+          <i class="bi bi-headset text-xl shrink-0"></i>
+          <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Hỗ Trợ</span>
+        </NuxtLink>
 
-    <NuxtLink
-      to="/guide"
-      :class="[
-        'flex items-center px-3 py-2.5 rounded-xl transition-all group relative mt-1',
-        isActive('/guide')
-          ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
-          : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
-      ]"
-      :title="(!sidebarOpen || isTablet) ? 'Tài Liệu' : ''"
-    >
-      <i class="bi bi-book text-xl shrink-0"></i>
-      <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Tài Liệu</span>
-    </NuxtLink>
+        <NuxtLink
+          to="/guide"
+          :class="[
+            'flex items-center px-3 py-2.5 rounded-xl transition-all group relative mt-1',
+            isActive('/guide')
+              ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
+              : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
+          ]"
+          :title="(!sidebarOpen || isTablet) ? 'Tài Liệu' : ''"
+        >
+          <i class="bi bi-book text-xl shrink-0"></i>
+          <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Tài Liệu</span>
+        </NuxtLink>
 
-    <NuxtLink
-      to="/roadmap"
-      :class="[
-        'flex items-center px-3 py-2.5 rounded-xl transition-all group relative mt-1',
-        isActive('/roadmap')
-          ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
-          : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
-      ]"
-      :title="(!sidebarOpen || isTablet) ? 'Lộ Trình Phát Triển' : ''"
-    >
-      <i class="bi bi-map text-xl shrink-0"></i>
-      <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Lộ Trình Phát Triển</span>
-    </NuxtLink>
+        <NuxtLink
+          to="/roadmap"
+          :class="[
+            'flex items-center px-3 py-2.5 rounded-xl transition-all group relative mt-1',
+            isActive('/roadmap')
+              ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
+              : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
+          ]"
+          :title="(!sidebarOpen || isTablet) ? 'Lộ Trình Phát Triển' : ''"
+        >
+          <i class="bi bi-map text-xl shrink-0"></i>
+          <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Lộ Trình Phát Triển</span>
+        </NuxtLink>
 
-    <NuxtLink
-      to="/support-dev"
-      :class="[
-        'flex items-center px-3 py-2.5 rounded-xl transition-all group relative mt-1',
-        isActive('/support-dev')
-          ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
-          : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
-      ]"
-      :title="(!sidebarOpen || isTablet) ? 'Dự Án' : ''"
-    >
-      <i class="bi bi-heart-fill text-xl shrink-0"></i>
-      <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Dự Án</span>
-    </NuxtLink>
+        <NuxtLink
+          to="/support-dev"
+          :class="[
+            'flex items-center px-3 py-2.5 rounded-xl transition-all group relative mt-1',
+            isActive('/support-dev')
+              ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-400 !text-white shadow-sm hover:opacity-90'
+              : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900',
+          ]"
+          :title="(!sidebarOpen || isTablet) ? 'Dự Án' : ''"
+        >
+          <i class="bi bi-heart-fill text-xl shrink-0"></i>
+          <span class="ml-3 font-medium transition-all duration-300 whitespace-nowrap overflow-hidden" :class="{ 'w-0 opacity-0': !sidebarOpen || isTablet }">Dự Án</span>
+        </NuxtLink>
+      </div>
+    </Transition>
 
   </div>
 </template>
@@ -212,8 +191,36 @@ const hasNextVisibleDepartment = (currentKey) => {
   return false;
 };
 
-// Expand active submenu on mount (kept for future module support)
-onMounted(() => {});
+// --- Collapse Logic ---
+const collapsedSections = ref({});
+
+// Load collapsed state from localStorage on mount (optional but recommended)
+onMounted(() => {
+  const saved = localStorage.getItem('sidebar_collapsed_sections');
+  if (saved) {
+    try {
+      collapsedSections.value = JSON.parse(saved);
+    } catch (e) {
+      collapsedSections.value = {};
+    }
+  }
+});
+
+const toggleSection = (key) => {
+  collapsedSections.value[key] = !collapsedSections.value[key];
+  localStorage.setItem('sidebar_collapsed_sections', JSON.stringify(collapsedSections.value));
+};
+
+// Expand active submenu on mount
+onMounted(() => {
+  // Find which department the current app belongs to and ensure it's expanded
+  const departments = visibleDepartments.value;
+  for (const [key, dept] of Object.entries(departments)) {
+    if (dept.apps.some(app => isActive(app.path))) {
+      collapsedSections.value[key] = false;
+    }
+  }
+});
 
 // Close submenus when sidebar collapses
 const openMenus = ref({});
@@ -224,7 +231,23 @@ watch(() => props.sidebarOpen, (val) => { if (!val) openMenus.value = {}; });
 .group { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
 .group:hover { transform: translateX(2px); }
 i { transition: transform 0.2s ease; }
-.group:hover i { transform: scale(1.1); }
+.group\/header:hover i { transform: translateX(2px); }
+
+/* Expand Transition */
+.expand-enter-active,
+.expand-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 500px;
+  opacity: 1;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
