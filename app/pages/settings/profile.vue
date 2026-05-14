@@ -843,6 +843,11 @@ onMounted(async () => {
 
   await fetchProfile();
   await loadSignatureStatus();
+
+  // Tự động mở modal chữ ký nếu có action từ URL
+  if (route.query.action === 'open-signature') {
+    openSignatureModal();
+  }
 });
 
 onUnmounted(() => {

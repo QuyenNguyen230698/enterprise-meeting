@@ -648,10 +648,13 @@ const openPrintView = () => {
 
 const handleSignatureRequired = (message) => {
   const msg = String(message ?? '')
-  if (!msg.toLowerCase().includes('chữ ký')) return false
+  // Chấp nhận cả message chứa 'chữ ký' hoặc mã lỗi MISSING_SIGNATURE
+  if (!msg.toLowerCase().includes('chữ ký') && msg !== 'MISSING_SIGNATURE') return false
+  
   signatureRequiredNotice.value = true
-  toast.error(msg || 'Bạn cần tạo chữ ký SignHub trước khi phê duyệt.')
-  setTimeout(() => navigateTo('/sign-hub'), 1200)
+  toast.error('Bạn cần tạo chữ ký SignHub trước khi phê duyệt.')
+  
+  setTimeout(() => navigateTo('/settings/profile?action=open-signature'), 1500)
   return true
 }
 
