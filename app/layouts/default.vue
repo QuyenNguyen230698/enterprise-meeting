@@ -162,7 +162,7 @@
               @click="navigateTo('/internal')"
               class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-zinc-100 transition-colors text-zinc-700"
             >
-              <i class="bi bi-stars text-purple-600"></i>
+              <i class="bi bi-stars text-emerald-500"></i>
               <span class="text-sm font-semibold">Ask AI</span>
             </button>
 
