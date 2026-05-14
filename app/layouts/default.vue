@@ -156,8 +156,16 @@
             </nav>
           </div>
 
-          <!-- Header Actions -->
           <div class="flex items-center gap-3">
+            <!-- Ask AI Button -->
+            <button
+              @click="navigateTo('/internal')"
+              class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-zinc-100 transition-colors text-zinc-700"
+            >
+              <i class="bi bi-stars text-purple-600"></i>
+              <span class="text-sm font-semibold">Ask AI</span>
+            </button>
+
             <!-- Notification Bell -->
             <NotificationDropdown />
             <!-- User Avatar Dropdown -->

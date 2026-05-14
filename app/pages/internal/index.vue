@@ -728,7 +728,7 @@
             <button v-if="canManage" @click="confirmDeleteAllDocs" class="h-8 w-8 rounded-lg flex items-center justify-center text-gray-600 hover:text-red-400 hover:bg-red-500/10 transition" title="Xóa tất cả tài liệu (SuperAdmin)">
               <i class="bi bi-trash3 text-sm"></i>
             </button>
-            <button v-if="canUpload" @click="openCreateCategory" class="h-8 w-8 rounded-lg flex items-center justify-center text-gray-600 hover:text-gray-300 hover:bg-white/[0.06] transition" title="Tạo danh mục">
+            <button v-if="canManage" @click="openCreateCategory" class="h-8 w-8 rounded-lg flex items-center justify-center text-gray-600 hover:text-gray-300 hover:bg-white/[0.06] transition" title="Tạo danh mục">
               <i class="bi bi-folder-plus text-sm"></i>
             </button>
             <button v-if="canUpload" @click="showUploadModal = true" class="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-medium transition active:scale-95">
@@ -1035,13 +1035,12 @@ definePageMeta({
 const auth = useAuthStore()
 const authUser = computed((): AuthUser => (auth.user as unknown as AuthUser) || {})
 
-// ── Permission helpers (theo logic user/index.vue + auth store) ─────────────
-// canView   : tất cả nhân viên đã đăng nhập
-// canUpload : Admin trở lên (isAdmin = isAdminOnly | isAdmin | isSuperAdmin)
-// canManage : SuperAdmin — sửa/xóa danh mục, xóa hàng loạt, upload bulk
-const canView    = computed(() => !!(auth as any).user)
-const canUpload  = computed(() => !!(auth as any).isAdmin)
-const canManage  = computed(() => !!(auth as any).isSuperAdmin)
+// canView   : tất cả nhân viên đã đăng nhập (isMember | isAdmin | isSuperAdmin)
+// canUpload : Admin trở lên (isAdminOnly | isSuperAdmin)
+// canManage : SuperAdmin (isSuperAdmin)
+const canView    = computed(() => auth.isMember || auth.isAdmin)
+const canUpload  = computed(() => auth.isAdmin)
+const canManage  = computed(() => auth.isSuperAdmin)
 
 const { messages, isStreaming, threadId: currentThreadId, sendMessage, clearChat, activeProvider } = useKnowledgeChat()
 const toast = useToast()
