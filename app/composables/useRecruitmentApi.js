@@ -59,5 +59,20 @@ export const useRecruitmentApi = () => {
     updateRule: (id, body) => call('PATCH', `/v1/recruitment/auto-rules/${id}?${qs()}`, body),
     deleteRule: (id) => call('DELETE', `/v1/recruitment/auto-rules/${id}?${qs()}`),
     toggleRule: (id) => call('POST', `/v1/recruitment/auto-rules/${id}/toggle?${qs()}`),
+
+    // CV Upload & Management
+    fetchCVs: (params = {}) => call('GET', `/v1/recruitment/cvs?${qs(params)}`),
+    deleteCv: (cvId) => call('DELETE', `/v1/recruitment/cvs/${cvId}?${qs()}`),
+    uploadCv: async (file, { candidateName = '', jobId = null } = {}) => {
+      const form = new FormData()
+      form.append('file', file)
+      const extra = { candidate_name: candidateName }
+      if (jobId) extra.job_id = jobId
+      return useFetchAuth(`/v1/recruitment/cvs/upload?${qs(extra)}`, {
+        method: 'POST',
+        body: form,
+      })
+    },
+    cvFileUrl: (filename) => `${config.public.apiBase}/v1/recruitment/cvs/file/${filename}`,
   }
 }
